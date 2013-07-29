@@ -28,11 +28,11 @@ class AgenciesRepository extends \Knp\Repository{
             'agencies',array(
                 'idLocation' => $data['idLocation'],
                 'name' => $data['agencyname'],
-                'logo' => $data['logoName'],
-                'website' => $data['website'],
-                'description' => $data['description'],
-                'tel' => $data['tel'],
-                'fax' => $data['fax']
+                'logo' =>       isset($data['logoName'])    ? $data['logoName'] : null,
+                'website' =>    isset($data['website'])     ? $data['website']:null,
+                'description' => isset($data['description']) ? $data['description']: null,
+                'tel' =>        isset($data['tel'])         ? $data['tel'] : null,
+                'fax' =>        isset($data['fax'])         ? $data['fax'] : null
             )
         );
     }

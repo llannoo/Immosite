@@ -120,44 +120,41 @@ class AuthController implements ControllerProviderInterface {
                     ))
                 )
             ))
-
             ->add('password','password', array(
                 'constraints' => array(
                     new Assert\Length(array('min' => 6)),
-                    new Assert\NotBlank()
+                    new Assert\NotBlank(array(
+                        'message' => 'Dit veld is verplicht'
+                    ))
                 )
             ))
-
             ->add('confirmpass','password', array(
                 'constraints' => array(
                     new Assert\Length(array('min' => 6)),
-                    new Assert\NotBlank()
+                    new Assert\NotBlank(array(
+                        'message' => 'Dit veld is verplicht'
+                    ))
                 )
             ))
-
             ->add('agencyname','text', array(
                 'constraints' => array(
-                    new Assert\NotBlank(),
+                    new Assert\NotBlank(array(
+                            'message' => 'Dit veld is verplicht'
+                        )),
                     new Assert\Length(array('min' => 2))
                 )
             ))
-
             ->add('street','text', array(
-                'constraints' => array(
-                    new Assert\NotBlank()
-                )
+
             ))
             ->add('housenumber','integer', array(
                 'constraints' => array(
-                    new Assert\NotBlank(),
                     new Assert\Length(array('max'=>5))
                 )
             ))
-
             ->add('bus','text', array(
                 'constraints' => array(),
             ))
-
             ->add('code','integer', array(
                 'constraints' => array(
                     new Assert\Range(array(
@@ -166,12 +163,9 @@ class AuthController implements ControllerProviderInterface {
                     ))
                 )
             ))
-
             ->add('city','text', array(
                 'constraints' => array()
             ))
-
-
             ->add('tel','text', array(
                 'constraints' => array(
                     new Assert\Regex(array(
@@ -183,7 +177,6 @@ class AuthController implements ControllerProviderInterface {
                     )
                 )
             ))
-
             ->add('fax','text', array(
                 'constraints' => array(
                     new Assert\Regex(array(
@@ -195,7 +188,6 @@ class AuthController implements ControllerProviderInterface {
                     )
                 )
             ))
-
             ->add('logo','file', array(
                 'constraints' => array(
                     new Assert\Image(array(
@@ -206,7 +198,6 @@ class AuthController implements ControllerProviderInterface {
                     ))
                 )
             ))
-
             ->add('website','url', array(
                 'constraints' => array(
                     new Assert\Url(array(
@@ -214,7 +205,6 @@ class AuthController implements ControllerProviderInterface {
                     ))
                 )
             ))
-
             ->add('description','textarea', array(
                 'constraints' => array()
             ));
@@ -225,10 +215,11 @@ class AuthController implements ControllerProviderInterface {
             if ($registerform->isValid()) {
                 $data = $registerform->getData();
                 var_dump($data);
-                //@todo get user and password + check
+
                 if ($data['password'] == $data['confirmpass']) {
                     //check password
                     $data['password'] = sha1($data['password'] . $app['PASSWORD_SALT']);
+
 
                     //check logo
                     if (isset($data['logo']) && (
@@ -236,16 +227,16 @@ class AuthController implements ControllerProviderInterface {
                         ('.png' == substr($data['logo']->getClientOriginalName(), -4))
 
                         )){
-
                         $data['logoName'] = sha1($data['logo']->getClientOriginalName() .  microtime()) . '.jpg';
                         // Move it to its new location
                         $data['logo']->move($app['logo.base_path'], $data['logoName']);
+
 
                         // Redirect to the overview
 //                        return $app->redirect($app['url_generator']->generate('backend.overview'));
                     }
                     else {
-                        $registerform->get('logo')->addError(new \Symfony\Component\Form\FormError('Only .jpg, .bmp, .png allowed'));
+                        $registerform->get('logo')->addError(new \Symfony\Component\Form\FormError('Only .jpg, .png allowed'));
                     }
 
                     //check postcode met citynaam
@@ -293,22 +284,5 @@ class AuthController implements ControllerProviderInterface {
 
         return $app['twig']->render('Backend/auth/register.twig', array('registerform' => $registerform->createView()));
     }
- /*   public function getCode ($term){
-        $max = 10;
-        $suggests = $app['cities']->searchCode($term, $max);
-
-        foreach ($suggests as $row)
-        {
-            $data[] = array(
-                'label' => $row['code'] .' '. $row['city'],
-                'value' => $row['code']
-            );
-        }
-        var_dump($data);
-        return $app['twig']->render('Backend/auth/register.twig',
-            array('suggests' => json_encode($suggests)));
-
-    }*/
-
 
 }

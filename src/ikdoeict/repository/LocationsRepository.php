@@ -22,10 +22,10 @@ class LocationsRepository extends \Knp\Repository {
 
     public function insert($data){
         $this->db->insert('locations',array(
-           'idCity' => $data['idCity'],
-           'street' => $data['street'],
-           'housenumber' => $data['housenumber'],
-           'bus' => $data['bus']
+           'idCity' =>      isset($data['idCity'])      ? $data['idCity'] : null,
+           'street' =>      isset($data['street'])      ? $data['street'] : null,
+           'housenumber' => isset($data['housenumber']) ? $data['housenumber'] : null,
+           'bus' =>         isset($data['bus'])         ? $data['bus'] : null
         ));
     }
 

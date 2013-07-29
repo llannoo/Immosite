@@ -42,7 +42,7 @@ class ContactsRepository extends \Knp\Repository{
                 'idAgency' => $data['idAgency'],
                 'email' => $data['email'],
                 'password' => $data['password'],
-                'tel' => $data['tel']
+                'tel' => isset($data['tel']) ? $data['tel'] : null
             )
         );
     }

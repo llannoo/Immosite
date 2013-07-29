@@ -165,7 +165,7 @@ body
 
 #login-inner.rotating #login-circle
 {
-    height: 1350px;
+    height: 1400px;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
