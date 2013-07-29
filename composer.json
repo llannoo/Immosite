@@ -1,0 +1,21 @@
+{
+    "require": {
+        "silex/silex": "1.0.*@dev",
+        "twig/twig": "1.*",
+        "doctrine/dbal": "2.*",
+        "knplabs/repository-service-provider": "dev-master",
+        "symfony/twig-bridge": "2.3.*@dev",
+        "symfony/form": "~2.1",
+        "symfony/validator": "~2.1",
+        "symfony/config": "~2.1",
+        "symfony/translation": "~2.1",
+        "igorw/config-service-provider": "~1.1",
+        "swiftmailer/swiftmailer": ">=4.1.2,<4.2-dev",
+        "symfony/intl": "2.4.*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Ikdoeict": "src/"
+        }
+    }
+}

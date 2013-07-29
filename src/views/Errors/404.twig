@@ -1,0 +1,11 @@
+{# extend the parent tpl #}
+{% extends 'Errors/layoutError.twig' %}
+
+
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'My Website &raquo; 404 - File Not Found' %}
+
+{% block pageContent %}
+    <p class="breadcrumb"><a href="">My Website</a> &raquo; 404 - File Not Found</p>
+    <p>{{ error }}</p>
+{% endblock %}

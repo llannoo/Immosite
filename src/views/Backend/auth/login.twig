@@ -1,0 +1,36 @@
+{# extend the parent tpl #}
+{% extends 'Backend/layout.twig' %}
+
+
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'Auth &raquo; Please Log In' %}
+
+{# overwrite the pageContent block #}
+{% block pageContent %}
+    <div id="login-wrap">
+
+        <div id="login-ribbon"><i class="icon-lock"></i></div>
+
+    <div id="login-inner">
+        <div id="login-circle">
+            <section id="login-form" class="login-inner-form active" data-angle="0">
+                <h1>Login</h1>
+                <form class="form-vertical" data-forward-only="true"  action="{{ path('auth.login') }}" method="post" {{ form_enctype(loginform) }} novalidate="novalidate">{# disable HTML5 formchecking #}
+
+                    <div class="control-group">
+                        {{ form_widget(loginform.email, { 'id': 'input-username' ,'attr': {'placeholder': 'E-mail','class' : 'big'} }) }}
+                        {{ form_widget(loginform.password,{ 'id':'input-password','attr': { 'placeholder': 'Passwoord', 'class' : 'big' } }) }}
+
+                    </div>
+                    {{ form_errors(loginform.email) }}
+                    {{ form_errors(loginform.password) }}
+                    <div class="form-actions">
+                        {{ form_widget(loginform._token) }}
+                        <input class="btn btn-primary btn-block btn-large" type="submit" name="submit" value="Log in" />
+                        <input class="btn btn-danger btn-block btn-large" type="button" name="submit" onClick="location.href='{{ path('auth.login') }}'" value="Create account" />
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+{% endblock %}

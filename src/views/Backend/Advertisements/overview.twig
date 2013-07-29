@@ -1,0 +1,32 @@
+{# extend the parent tpl #}
+{% extends '/Backend/layout.twig' %}
+
+
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'My Website &raquo; Overview' %}
+
+{% block pageContent %}
+    <p class="breadcrumb"><a href="{{ path('backend.advertisements.overview') }}">My Website</a> &raquo; <a href="{{ path('backend.advertisements.overview') }}">Advertisements</a> &raquo; Overview</p>
+
+    <ul>
+        {% for ad in advertisements %}
+            <article>
+                <h1>
+                    <a href="{{ app.request.baseUrl }}/advertisements/{{ ad.idAdvertisement }}">{{ad.propertytype}} te {{ ad.name }}</a>
+                </h1>
+                <footer>
+                    <ul>
+                        <li>Prijs: {{ ad.price }}</li>
+                        <li>Views: {{ ad.views }}</li>
+                        <li>Updated on: {{ ad.updated_on }}</li>
+                    </ul>
+                </footer>
+                {{ dump(ad) }}
+                <a href="{{ path('backend.advertisements.delete', {'idAdvertisement': ad.idAdvertisement}) }}" class="delete" title="Delete">delete</a>
+                <a href="{{ path('backend.advertisements.edit',{'idAdvertisement': ad.idAdvertisement}) }}" class="edit" title="edit">edit</a>
+                <a href="{{ path('backend.advertisements.detail',{'idAdvertisement': ad.idAdvertisement}) }}" class="detail" title="detail">detail</a>
+            </article>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ path('backend.advertisements.new') }}">New Advertisement</a></p>
+{% endblock %}

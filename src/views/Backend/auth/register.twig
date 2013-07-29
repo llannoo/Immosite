@@ -1,0 +1,160 @@
+{# extend the parent tpl #}
+{% extends 'Backend/layout.twig' %}
+{% form_theme registerform _self %}
+
+{% block field_row %}
+   {{ form_label( registerform ) }}
+   {{ form_widget( registerform ) }}
+   <div class="text-error">{{ form_errors(registerform) }}</div>
+   <hr />
+{% endblock field_row %}
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'Auth &raquo; Register' %}
+{# overwrite the pageContent block #}
+{% block pageContent %}
+    <div id="login-wrap">
+
+        <div id="login-ribbon"><i class="icon-lock"></i></div>
+        <div id="login-inner">
+            <div id="login-circle">
+                <section id="register-form" class="error login-inner-form ">
+                    <h1>Register</h1>
+                       <form action="{{ path('auth.register') }}" class="login-inner-form" method="post" {{ form_enctype(registerform) }} novalidate="novalidate">{# disable HTML5 formchecking #}
+
+                            <div class="control-group">
+                                {# email #}
+                                {{ form_label(registerform.email, 'E-mail', {'attr': {'class': 'control-label'} } ) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.email, {'attr': {'class': 'required email'} }) }}
+                                    {{ form_errors(registerform.email) }}
+
+                                </div>
+                            </div>
+                            {# password #}
+                            <div class="control-group">
+                                {{ form_label(registerform.password, 'Passwoord', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.password, {'attr': {'class': 'required'} }) }}
+                                    {{ form_errors(registerform.password) }}
+
+                                </div>
+                            </div>
+                            {# password #}
+                            <div class="control-group">
+                                {{ form_label(registerform.confirmpass, 'Confirm passwoord', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.confirmpass, {'attr': {'class': 'required'} }) }}
+                                    {{ form_errors(registerform.confirmpass) }}
+                                </div>
+                            </div>
+
+
+                            {# location #}
+                            {# name #}
+                            <div class="control-group">
+                                {{ form_label(registerform.agencyname, 'Agentschap', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.agencyname, {'attr': {'class': 'required'} }) }}
+                                    {{ form_errors(registerform.agencyname) }}
+                                </div>
+                            </div>
+                            {# street #}
+                            <div class="control-group">
+                                {{ form_label(registerform.street, 'Street', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.street) }}
+                                    {{ form_errors(registerform.street) }}
+                                </div>
+                            </div>
+
+                            {# housenumber #}
+                            <div class="control-group">
+                                {{ form_label(registerform.housenumber, 'Housenumber', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.housenumber) }}
+                                    {{ form_errors(registerform.housenumber) }}
+                                </div>
+                            </div>
+
+                            {# bus #}
+                            <div class="control-group">
+                                {{ form_label(registerform.bus, 'Bus', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.bus) }}
+                                    {{ form_errors(registerform.bus) }}
+                                </div>
+                            </div>
+                            {# code  {{ dump(registerform.vars.value.code) }} #}
+                            <div class="control-group">
+                                {{ form_label(registerform.code, 'Postcode', {'attr': {'class': 'control-label'} } )}}
+                                {# dump(registerform.vars.value.code) #}
+                                <div  class="controls">
+                                    {{ form_widget( registerform.code,{'attr': {'class': 'code'}}) }}
+                                    {{ form_errors(registerform.code) }}
+                                </div>
+                            </div>
+
+                            {# city #}
+                            <div class="control-group">
+                                {{ form_label(registerform.city, 'Gemeente', {'attr': {'class': 'control-label'} })}}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.city) }}
+                                    {{ form_errors(registerform.city) }}
+                                </div>
+                            </div>
+
+                            {# extra contact gegevens #}
+                            <div class="control-group">
+                                {{ form_label(registerform.tel, 'Telefoon', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.tel) }}
+                                    {{ form_errors(registerform.tel) }}
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                {{ form_label(registerform.fax, 'Fax', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.fax) }}
+                                    {{ form_errors(registerform.fax) }}
+                                </div>
+                            </div>
+
+                            {# extra info #}
+
+                            {# logo #}
+                            <div class="control-group">
+                                {{ form_label(registerform.logo, 'Logo', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.logo, {'attr': {'class': 'fileinput-preview uneditable-input input-large'}}) }}
+                                    {{ form_errors(registerform.logo) }}
+                                </div>
+                            </div>
+
+                            {# website #}
+                            <div class="control-group">
+                                {{ form_label(registerform.website, 'Website', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.website) }}
+                                    {{ form_errors(registerform.website) }}
+                                </div>
+                            </div>
+                            {# description #}
+                            <div class="control-group">
+                                {{ form_label(registerform.description, 'Beschrijving', {'attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(registerform.description) }}
+                                    {{ form_errors(registerform.description) }}
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                {{ form_widget(registerform._token) }}
+                                <input class="btn btn-success btn-block btn-large" type="submit" name="submit" value="Create account" />
+                                <input class="btn btn btn-block btn-large" type="submit" name="submit" value="Back" />
+                            </div>
+                        </form>
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}

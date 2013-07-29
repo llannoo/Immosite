@@ -1,0 +1,23 @@
+{# extend the parent tpl #}
+{% extends '/Backend/layout.twig' %}
+
+
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'My Website &raquo; Overview' %}
+
+{% block pageContent %}
+    <p class="breadcrumb"><a href="{{ path('backend.advertisements.overview') }}">My Website</a> &raquo; <a href="{{ path('backend.advertisements.overview') }}">Advertisements</a> &raquo; Overview</p>
+
+    <article>
+        <h1>
+            <a href="{{ app.request.baseUrl }}/advertisements/{{ advertisement.idAdvertisement }}">{{advertisement.propertytype}} te {{ advertisement.name }}</a>
+        </h1>
+        <footer>
+            <ul>
+                <li>Prijs: {{ advertisement.price }}</li>
+                <li>Views: {{ advertisement.views }}</li>
+                <li>Updated on: {{ advertisement.updated_on }}</li>
+            </ul>
+        </footer>
+    </article>
+{% endblock %}

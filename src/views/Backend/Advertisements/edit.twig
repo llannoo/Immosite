@@ -1,0 +1,139 @@
+{# extend the parent tpl #}
+{% extends '/Backend/layout.twig' %}
+
+{% set pageTitle = 'New Advertisement &raquo; My Website' %}
+
+{# overwrite the pageContent block #}
+{% block pageContent %}
+
+    <p class="breadcrumb"><a href="">My Website</a> &raquo; New</p>
+
+    <form action="" method="post" {{ form_enctype(registerform) }} novalidate="novalidate">{# disable HTML5 formchecking #}
+        <dl>
+            <dt>
+                {{ form_label(registerform.description, 'Beschrijving') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.description) }}
+                {{ form_errors(registerform.description) }}
+            </dd>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                {{ form_label(registerform.price, 'Prijs') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.price) }}
+                {{ form_errors(registerform.price) }}
+            </dd>
+            <dt>
+                {{ form_label(registerform.epc, 'EPC') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.epc) }}
+                {{ form_errors(registerform.epc) }}
+            </dd>
+            <dt>
+                {{ form_label(registerform.ki, 'K.I.') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.ki) }}
+                {{ form_errors(registerform.ki) }}
+            </dd>
+            <dt>
+                {{ form_label(registerform.chambers, 'Kamers') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.chambers) }}
+                {{ form_errors(registerform.chambers) }}
+            </dd>
+            <dt>
+                {{ form_label(registerform.living_area, 'Bewoonbare opp.') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.living_area) }}
+                {{ form_errors(registerform.living_area) }}
+            </dd>
+            <dt>
+                {{ form_label(registerform.total_area, 'Totale opp.') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.total_area) }}
+                {{ form_errors(registerform.total_area) }}
+            </dd>
+            <dt>
+                {{ form_label(registerform.rent_sell, 'Verkoop/Verhuur') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.rent_sell) }}
+                {{ form_errors(registerform.rent_sell) }}
+            </dd>
+            <dt>
+                {{ form_label(registerform.sold_rented, 'Verkocht/Verhuurd') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.sold_rented) }}
+                {{ form_errors(registerform.sold_rented) }}
+            </dd>
+        </dl>
+
+        {# location #}
+        <dl>
+            {# street #}
+            <dt>
+                {{ form_label(registerform.street, 'Street') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.street) }}
+                {{ form_errors(registerform.street) }}
+            </dd>
+
+            {# housenumber #}
+            <dt>
+                {{ form_label(registerform.housenumber, 'Housenumber') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.housenumber) }}
+                {{ form_errors(registerform.housenumber) }}
+            </dd>
+
+            {# bus #}
+            <dt>
+                {{ form_label(registerform.bus, 'Bus') }}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.bus) }}
+                {{ form_errors(registerform.bus) }}
+            </dd>
+
+            {# code  {{ dump(registerform.vars.value.code) }} #}
+            <dt>
+                {{ form_label(registerform.code, 'Postcode' )}}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.code) }}
+                {{ form_errors(registerform.code) }}
+            </dd>
+
+            {# city #}
+            <dt>
+                {{ form_label(registerform.city, 'Gemeente')}}
+            </dt>
+            <dd>
+                {{ form_widget(registerform.city) }}
+                {{ form_errors(registerform.city) }}
+            </dd>
+        </dl>
+
+        <dt>
+            &nbsp;
+        </dt>
+        <dd>
+            {{ form_widget(registerform._token) }}
+            <input type="submit" name="submit" value="Create account" />
+        </dd>
+        </dl>
+    </form>
+{% endblock %}
