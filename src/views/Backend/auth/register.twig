@@ -1,5 +1,5 @@
 {# extend the parent tpl #}
-{% extends 'Backend/layout.twig' %}
+{% extends 'Backend/layoutAuth.twig' %}
 {% form_theme registerform _self %}
 
 {% block field_row %}
@@ -10,6 +10,7 @@
 {% endblock field_row %}
 {# set the pagetitle in the parent tpl #}
 {% set pageTitle = 'Auth &raquo; Register' %}
+
 {# overwrite the pageContent block #}
 {% block pageContent %}
     <div id="login-wrap">

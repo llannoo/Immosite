@@ -29,7 +29,7 @@ CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Provinces` (
   `idProvince` BIGINT NOT NULL ,
   `name` VARCHAR(45) NOT NULL DEFAULT '' ,
   PRIMARY KEY (`idProvince`) )
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -48,11 +48,11 @@ CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Cities` (
   PRIMARY KEY (`idCity`) ,
   INDEX `fk_Cities_Provinces1_idx` (`idProvince` ASC) ,
   CONSTRAINT `fk_Cities_Provinces1`
-    FOREIGN KEY (`idProvince` )
-    REFERENCES `Immo_DB`.`Provinces` (`idProvince` )
+  FOREIGN KEY (`idProvince` )
+  REFERENCES `Immo_DB`.`Provinces` (`idProvince` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -62,18 +62,18 @@ DROP TABLE IF EXISTS `Immo_DB`.`Locations` ;
 
 CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Locations` (
   `idLocatie` INT NOT NULL AUTO_INCREMENT ,
-  `idCity` BIGINT NOT NULL ,
-  `street` VARCHAR(45) NOT NULL ,
-  `housenumber` INT NOT NULL ,
+  `idCity` BIGINT NULL ,
+  `street` VARCHAR(45) NULL ,
+  `housenumber` INT NULL ,
   `bus` VARCHAR(45) NULL DEFAULT NULL ,
   PRIMARY KEY (`idLocatie`) ,
   INDEX `fk_locaties_Gemeenten1_idx` (`idCity` ASC) ,
   CONSTRAINT `fk_locaties_Cities1`
-    FOREIGN KEY (`idCity` )
-    REFERENCES `Immo_DB`.`Cities` (`idCity` )
+  FOREIGN KEY (`idCity` )
+  REFERENCES `Immo_DB`.`Cities` (`idCity` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -85,19 +85,19 @@ CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Agencies` (
   `idAgency` INT NOT NULL AUTO_INCREMENT ,
   `idLocation` INT NOT NULL ,
   `name` VARCHAR(45) NOT NULL ,
-  `logo` VARCHAR(45) NULL DEFAULT NULL ,
-  `website` VARCHAR(45) NULL DEFAULT NULL ,
-  `description` VARCHAR(45) NULL DEFAULT NULL ,
+  `logo` BLOB NULL ,
+  `website` BLOB NULL DEFAULT NULL ,
+  `description` TEXT NULL DEFAULT NULL ,
   `tel` VARCHAR(15) NULL DEFAULT NULL ,
   `fax` VARCHAR(15) NULL DEFAULT NULL ,
   PRIMARY KEY (`idAgency`) ,
   INDEX `fk_Agentschappen_locaties1_idx` (`idLocation` ASC) ,
   CONSTRAINT `fk_Agencies_locations1`
-    FOREIGN KEY (`idLocation` )
-    REFERENCES `Immo_DB`.`Locations` (`idLocatie` )
+  FOREIGN KEY (`idLocation` )
+  REFERENCES `Immo_DB`.`Locations` (`idLocatie` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -112,29 +112,29 @@ CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Advertisements` (
   `rent_sell` TINYINT(1) NOT NULL ,
   `sold_rented` TINYINT(1) NOT NULL ,
   `propertytype` ENUM('Huis', 'Appertement', 'Grond', 'Kantoor & Handelszaak', 'Opbrengsteigendom', 'Parkeerplaats of Garage', 'Speciale eigendom') NOT NULL ,
-  `price` BIGINT NOT NULL ,
-  `EPC` INT NOT NULL ,
-  `ki` INT ZEROFILL NOT NULL ,
-  `chambers` INT ZEROFILL NOT NULL ,
-  `living_area` INT ZEROFILL NOT NULL ,
+  `price` DECIMAL(19,4) NOT NULL ,
+  `EPC` INT NULL ,
+  `ki` DECIMAL(19,4) ZEROFILL NULL ,
+  `chambers` INT ZEROFILL NULL ,
+  `living_area` INT ZEROFILL NULL ,
   `total_area` INT ZEROFILL NOT NULL ,
-  `description` LONGTEXT NULL DEFAULT NULL ,
+  `description` LONGTEXT NOT NULL ,
   `views` INT ZEROFILL NOT NULL ,
   `updated_on` DATETIME NOT NULL ,
   PRIMARY KEY (`idAdvertisement`) ,
   INDEX `fk_Advertenties_locaties_idx` (`idLocation` ASC) ,
   INDEX `fk_Advertenties_Agentschappen1_idx` (`idAgency` ASC) ,
   CONSTRAINT `fk_Advertisements_locations`
-    FOREIGN KEY (`idLocation` )
-    REFERENCES `Immo_DB`.`Locations` (`idLocatie` )
+  FOREIGN KEY (`idLocation` )
+  REFERENCES `Immo_DB`.`Locations` (`idLocatie` )
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_Advertisements_Agencies1`
-    FOREIGN KEY (`idAgency` )
-    REFERENCES `Immo_DB`.`Agencies` (`idAgency` )
+  FOREIGN KEY (`idAgency` )
+  REFERENCES `Immo_DB`.`Agencies` (`idAgency` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -145,16 +145,16 @@ DROP TABLE IF EXISTS `Immo_DB`.`Photos` ;
 CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Photos` (
   `idPhotos` INT NOT NULL AUTO_INCREMENT ,
   `idAdvertisement` INT NOT NULL ,
-  `URL` VARCHAR(255) NOT NULL ,
+  `URL` BLOB NOT NULL ,
   `priority` ENUM('High','Medium', 'Low') NOT NULL ,
   PRIMARY KEY (`idPhotos`) ,
   INDEX `fk_Photos_Advertisements1_idx` (`idAdvertisement` ASC) ,
   CONSTRAINT `fk_Photos_Advertisements1`
-    FOREIGN KEY (`idAdvertisement` )
-    REFERENCES `Immo_DB`.`Advertisements` (`idAdvertisement` )
+  FOREIGN KEY (`idAdvertisement` )
+  REFERENCES `Immo_DB`.`Advertisements` (`idAdvertisement` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -171,17 +171,18 @@ CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Contacts` (
   PRIMARY KEY (`idContact`) ,
   INDEX `fk_Contacten_Agentschappen1_idx` (`idAgency` ASC) ,
   CONSTRAINT `fk_Contacts_Agencies1`
-    FOREIGN KEY (`idAgency` )
-    REFERENCES `Immo_DB`.`Agencies` (`idAgency` )
+  FOREIGN KEY (`idAgency` )
+  REFERENCES `Immo_DB`.`Agencies` (`idAgency` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
 
 -- ----------------------------
 -- Records of advertisements

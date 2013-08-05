@@ -74,7 +74,7 @@ class AdvertisementController implements ControllerProviderInterface{
         $contact = $app['session']->get('contact');
         $advertisements = $app['advertisements']->findAllByAgency($contact['idAgency']);
 
-        return $app['twig']->render('Backend/Advertisements/overview.twig', array('advertisements' => $advertisements, 'session' => $app['session']->get('contact')));
+        return $app['twig']->render('Backend/Advertisements/overview.twig', array('login' => false, 'advertisements' => $advertisements, 'session' => $app['session']->get('contact')));
     }
 
     public function detail(Application $app, $idAdvertisement){
@@ -102,13 +102,20 @@ class AdvertisementController implements ControllerProviderInterface{
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function edit(Application $app, $idAdvertisement){
-       $contact = $app['session']->get('contact');
-        $propertytypes = $app['advertisements']->fetchPropertytype();
-
+        $contact = $app['session']->get('contact');
         $advertisement = $app['advertisements']->findAdByAgency($contact['idAgency'], $idAdvertisement);
-var_dump($advertisement);
         if (!$advertisement) {
             $app->abort(404, 'Internship does not exist');
+        }
+
+        $propertytypes = $app['advertisements']->fetchPropertytype();
+        $cities2 = $app['cities']->findAll();
+        $codes2 = $app['cities']->findAllCodes();
+        foreach($codes2 as $key=>$value) {
+            $codes[$key] = $value['code'];
+        }
+        foreach($cities2 as $key=>$value) {
+            $cities[$key] = $value['name'];
         }
 
         $newform = $app['form.factory']->createNamed('newform')
@@ -245,7 +252,8 @@ var_dump($advertisement);
                 'data' => $advertisement['bus']
             ))
 
-            ->add('code','integer', array(
+            ->add('code','choice', array(
+                'choices' => $codes,
                 'constraints' => array(
                     new Assert\Range(array(
                         'min' => 1000,
@@ -253,14 +261,29 @@ var_dump($advertisement);
                         'minMessage' => 'De waarde moet groter dan 1000 zijn',
                         'maxMessage' => 'De waarde mag niet groter dan 9999 zijn',
                         'invalidMessage'=> 'Dit is geen geldige waarde'
-                    ))
+                    )),
+                    new Assert\Choice(
+                        array(
+                            'choices' => $codes,
+                            'message' => 'Kies een optie uit de lijst',
+                            'strict' => true
+                        )
+                    )
                 ),
                 'data' => $advertisement['code']
             ))
 
-            ->add('city','text', array(
-                'constraints' => array(),
-                'data' => $advertisement['name']
+            ->add('city','choice', array(
+                'choices' => $cities,
+                'constraints' => array(
+                    new Assert\Choice(
+                        array(
+                            'choices' => $cities,
+                            'message' => 'Kies een optie uit de lijst',
+                            'strict' => true
+                        )
+                    )
+                )
             ));
 
         if ('POST' == $app['request']->getMethod()) {
@@ -306,7 +329,7 @@ var_dump($advertisement);
             }
         }
 
-        return $app['twig']->render('Backend/Advertisements/new.twig', array('registerform' => $newform->createView()));
+        return $app['twig']->render('Backend/Advertisements/edit.twig', array('login' => false,'registerform' => $newform->createView()));
 
 
     }
@@ -318,6 +341,15 @@ var_dump($advertisement);
     public function add (Application $app){
         $contact = $app['session']->get('contact');
         $propertytypes = $app['advertisements']->fetchPropertytype();
+
+        $cities2 = $app['cities']->findAll();
+        $codes2 = $app['cities']->findAllCodes();
+        foreach($codes2 as $key=>$value) {
+            $codes[$key] = $value['code'];
+        }
+        foreach($cities2 as $key=>$value) {
+            $cities[$key] = $value['name'];
+        }
 
         $newform = $app['form.factory']->createNamed('newform')
             ->add('description','textarea', array(
@@ -446,7 +478,8 @@ var_dump($advertisement);
                 'constraints' => array(),
             ))
 
-            ->add('code','integer', array(
+            ->add('code','choice', array(
+                'choices' => $codes,
                 'constraints' => array(
                     new Assert\Range(array(
                         'min' => 1000,
@@ -454,12 +487,28 @@ var_dump($advertisement);
                         'minMessage' => 'De waarde moet groter dan 1000 zijn',
                         'maxMessage' => 'De waarde mag niet groter dan 9999 zijn',
                         'invalidMessage'=> 'Dit is geen geldige waarde'
-                    ))
-                ),
+                    )),
+                    new Assert\Choice(
+                        array(
+                            'choices' => $codes,
+                            'message' => 'Kies een optie uit de lijst',
+                            'strict' => true
+                        )
+                    )
+                )
             ))
 
-            ->add('city','text', array(
-                'constraints' => array()
+            ->add('city','choice', array(
+                'choices' => $cities,
+                'constraints' => array(
+                    new Assert\Choice(
+                        array(
+                            'choices' => $cities,
+                            'message' => 'Kies een optie uit de lijst',
+                            'strict' => true
+                        )
+                    )
+                )
             ));
 
         if ('POST' == $app['request']->getMethod()) {
@@ -505,7 +554,7 @@ var_dump($advertisement);
             }
         }
 
-    return $app['twig']->render('Backend/Advertisements/new.twig', array('registerform' => $newform->createView()));
+    return $app['twig']->render('Backend/Advertisements/new.twig', array('login' => false, 'registerform' => $newform->createView()));
 
     }
 

@@ -103,7 +103,7 @@ class AuthController implements ControllerProviderInterface {
                 }
             }
         }
-        return $app['twig']->render('Backend/auth/login.twig', array('loginform' => $loginform->createView()));
+        return $app['twig']->render('Backend/auth/login.twig', array('login'=> true, 'loginform' => $loginform->createView()));
     }
 
     public function logout(Application $app) {
@@ -117,6 +117,9 @@ class AuthController implements ControllerProviderInterface {
                 'constraints' => array(
                     new Assert\Email(array(
                         'message' => 'Dit is geen geldig emailadres'
+                    )),
+                    new Assert\NotBlank(array(
+                        'message' => 'Dit veld is verplicht'
                     ))
                 )
             ))
@@ -230,10 +233,6 @@ class AuthController implements ControllerProviderInterface {
                         $data['logoName'] = sha1($data['logo']->getClientOriginalName() .  microtime()) . '.jpg';
                         // Move it to its new location
                         $data['logo']->move($app['logo.base_path'], $data['logoName']);
-
-
-                        // Redirect to the overview
-//                        return $app->redirect($app['url_generator']->generate('backend.overview'));
                     }
                     else {
                         $registerform->get('logo')->addError(new \Symfony\Component\Form\FormError('Only .jpg, .png allowed'));
@@ -263,7 +262,7 @@ class AuthController implements ControllerProviderInterface {
 
 
                     $data['idCity'] = $resultCode['idCity'];
-
+var_dump($data);
                     $app['locations']->insert($data);
                     $data['idLocation'] = $app['locations']->getLastInsertedId();
 
@@ -282,7 +281,7 @@ class AuthController implements ControllerProviderInterface {
             }
         }
 
-        return $app['twig']->render('Backend/auth/register.twig', array('registerform' => $registerform->createView()));
+        return $app['twig']->render('Backend/auth/register.twig', array('login'=> true, 'registerform' => $registerform->createView()));
     }
 
 }

@@ -20,6 +20,13 @@ class CitiesRepository extends \Knp\Repository{
         return 'Cities';
     }
 
+    public function findAll(){
+        return $this->db->fetchAll('SELECT cities.code, cities.name FROM cities ORDER BY code');
+    }
+
+    public function findAllCodes(){
+        return $this->db->fetchAll('SELECT DISTINCT cities.code FROM cities ORDER BY code');
+    }
     /**
      * @param $data
      * @return array

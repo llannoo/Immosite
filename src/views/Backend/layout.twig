@@ -8,29 +8,45 @@
 
     <title>{{ pageTitle|raw }}</title>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="cleartype" content="on" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="{{ app.request.baseUrl }}/bootstrap/css/bootstrap-login.min.css" media="screen">
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/bootstrap/css/bootstrap.min.css" media="screen">
+
+    <!-- jquery-ui Stylesheets -->
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/assets/jui/css/jquery.ui.all.css" media="screen">
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/assets/jui/jquery-ui.custom.css" media="screen">
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/assets/jui/timepicker/jquery-ui-timepicker.css" media="screen">
 
     <!-- Uniform Stylesheet -->
     <link rel="stylesheet" href="{{ app.request.baseUrl }}/plugins/uniform/css/uniform.default.css">
 
+    <!-- Rating Plugin -->
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/plugins/rating/jquery.rating.css" media="screen">
+
     <!-- Plugin Stylsheets first to ease overrides -->
+
+    <!-- jquery-ui Spinner -->
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/assets/jui/spinner/jquery.ui.spinner.css" media="screen">
+    <!-- iButton -->
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/plugins/ibutton/jquery.ibutton.css" media="screen">
+
+    <!-- PickList -->
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/custom-plugins/picklist/picklist.css" media="screen">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/plugins/select2/select2.css" media="screen">
+
 
     <!-- End Plugin Stylesheets -->
 
     <!-- Main Layout Stylesheet -->
     <link rel="stylesheet" href="{{ app.request.baseUrl }}/assets/css/fonts/icomoon/style.css" media="screen">
-
-
-    <link rel="stylesheet" href="{{ app.request.baseUrl }}/assets/css/login-style.css" media="screen">
+    <link rel="stylesheet" href="{{ app.request.baseUrl }}/assets/css/main-style.css" media="screen">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -39,13 +55,102 @@
 
 </head>
 <body>
+    <div id="wrapper">
+        <header id="header" class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="brand-wrap pull-left">
+                        <div class="brand-img">
+                            <a class="brand" href="#">
+                                <img src="{{ app.request.baseurl }}/assets/images/logo1.png" alt="">
+                            </a>
+                        </div>
+                    </div>
 
-<section role="main">
-    {% block pageContent %}
-    {% endblock %}
-</section>
+                    <div id="header-right" class="clearfix">
+                        <div id="nav-toggle" data-toggle="collapse" data-target="#navigation" class="collapsed">
+                            <i class="icon-caret-down"></i>
+                        </div>
+                        <div id="header-search">
+                            <span id="search-toggle" data-toggle="dropdown">
+                                <i class="icon-search"></i>
+                            </span>
+                            <form class="navbar-search">
+                                <input type="text" class="search-query" placeholder="Search">
+                            </form>
+                        </div>
 
+                        <div id="header-functions" class="pull-right">
+                            <div id="user-info" class="clearfix">
+                                <span class="info">
+                                    Welkom
+                                    <span class="name"></span>
+                                </span>
+                                <div class="avatar">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                                        <img src="{{ app.request.baseurl }}/assets/images/pp.jpg" alt="Avatar">
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="profile.html"><i class="icos-user"></i> Mijn Profiel</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="{{ path('auth.logout') }}"><i class="icol-key"></i> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="logout-ribbon">
+                                <a href="{{ path('auth.logout') }}"><i class="icon-off"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
+        <div id="content-wrap">
+            <div id="content">
+                <div id="content-outer">
+                    <div id="content-inner">
+                        <aside id="sidebar">
+                            <nav id="navigation" class="collapse">
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('backend.advertisements.overview') }}"
+                                            <span title="General">
+                                                <i class="icon-list"></i>
+                                                <span class="nav-title">Overzicht</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('backend.advertisements.new') }}"
+                                            <span title="Nieuw">
+                                                <i class="icon-plus"></i>
+                                                <span class="nav-title">Nieuw</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""
+                                            <span title="Profiel">
+                                                <i class="icon-official"></i>
+                                                <span class="nav-title">Profiel</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <div id="sidebar-separator"></div>
+
+                        <section id="main" class="clearfix" role="main">
+{% block pageContent %}
+{% endblock %}
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Core Scripts -->
 <script src="{{ app.request.baseUrl }}/assets/js/libs/jquery-1.8.2.min.js"></script>
@@ -71,6 +176,11 @@
 
 <!-- Plugin Scripts -->
 
+<!-- DataTables -->
+<script src="{{ app.request.baseUrl }}/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="{{ app.request.baseUrl }}/plugins/datatables/TableTools/js/TableTools.min.js"></script>
+<script src="{{ app.request.baseUrl }}/plugins/datatables/dataTables.bootstrap.js"></script>
+
 <!-- Validation -->
 <script src="{{ app.request.baseUrl }}/plugins/validate/jquery.validate.min.js"></script>
 
@@ -78,8 +188,31 @@
 <script src="{{ app.request.baseUrl }}/custom-plugins/wizard/wizard.min.js"></script>
 <script src="{{ app.request.baseUrl }}/custom-plugins/wizard/jquery.form.min.js"></script>
 
+
+<!-- Bootstrap FileInput -->
+<script src="{{ app.request.baseUrl }}/custom-plugins/bootstrap-fileinput.min.js"></script>
+
+<!-- Bootstrap InputMask -->
+<script src="{{ app.request.baseUrl }}/custom-plugins/bootstrap-inputmask.min.js"></script>
+
+<!-- jquery-ui Spinner -->
+<script src="{{ app.request.baseUrl }}/assets/jui/spinner/jquery.ui.spinner.min.js"></script>
+
+<!-- iButton -->
+<script src="{{ app.request.baseUrl }}/plugins/ibutton/jquery.ibutton.min.js"></script>
+
+<!-- PickList -->
+<script src="{{ app.request.baseUrl }}/custom-plugins/picklist/picklist.min.js"></script>
+
+<!-- Select2 -->
+<script src="{{ app.request.baseUrl }}/plugins/select2/select2.min.js"></script>
+
+<!-- Rating  -->
+<script src="{{ app.request.baseUrl }}/plugins/rating/jquery.rating.min.js"></script>
+
 <!-- Demo Scripts -->
-<script src="{{ app.request.baseUrl }}/assets/js/demo/form_wizard.js"></script>
-<script src="{{ app.request.baseUrl }}/assets/js/login.js"></script>
+<script src="{{ app.request.baseUrl }}/assets/js/demo/form.js"></script>
+
+
 </body>
 </html>

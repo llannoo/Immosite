@@ -76,7 +76,6 @@ FROM advertisements
         return $enum_fields;
     }
 
-
     /**
      * @return string
      */

@@ -32,7 +32,6 @@ class LocationsRepository extends \Knp\Repository {
     public function find($id){
         return;
     }
-
     /**
      * @return string
      */
