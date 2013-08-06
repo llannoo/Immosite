@@ -19,6 +19,13 @@ class AgenciesRepository extends \Knp\Repository{
         return 'Agencies';
     }
 
+    public function delete($data){
+        $this->db->delete(
+            'agencies',array(
+                'idAgency' => $data['idAgency']
+            )
+        );
+    }
     /**
      * @param array $data
      * @return int|void
@@ -30,10 +37,28 @@ class AgenciesRepository extends \Knp\Repository{
                 'name' => $data['agencyname'],
                 'logo' =>       isset($data['logoName'])    ? $data['logoName'] : null,
                 'website' =>    isset($data['website'])     ? $data['website']:null,
-                'description' => isset($data['description']) ? $data['description']: null,
+                'description' => isset($data['description'])? $data['description']: null,
                 'tel' =>        isset($data['tel'])         ? $data['tel'] : null,
                 'fax' =>        isset($data['fax'])         ? $data['fax'] : null
             )
+        );
+    }
+    /**
+     * @param array $data
+     * @return int|void
+     */
+    public function update($data){
+        $this->db->update(
+            'agencies',array(
+                'idLocation' => $data['idLocation'],
+                'name' => $data['agencyname'],
+                'logo' =>       isset($data['logoName'])    ? $data['logoName'] : null,
+                'website' =>    isset($data['website'])     ? $data['website']:null,
+                'description' => isset($data['description'])? $data['description']: null,
+                'tel' =>        isset($data['tel'])         ? $data['tel'] : null,
+                'fax' =>        isset($data['fax'])         ? $data['fax'] : null
+            ),
+            array('idAgency' => $data['idAgency'])
         );
     }
 

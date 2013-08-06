@@ -118,8 +118,19 @@ class AdvertisementController implements ControllerProviderInterface{
             $cities[$key] = $value['name'];
         }
 
-        $newform = $app['form.factory']->createNamed('newform')
-
+        $editform = $app['form.factory']->createNamed('editform')
+            ->add('propertytype', 'choice', array(
+                'choices'=>$propertytypes,
+                'constraints' => array(
+                    new Assert\Choice(
+                        array(
+                            'choices' => $propertytypes,
+                            'message' => 'Kies een optie uit de lijst',
+                            'strict' => true
+                        )
+                    )
+                )
+            ))
             ->add('description','textarea', array(
                 'constraints' => array(
                     new Assert\NotBlank(array(
@@ -287,10 +298,10 @@ class AdvertisementController implements ControllerProviderInterface{
             ));
 
         if ('POST' == $app['request']->getMethod()) {
-            $newform->bind($app['request']);
+            $editform->bind($app['request']);
 
-            if ($newform->isValid()) {
-                $data = $newform->getData();
+            if ($editform->isValid()) {
+                $data = $editform->getData();
                 var_dump($data);
 
 
@@ -300,21 +311,21 @@ class AdvertisementController implements ControllerProviderInterface{
                 if(isset($data['code'])){
                     $resultCode = $app['cities']->findByCode($data);
                     if (!$resultCode){
-                        $newform->get('code')->addError(new \Symfony\Component\Form\FormError('Postcode wordt niet herkend'));
+                        $editform->get('code')->addError(new \Symfony\Component\Form\FormError('Postcode wordt niet herkend'));
                     }
                 }
                 elseif(isset($data['city'])){
                     $data['city'] = strtolower($data['city']);
                     $resultCode = $app['cities']->findByCityName($data);
                     if (!$resultCode){
-                        $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
+                        $editform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
                     }
                 }
                 elseif(isset($data['city']) && isset($data['code'])){
                     $data['city'] = strtolower($data['city']);
                     $resultCode = $app['cities']->findByCityAndCode($data);
                     if (!$resultCode){
-                        $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente en postcode stemmen niet overeen'));
+                        $editform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente en postcode stemmen niet overeen'));
                     }
                 }
                 $data['idCity'] = $resultCode['idCity'];
@@ -329,7 +340,7 @@ class AdvertisementController implements ControllerProviderInterface{
             }
         }
 
-        return $app['twig']->render('Backend/Advertisements/edit.twig', array('login' => false,'registerform' => $newform->createView()));
+        return $app['twig']->render('Backend/Advertisements/edit.twig', array('login' => false,'editform' => $editform->createView()));
 
 
     }
@@ -352,6 +363,19 @@ class AdvertisementController implements ControllerProviderInterface{
         }
 
         $newform = $app['form.factory']->createNamed('newform')
+            ->add('propertytype', 'choice', array(
+                'choices'=> $propertytypes,
+                'constraints' => array(
+                    new Assert\Choice(
+                        array(
+                            'choices' => $propertytypes,
+                            'message' => 'Kies een optie uit de lijst',
+                            'strict' => true
+                        )
+                    )
+                )
+            ))
+
             ->add('description','textarea', array(
                 'constraints' => array(
                     new Assert\NotBlank(array(
@@ -480,6 +504,7 @@ class AdvertisementController implements ControllerProviderInterface{
 
             ->add('code','choice', array(
                 'choices' => $codes,
+                'empty_value' => '',
                 'constraints' => array(
                     new Assert\Range(array(
                         'min' => 1000,
@@ -500,6 +525,7 @@ class AdvertisementController implements ControllerProviderInterface{
 
             ->add('city','choice', array(
                 'choices' => $cities,
+                'empty_value' => '',
                 'constraints' => array(
                     new Assert\Choice(
                         array(
@@ -548,13 +574,13 @@ class AdvertisementController implements ControllerProviderInterface{
 
 
 
-                //@todo send mail and redirect to auth.login
-                return $app->redirect($app['url_generator']->generate('auth.login'));
 
+                //@todo send mail and redirect to auth.login
+                return $app->redirect($app['url_generator']->generate('backend.advertisements.overview') . '?added');
             }
         }
 
-    return $app['twig']->render('Backend/Advertisements/new.twig', array('login' => false, 'registerform' => $newform->createView()));
+    return $app['twig']->render('Backend/Advertisements/new.twig', array('newform' => $newform->createView()));
 
     }
 

@@ -20,17 +20,48 @@ class LocationsRepository extends \Knp\Repository {
         return 'Locations';
     }
 
+    /**
+     * @param array $data
+     * @return int|void
+     */
     public function insert($data){
-        $this->db->insert('locations',array(
-           'idCity' =>      isset($data['idCity'])      ? $data['idCity'] : null,
-           'street' =>      isset($data['street'])      ? $data['street'] : null,
-           'housenumber' => isset($data['housenumber']) ? $data['housenumber'] : null,
-           'bus' =>         isset($data['bus'])         ? $data['bus'] : null
+        $this->db->insert(
+            'locations',array(
+               'idCity' =>      isset($data['idCity'])      ? $data['idCity'] : null,
+               'street' =>      isset($data['street'])      ? $data['street'] : null,
+               'housenumber' => isset($data['housenumber']) ? $data['housenumber'] : null,
+               'bus' =>         isset($data['bus'])         ? $data['bus'] : null
         ));
     }
 
-    public function find($id){
-        return;
+    /**
+     * @param array $data
+     * @return int|void
+     */
+    public function update($data){
+        $this->db->update(
+            'locations',array(
+                'idCity' =>      isset($data['idCity'])      ? $data['idCity'] : null,
+                'street' =>      isset($data['street'])      ? $data['street'] : null,
+                'housenumber' => isset($data['housenumber']) ? $data['housenumber'] : null,
+                'bus' =>         isset($data['bus'])         ? $data['bus'] : null
+            ),
+            array(
+                'idLocatie' => $data['idLocation']
+            )
+        );
+    }
+
+    /**
+     * @param array $data
+     * @return int|void
+     */
+    public function delete($data){
+        $this->db->delete(
+            'locations', array(
+                'idLocatie' => 'idLocation'
+            )
+        );
     }
     /**
      * @return string

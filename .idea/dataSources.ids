@@ -38,22 +38,21 @@
       <column name="idAdvertisement" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="idAgency" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="idLocation" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="title" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="rent_sell" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7"/>
       <column name="sold_rented" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7"/>
       <column name="propertytype" sqlType="ENUM" length="23" precision="0" nullable="false" jdbcType="1"/>
-      <column name="price" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
-      <column name="EPC" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="ki" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="chambers" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="living_area" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="price" sqlType="DECIMAL" length="19" precision="4" nullable="false" jdbcType="3"/>
+      <column name="EPC" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="ki" sqlType="DECIMAL UNSIGNED" length="19" precision="4" nullable="true" jdbcType="3"/>
+      <column name="chambers" sqlType="INT UNSIGNED" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="living_area" sqlType="INT UNSIGNED" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="total_area" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="description" sqlType="BLOB" length="65535" precision="0" nullable="true" jdbcType="-4"/>
+      <column name="description" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="false" jdbcType="-1"/>
       <column name="views" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="updated_on" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="idAdvertisement"/>
-      <foreign-key name="fk_Advertenties_locaties" columns="idLocation" ref-table="locations" ref-schema="" ref-catalog="immo_db" ref-columns="idLocatie" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_Advertenties_Agentschappen1" columns="idAgency" ref-table="agencies" ref-schema="" ref-catalog="immo_db" ref-columns="idAgency" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_Advertisements_Agencies1" columns="idAgency" ref-table="agencies" ref-schema="" ref-catalog="immo_db" ref-columns="idAgency" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_Advertisements_locations" columns="idLocation" ref-table="locations" ref-schema="" ref-catalog="immo_db" ref-columns="idLocatie" update-rule="0" delete-rule="0" deferrability="2"/>
       <exported-key name="fk_Photos_Advertisements1" table="photos" schema="" catalog="immo_db" columns="idAdvertisement"/>
       <index name="fk_Advertenties_locaties_idx" unique="false" columns="idLocation"/>
       <index name="fk_Advertenties_Agentschappen1_idx" unique="false" columns="idAgency"/>

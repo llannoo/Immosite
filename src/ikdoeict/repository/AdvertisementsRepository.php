@@ -54,11 +54,12 @@ class AdvertisementsRepository extends \Knp\Repository{
             array($id)
         );
     }
+
     /**
- * @param $idAgency
- * @param $idAd
- * @return array
- */
+     * @param $idAgency
+     * @param $idAd
+     * @return array
+     */
     public function findAdByAgency($idAgency,$idAd ){
         return $this->db->fetchAssoc(
             'SELECT advertisements.*, cities.*, locations.*
@@ -69,6 +70,10 @@ FROM advertisements
             array($idAgency, $idAd)
         );
     }
+
+    /**
+     * @return mixed
+     */
     public function fetchPropertytype(){
         $result = $this->db->fetchAssoc('SHOW COLUMNS FROM advertisements WHERE Field="propertytype"');
         preg_match_all("/'(.*?)'/",$result['Type'], $enumArr);
@@ -77,9 +82,73 @@ FROM advertisements
     }
 
     /**
+     * @param array $data
+     * @return int|void
+     */
+    public function insert(array $data){
+        $this->db->insert(
+            'advertisements', array(
+                'idAgency'      => $data['idAgency'],
+                'idLocation'    => $data['idLocation'],
+                'rent_sell'     => $data['rent_sell'],
+                'sold_rented'   => $data['sold_rented'],
+                'propertytype'  => $data['propertytype'],
+                'price'         => $data['price'],
+                'EPC'           => $data['EPC'],
+                'ki'            => $data['ki'],
+                'chambers'      => $data['chambers'],
+                'living_area'   => $data['living_area'],
+                'total_area'    => $data['total_area'],
+                'description'   => $data['description'],
+                'views'         => $data['views'],
+                'updated_on'    => $data['updated_on']
+            )
+        );
+    }
+
+    /**
+     * @param array $data
+     * @return int|void
+     */
+    public function update(array $data){
+        $this->db->update(
+            'advertisements', array(
+                'idAgency'      => $data['idAgency'],
+                'idLocation'    => $data['idLocation'],
+                'rent_sell'     => $data['rent_sell'],
+                'sold_rented'   => $data['sold_rented'],
+                'propertytype'  => $data['propertytype'],
+                'price'         => $data['price'],
+                'EPC'           => $data['EPC'],
+                'ki'            => $data['ki'],
+                'chambers'      => $data['chambers'],
+                'living_area'   => $data['living_area'],
+                'total_area'    => $data['total_area'],
+                'description'   => $data['description'],
+                'views'         => $data['views'],
+                'updated_on'    => $data['updated_on']
+            ),
+            array('idAdvertisement' => $data['idAdvertisement'], 'idAgency' => $data['idAgency'])
+        );
+    }
+
+    /**
+     * @param array $data
+     * @return int|void
+     */
+    public function delete($data){
+        $this->db->delete(
+            'advertisements',array(
+            'idAdvertisement'   => $data['idAdvertisement'],
+                'idAgency'      => $data['idAgency']
+            )
+        );
+    }
+    /**
      * @return string
      */
     public function getLastInsertedId(){
         return $this->db->lastInsertId();
     }
+
 }

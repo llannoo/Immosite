@@ -31,117 +31,124 @@
                 <div class="widget-content form-container">
                     <form class="form-horizontal">
                         <div class="control-group">
-                            {{ form_label(registerform.description, 'Beschrijving', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(newform.propertytype, 'Vastgoedtype', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.description, {'attr': { 'class': 'span12'} }) }}
-                                {{ form_errors(registerform.description) }}
+                                {{ form_widget(newform.propertytype, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(newform.propertytype) }}
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.price, 'Prijs', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.description, 'Beschrijving', {'attr': { 'class': 'control-label'} }) }}
+                            <div class="controls">
+                                {{ form_widget(editform.description, {'attr': { 'class': 'span12'} }) }}
+                                {{ form_errors(editform.description) }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            {{ form_label(editform.price, 'Prijs', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
                                 <div class="input-prepend">
-                                    <span class="add-on">&#8364;</span>{{ form_widget(registerform.price, {'attr': { 'class': 'input-xlarge'} }) }}
-                                    {{ form_errors(registerform.price) }}
+                                    <span class="add-on">&#8364;</span>{{ form_widget(editform.price, {'attr': { 'class': 'input-xlarge'} }) }}
+                                    {{ form_errors(editform.price) }}
                                 </div>
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.epc, 'EPC', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.epc, 'EPC', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.epc, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(registerform.epc) }}
+                                {{ form_widget(editform.epc, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(editform.epc) }}
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.ki, 'K.I.', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.ki, 'K.I.', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
                                 <div class="input-prepend">
-                                    <span class="add-on">&#8364;</span>{{ form_widget(registerform.ki, {'attr': { 'class': 'input-xlarge'} }) }}
-                                    {{ form_errors(registerform.ki) }}
+                                    <span class="add-on">&#8364;</span>{{ form_widget(editform.ki, {'attr': { 'class': 'input-xlarge'} }) }}
+                                    {{ form_errors(editform.ki) }}
                                 </div>
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.chambers, 'Kamers', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.chambers, 'Kamers', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.chambers, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(registerform.chambers) }}
+                                {{ form_widget(editform.chambers, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(editform.chambers) }}
 
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.living_area, 'Bewoonbare opp.', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.living_area, 'Bewoonbare opp.', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.living_area, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(registerform.living_area) }}
+                                {{ form_widget(editform.living_area, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(editform.living_area) }}
 
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.total_area, 'Totale opp.', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.total_area, 'Totale opp.', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.total_area, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(registerform.total_area) }}
+                                {{ form_widget(editform.total_area, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(editform.total_area) }}
 
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.rent_sell, 'Verkoop/Verhuur', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.rent_sell, 'Verkoop/Verhuur', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.rent_sell, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(registerform.rent_sell) }}
+                                {{ form_widget(editform.rent_sell, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(editform.rent_sell) }}
 
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.sold_rented, 'Verkocht/Verhuurd', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.sold_rented, 'Verkocht/Verhuurd', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.sold_rented, {'attr': { 'class': 'input-xlarge', 'data-provide' : 'ibutton', 'data-label-on' : 'Ja',  'data-label-off' : 'Nee'} }) }}
-                                {{ form_errors(registerform.sold_rented) }}
+                                {{ form_widget(editform.sold_rented, {'attr': { 'class': 'input-xlarge', 'data-provide' : 'ibutton', 'data-label-on' : 'Ja',  'data-label-off' : 'Nee'} }) }}
+                                {{ form_errors(editform.sold_rented) }}
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.street, 'Straat', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.street, 'Straat', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.street, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(registerform.street) }}
+                                {{ form_widget(editform.street, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(editform.street) }}
 
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.housenumber, 'Huisnummer', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.housenumber, 'Huisnummer', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.housenumber, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(registerform.housenumber) }}
+                                {{ form_widget(editform.housenumber, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(editform.housenumber) }}
 
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.bus, 'Bus', {'attr': { 'class': 'control-label'} }) }}
+                            {{ form_label(editform.bus, 'Bus', {'attr': { 'class': 'control-label'} }) }}
                             <div class="controls">
-                                {{ form_widget(registerform.bus, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(registerform.bus) }}
+                                {{ form_widget(editform.bus, {'attr': { 'class': 'input-xlarge'} }) }}
+                                {{ form_errors(editform.bus) }}
 
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.code, 'Postcode', {'attr': { 'class': 'control-label'} } )}}
+                            {{ form_label(editform.code, 'Postcode', {'attr': { 'class': 'control-label'} } )}}
                             <div class="controls">
-                                {{ form_widget(registerform.code, {'attr': { 'class': 'input-xlarge select2-select-00'} }) }}
-                                {{ form_errors(registerform.code) }}
+                                {{ form_widget(editform.code, {'attr': { 'class': 'input-xlarge select2-select-00'} }) }}
+                                {{ form_errors(editform.code) }}
 
                             </div>
                         </div>
                         <div class="control-group">
-                            {{ form_label(registerform.city, 'Gemeente', {'attr': { 'class': 'control-label'} })}}
+                            {{ form_label(editform.city, 'Gemeente', {'attr': { 'class': 'control-label'} })}}
                             <div class="controls">
-                                {{ form_widget(registerform.city, {'attr': { 'class': 'input-xlarge select2-select-00'} }) }}
-                                {{ form_errors(registerform.city) }}
+                                {{ form_widget(editform.city, {'attr': { 'class': 'input-xlarge select2-select-00'} }) }}
+                                {{ form_errors(editform.city) }}
                             </div>
                         </div>
                         <div class="form-actions">
-                            {{ form_widget(registerform._token) }}
+                            {{ form_widget(editform._token) }}
                             <input type="submit" name="submit"  class="btn btn-primary" value="Bewerken" />
                             <button class="btn">Cancel</button>
                         </div>
