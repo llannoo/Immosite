@@ -24,7 +24,7 @@ class LocationsRepository extends \Knp\Repository {
      * @param array $data
      * @return int|void
      */
-    public function insert($data){
+    public function insert(array $data){
         $this->db->insert(
             'locations',array(
                'idCity' =>      isset($data['idCity'])      ? $data['idCity'] : null,
@@ -38,7 +38,7 @@ class LocationsRepository extends \Knp\Repository {
      * @param array $data
      * @return int|void
      */
-    public function update($data){
+    public function update(array $data, array $id){
         $this->db->update(
             'locations',array(
                 'idCity' =>      isset($data['idCity'])      ? $data['idCity'] : null,
@@ -47,7 +47,7 @@ class LocationsRepository extends \Knp\Repository {
                 'bus' =>         isset($data['bus'])         ? $data['bus'] : null
             ),
             array(
-                'idLocatie' => $data['idLocation']
+                'idLocatie' => $id['idLocation']
             )
         );
     }
@@ -56,7 +56,7 @@ class LocationsRepository extends \Knp\Repository {
      * @param array $data
      * @return int|void
      */
-    public function delete($data){
+    public function delete(array $data){
         $this->db->delete(
             'locations', array(
                 'idLocatie' => 'idLocation'
@@ -69,5 +69,4 @@ class LocationsRepository extends \Knp\Repository {
     public function getLastInsertedId(){
         return $this->db->lastInsertId();
     }
-
 }

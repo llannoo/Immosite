@@ -73,8 +73,7 @@ class AdvertisementController implements ControllerProviderInterface{
     public function overview(Application $app){
         $contact = $app['session']->get('contact');
         $advertisements = $app['advertisements']->findAllByAgency($contact['idAgency']);
-
-        return $app['twig']->render('Backend/Advertisements/overview.twig', array('login' => false, 'advertisements' => $advertisements, 'session' => $app['session']->get('contact')));
+        return $app['twig']->render('Backend/Advertisements/overview.twig', array('advertisements' => $advertisements, 'session' => $app['session']->get('contact')));
     }
 
     public function detail(Application $app, $idAdvertisement){
@@ -108,15 +107,15 @@ class AdvertisementController implements ControllerProviderInterface{
             $app->abort(404, 'Internship does not exist');
         }
 
-        $propertytypes = $app['advertisements']->fetchPropertytype();
+        $propertytypes1 = $app['advertisements']->fetchPropertytype();
+        $propertytypes = $this->reorderArray($propertytypes1);
         $cities2 = $app['cities']->findAll();
+        $cities1 = $this->reorder2dArray($cities2, 'name');
+        $cities = $this->reorderArray($cities1);
+
         $codes2 = $app['cities']->findAllCodes();
-        foreach($codes2 as $key=>$value) {
-            $codes[$key] = $value['code'];
-        }
-        foreach($cities2 as $key=>$value) {
-            $cities[$key] = $value['name'];
-        }
+        $codes1 = $this->reorder2dArray($codes2, 'code');
+        $codes = $this->reorderArray($codes1);
 
         $editform = $app['form.factory']->createNamed('editform')
             ->add('propertytype', 'choice', array(
@@ -142,14 +141,15 @@ class AdvertisementController implements ControllerProviderInterface{
 
             ->add('price','money', array(
                 'constraints' => array(
-                    new Assert\NotBlank()
+                    new Assert\NotBlank(array(
+                        'message' => 'Gelieve een prijs mee te geven'
+                    ))
                 ),
                 'data' => $advertisement['price']
             ))
 
             ->add('epc','integer', array(
                 'constraints' => array(
-                    new Assert\NotBlank(),
                     new Assert\Range(
                         array(
                             'min' => 0,
@@ -266,13 +266,6 @@ class AdvertisementController implements ControllerProviderInterface{
             ->add('code','choice', array(
                 'choices' => $codes,
                 'constraints' => array(
-                    new Assert\Range(array(
-                        'min' => 1000,
-                        'max' => 9999,
-                        'minMessage' => 'De waarde moet groter dan 1000 zijn',
-                        'maxMessage' => 'De waarde mag niet groter dan 9999 zijn',
-                        'invalidMessage'=> 'Dit is geen geldige waarde'
-                    )),
                     new Assert\Choice(
                         array(
                             'choices' => $codes,
@@ -302,10 +295,6 @@ class AdvertisementController implements ControllerProviderInterface{
 
             if ($editform->isValid()) {
                 $data = $editform->getData();
-                var_dump($data);
-
-
-
 
                 //check postcode met citynaam
                 if(isset($data['code'])){
@@ -339,10 +328,7 @@ class AdvertisementController implements ControllerProviderInterface{
 
             }
         }
-
-        return $app['twig']->render('Backend/Advertisements/edit.twig', array('login' => false,'editform' => $editform->createView()));
-
-
+        return $app['twig']->render('Backend/Advertisements/edit.twig', array('advertisement' => $advertisement,'editform' => $editform->createView()));
     }
 
     /**
@@ -351,16 +337,16 @@ class AdvertisementController implements ControllerProviderInterface{
      */
     public function add (Application $app){
         $contact = $app['session']->get('contact');
-        $propertytypes = $app['advertisements']->fetchPropertytype();
 
+        $propertytypes1 = $app['advertisements']->fetchPropertytype();
+        $propertytypes = $this->reorderArray($propertytypes1);
         $cities2 = $app['cities']->findAll();
+        $cities1 = $this->reorder2dArray($cities2, 'name');
+        $cities = $this->reorderArray($cities1);
+
         $codes2 = $app['cities']->findAllCodes();
-        foreach($codes2 as $key=>$value) {
-            $codes[$key] = $value['code'];
-        }
-        foreach($cities2 as $key=>$value) {
-            $cities[$key] = $value['name'];
-        }
+        $codes1 = $this->reorder2dArray($codes2, 'code');
+        $codes = $this->reorderArray($codes1);
 
         $newform = $app['form.factory']->createNamed('newform')
             ->add('propertytype', 'choice', array(
@@ -375,7 +361,6 @@ class AdvertisementController implements ControllerProviderInterface{
                     )
                 )
             ))
-
             ->add('description','textarea', array(
                 'constraints' => array(
                     new Assert\NotBlank(array(
@@ -383,17 +368,16 @@ class AdvertisementController implements ControllerProviderInterface{
                     ))
                 )
             ))
-
             ->add('price','money', array(
                 'constraints' => array(
-                    new Assert\NotBlank()
+                    new Assert\NotBlank(array(
+                        'message' => 'Gelieve een prijs mee te geven'
+                    ))
                 ),
                 'data' => 0.0
             ))
-
             ->add('epc','integer', array(
                 'constraints' => array(
-                    new Assert\NotBlank(),
                     new Assert\Range(
                         array(
                             'min' => 0,
@@ -406,14 +390,12 @@ class AdvertisementController implements ControllerProviderInterface{
                 ),
                 'data' => 0
             ))
-
             ->add('ki','money', array(
                 'constraints' => array(
                     new Assert\NotBlank(),
                 ),
                 'data' => 0
             ))
-
             ->add('chambers','integer', array(
                 'constraints' => array(
                     new Assert\NotBlank(),
@@ -440,7 +422,6 @@ class AdvertisementController implements ControllerProviderInterface{
                 ),
                 'data' => 0
             ))
-
             ->add('total_area','integer', array(
                 'constraints' => array(
                     new Assert\NotBlank(),
@@ -454,7 +435,6 @@ class AdvertisementController implements ControllerProviderInterface{
                 ),
                 'data' => 0
             ))
-
             ->add('rent_sell','choice', array(
                 'choices'   => array(
                     'verkoop'   => 'Verkoop',
@@ -470,20 +450,16 @@ class AdvertisementController implements ControllerProviderInterface{
                     )
                 )
             ))
-
             ->add('sold_rented','checkbox', array(
                 'constraints' => array(
 
                 )
             ))
-
-
             ->add('street','text', array(
                 'constraints' => array(
                     new Assert\NotBlank(),
                 )
             ))
-
             ->add('housenumber','integer', array(
                 'constraints' => array(
                     new Assert\Range(
@@ -497,7 +473,6 @@ class AdvertisementController implements ControllerProviderInterface{
                     )
                 ),
             ))
-
             ->add('bus','text', array(
                 'constraints' => array(),
             ))
@@ -506,23 +481,14 @@ class AdvertisementController implements ControllerProviderInterface{
                 'choices' => $codes,
                 'empty_value' => '',
                 'constraints' => array(
-                    new Assert\Range(array(
-                        'min' => 1000,
-                        'max' => 9999,
-                        'minMessage' => 'De waarde moet groter dan 1000 zijn',
-                        'maxMessage' => 'De waarde mag niet groter dan 9999 zijn',
-                        'invalidMessage'=> 'Dit is geen geldige waarde'
-                    )),
                     new Assert\Choice(
                         array(
                             'choices' => $codes,
                             'message' => 'Kies een optie uit de lijst',
-                            'strict' => true
                         )
-                    )
+                    ),
                 )
             ))
-
             ->add('city','choice', array(
                 'choices' => $cities,
                 'empty_value' => '',
@@ -533,45 +499,56 @@ class AdvertisementController implements ControllerProviderInterface{
                             'message' => 'Kies een optie uit de lijst',
                             'strict' => true
                         )
-                    )
+                    ),
                 )
             ));
-
+var_dump($codes);
+        var_dump($cities);
         if ('POST' == $app['request']->getMethod()) {
             $newform->bind($app['request']);
+            $data = $newform->getData();
+
+            if ($data['city'] == null && $data['code'] == null){
+                $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Gelieve een postcode of een gemeente in te vullen'));
+            }
 
             if ($newform->isValid()) {
                 $data = $newform->getData();
                 var_dump($data);
-
-
-
-
                 //check postcode met citynaam
-                if(isset($data['code'])){
+                if(isset($data['code']) && $data['code'] != null){
                     $resultCode = $app['cities']->findByCode($data);
                     if (!$resultCode){
                         $newform->get('code')->addError(new \Symfony\Component\Form\FormError('Postcode wordt niet herkend'));
                     }
+                    $data['idCity'] = $resultCode['idCity'];
                 }
-                elseif(isset($data['city'])){
+                elseif(isset($data['city']) && $data['city'] != null ){
                     $data['city'] = strtolower($data['city']);
                     $resultCode = $app['cities']->findByCityName($data);
                     if (!$resultCode){
                         $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
                     }
+                    $data['idCity'] = $resultCode['idCity'];
                 }
-                elseif(isset($data['city']) && isset($data['code'])){
+                elseif(isset($data['city']) && isset($data['code']) && $data['code'] != null && $data['city'] != null){
                     $data['city'] = strtolower($data['city']);
                     $resultCode = $app['cities']->findByCityAndCode($data);
                     if (!$resultCode){
                         $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente en postcode stemmen niet overeen'));
                     }
+                    $data['idCity'] = $resultCode['idCity'];
                 }
-                $data['idCity'] = $resultCode['idCity'];
+                elseif ($data['city'] == null && $data['code'] == null){
+                    $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Gelieve een postcode of een gemeente in te vullen'));
+                }
+
+                $data['idAgency'] = $contact['idAgency'];
+
                 $app['locations']->insert($data);
                 $data['idLocation'] = $app['locations']->getLastInsertedId();
 
+                $app['advertisements']->insert($data);
 
 
 
@@ -593,5 +570,28 @@ class AdvertisementController implements ControllerProviderInterface{
         if (!$app['session']->get('contact')) {
             return $app->redirect($app['url_generator']->generate('auth.login'));
         }
+    }
+
+    /**
+     * @param $data
+     * @param $field
+     * @return mixed
+     */
+    public function reorder2dArray($data , $field){
+        foreach($data as $key=>$value) {
+            $data2[$key] = $value[$field];
+        }
+        return $data2;
+    }
+
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function reorderArray($data){
+        foreach($data as $value) {
+            $data2[$value] = $value;
+        }
+        return $data2;
     }
 }

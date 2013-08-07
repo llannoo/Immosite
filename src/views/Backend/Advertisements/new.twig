@@ -1,6 +1,8 @@
 {# extend the parent tpl #}
 {% extends '/Backend/layout.twig' %}
 
+{% form_theme newform 'themes.twig' %}
+
 {% set pageTitle = 'New Advertisement &raquo; My Website' %}
 
 {# overwrite the pageContent block #}
@@ -20,7 +22,6 @@
             Nieuwe advertentie
         </h1>
     </div>
-
     <div id="main-content">
 
         <div class="row-fluid">
@@ -29,123 +30,144 @@
                     <span class="title"><i class="icon-business-card"></i> Nieuwe advertentie</span>
                 </div>
                 <div class="widget-content form-container">
-                    <form class="form-horizontal">
-                        <div class="control-group">
-                            {{ form_label(newform.propertytype, 'Vastgoedtype', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.propertytype, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.propertytype) }}
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.description, 'Beschrijving', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.description, {'attr': { 'class': 'span12'} }) }}
-                                {{ form_errors(newform.description) }}
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.price, 'Prijs', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                <div class="input-prepend">
-                                    <span class="add-on">&#8364;</span>{{ form_widget(newform.price, {'attr': { 'class': 'input-xlarge'} }) }}
-                                    {{ form_errors(newform.price) }}
+                    <form  form action="{{ path('backend.advertisements.new') }}" method="post" {{ form_enctype(newform) }} novalidate="novalidate" class="form-vertical">
+                            <fieldset>
+                                <legend>
+                                    Status
+                                </legend>
+                                <div class="control-group">
+                                    {{ form_label(newform.rent_sell, 'Verkoop/Verhuur', {'attr': { 'class': 'control-label'} }) }}
+                                    <div class="controls">
+                                        {{ form_widget(newform.rent_sell, {'attr': { 'class': 'span12'} }) }}
+                                        {{ form_errors(newform.rent_sell, {'attr': {'class' : 'help-block'} }) }}
+
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    {{ form_label(newform.sold_rented, 'Verkocht/Verhuurd', {'attr': { 'class': 'control-label'} }) }}
+                                    <div class="controls">
+                                        {{ form_widget(newform.sold_rented, {'attr': { 'class': 'span12', 'data-provide' : 'ibutton', 'data-label-on' : 'Ja',  'data-label-off' : 'Nee'} }) }}
+                                        {{ form_errors(newform.sold_rented, {'attr': {'class' : 'help-block'} }) }}
+                                    </div>
+                                </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Omschrijving
+                            </legend>
+                            <div class="control-group">
+                                {{ form_label(newform.propertytype, 'Vastgoedtype', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.propertytype, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.propertytype, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.epc, 'EPC', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.epc, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.epc) }}
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.ki, 'K.I.', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                <div class="input-prepend">
-                                    <span class="add-on">&#8364;</span>{{ form_widget(newform.ki, {'attr': { 'class': 'input-xlarge'} }) }}
-                                    {{ form_errors(newform.ki) }}
+                            <div class="control-group">
+                                {{ form_label(newform.description, 'Beschrijving', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.description, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.description, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.chambers, 'Kamers', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.chambers, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.chambers) }}
+                            <div class="control-group">
+                                {{ form_label(newform.price, 'Prijs', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    <div class="input-prepend">
+                                        <span class="add-on">&#8364;</span>{{ form_widget(newform.price, {'attr': { 'class': 'span11'} }) }}
+                                        {{ form_errors(newform.price, {'attr': {'class' : 'help-block'} }) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Informatie
+                            </legend>
+                            <div class="control-group">
+                                {{ form_label(newform.epc, 'EPC', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.epc, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.epc, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(newform.ki, 'K.I.', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    <div class="input-prepend ">
+                                        <span class="add-on">&#8364;</span>{{ form_widget(newform.ki, {'attr': { 'class': 'span11'} }) }}
+                                        {{ form_errors(newform.ki, {'attr': {'class' : 'help-block'} }) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(newform.chambers, 'Kamers', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.chambers, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.chambers, {'attr': {'class' : 'help-block'} }) }}
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.living_area, 'Bewoonbare opp.', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.living_area, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.living_area) }}
+                            <div class="control-group">
+                                {{ form_label(newform.living_area, 'Bewoonbare opp.', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.living_area, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.living_area, {'attr': {'class' : 'help-block'} }) }}
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.total_area, 'Totale opp.', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.total_area, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.total_area) }}
+                            <div class="control-group">
+                                {{ form_label(newform.total_area, 'Totale opp.', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.total_area, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.total_area, {'attr': {'class' : 'help-block'} }) }}
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.rent_sell, 'Verkoop/Verhuur', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.rent_sell, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.rent_sell) }}
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Locatie
+                            </legend>
+                            <div class="control-group">
+                                {{ form_label(newform.code, 'Postcode', {'attr': { 'class': 'control-label'} } )}}
+                                <div class="controls">
+                                    {{ form_widget(newform.code, {'attr': { 'class': 'span12 select2-select-00'} }) }}
+                                    {{ form_errors(newform.code, {'attr': {'class' : 'help-block'} }) }}
 
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.sold_rented, 'Verkocht/Verhuurd', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.sold_rented, {'attr': { 'class': 'input-xlarge', 'data-provide' : 'ibutton', 'data-label-on' : 'Ja',  'data-label-off' : 'Nee'} }) }}
-                                {{ form_errors(newform.sold_rented) }}
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.street, 'Straat', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.street, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.street) }}
+                                </div>
 
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.housenumber, 'Huisnummer', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.housenumber, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.housenumber) }}
-
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.bus, 'Bus', {'attr': { 'class': 'control-label'} }) }}
-                            <div class="controls">
-                                {{ form_widget(newform.bus, {'attr': { 'class': 'input-xlarge'} }) }}
-                                {{ form_errors(newform.bus) }}
-
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            {{ form_label(newform.code, 'Postcode', {'attr': { 'class': 'control-label'} } )}}
-                            <div class="controls">
-                                {{ form_widget(newform.code, {'attr': { 'class': 'input-xlarge select2-select-00'} }) }}
-                                {{ form_errors(newform.code) }}
-
+                                {{ form_label(newform.city, 'Gemeente', {'attr': { 'class': 'control-label'} })}}
+                                <div class="controls">
+                                    {{ form_widget(newform.city, {'attr': { 'class': 'span12 select2-select-00'} }) }}
+                                    {{ form_errors(newform.city, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
                             </div>
 
-                            {{ form_label(newform.city, 'Gemeente', {'attr': { 'class': 'control-label'} })}}
-                            <div class="controls">
-                                {{ form_widget(newform.city, {'attr': { 'class': 'input-xlarge select2-select-00'} }) }}
-                                {{ form_errors(newform.city) }}
+                            <div class="control-group">
+                                {{ form_label(newform.street, 'Straat', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.street, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.street, {'attr': {'class' : 'help-block'} }) }}
+
+                                </div>
                             </div>
-                        </div>
+                            <div class="control-group">
+                                {{ form_label(newform.housenumber, 'Huisnummer', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.housenumber, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.housenumber, {'attr': {'class' : 'help-block'} }) }}
+
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(newform.bus, 'Bus', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.bus, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.bus, {'attr': {'class' : 'help-block'} }) }}
+
+                                </div>
+                            </div>
+                        </fieldset>
                         <div class="form-actions">
                             {{ form_widget(newform._token) }}
                             <input type="submit" name="submit"  class="btn btn-primary" value="Toevoegen" />

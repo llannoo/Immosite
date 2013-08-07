@@ -94,23 +94,24 @@ FROM advertisements
                 'sold_rented'   => $data['sold_rented'],
                 'propertytype'  => $data['propertytype'],
                 'price'         => $data['price'],
-                'EPC'           => $data['EPC'],
+                'EPC'           => $data['epc'],
                 'ki'            => $data['ki'],
                 'chambers'      => $data['chambers'],
                 'living_area'   => $data['living_area'],
                 'total_area'    => $data['total_area'],
                 'description'   => $data['description'],
-                'views'         => $data['views'],
-                'updated_on'    => $data['updated_on']
+                'views'         => 0,
+                'updated_on'    => date("Y-m-d H:i:s")
             )
         );
     }
 
     /**
      * @param array $data
+     * @param array $id
      * @return int|void
      */
-    public function update(array $data){
+    public function update(array $data, array $id){
         $this->db->update(
             'advertisements', array(
                 'idAgency'      => $data['idAgency'],
@@ -128,19 +129,20 @@ FROM advertisements
                 'views'         => $data['views'],
                 'updated_on'    => $data['updated_on']
             ),
-            array('idAdvertisement' => $data['idAdvertisement'], 'idAgency' => $data['idAgency'])
+            array('idAdvertisement' => $id['idAdvertisement'], 'idAgency' => $id['idAgency'])
         );
     }
 
     /**
-     * @param array $data
+     * @param array $id
+     * @internal param array $data
      * @return int|void
      */
-    public function delete($data){
+    public function delete(array $id){
         $this->db->delete(
             'advertisements',array(
-            'idAdvertisement'   => $data['idAdvertisement'],
-                'idAgency'      => $data['idAgency']
+            'idAdvertisement'   => $id['idAdvertisement'],
+                'idAgency'      => $id['idAgency']
             )
         );
     }
