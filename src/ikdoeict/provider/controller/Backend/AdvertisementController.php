@@ -83,7 +83,10 @@ class AdvertisementController implements ControllerProviderInterface{
      */
     public function detail(Application $app, $idAdvertisement){
         $contact = $app['session']->get('contact');
-        $advertisement = $app['advertisements']->findAdByAgency($contact['idAgency'], $idAdvertisement);
+
+        $id['idAgency'] = $contact['idAgency'];
+        $id['idAdvertisement'] = $idAdvertisement;
+        $advertisement = $app['advertisements']->findAdByAgency($id);
 
         if (!$advertisement) {
             $app->abort(404, 'Internship does not exist');
@@ -98,6 +101,9 @@ class AdvertisementController implements ControllerProviderInterface{
      */
     public function delete(Application $app, $idAdvertisement){
         $contact = $app['session']->get('contact');
+        $id['idAgency'] = $contact['idAgency'];
+        $id['idAdvertisement'] = $idAdvertisement;
+        $advertisement = $app['advertisements']->findAdByAgency($id);
     }
 
     /**
@@ -107,7 +113,10 @@ class AdvertisementController implements ControllerProviderInterface{
      */
     public function edit(Application $app, $idAdvertisement){
         $contact = $app['session']->get('contact');
-        $advertisement = $app['advertisements']->findAdByAgency($contact['idAgency'], $idAdvertisement);
+
+        $id['idAgency'] = $contact['idAgency'];
+        $id['idAdvertisement'] = $idAdvertisement;
+        $advertisement = $app['advertisements']->findAdByAgency($id);
         if (!$advertisement) {
             $app->abort(404, 'Internship does not exist');
         }

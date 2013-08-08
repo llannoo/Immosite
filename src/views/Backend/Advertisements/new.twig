@@ -3,7 +3,7 @@
 
 {% form_theme newform 'themes.twig' %}
 
-{% set pageTitle = 'New Advertisement &raquo; My Website' %}
+{% set pageTitle = 'lannimmoo :: Nieuwe Advertentie' %}
 
 {# overwrite the pageContent block #}
 {% block pageContent %}
@@ -31,28 +31,29 @@
                 </div>
                 <div class="widget-content form-container">
                     <form  form action="{{ path('backend.advertisements.new') }}" method="post" {{ form_enctype(newform) }} novalidate="novalidate" class="form-vertical">
-                            <fieldset>
-                                <legend>
-                                    Status
-                                </legend>
-                                <div class="control-group">
-                                    {{ form_label(newform.rent_sell, 'Verkoop/Verhuur', {'attr': { 'class': 'control-label'} }) }}
-                                    <div class="controls">
-                                        {{ form_widget(newform.rent_sell, {'attr': { 'class': 'span12'} }) }}
-                                        {{ form_errors(newform.rent_sell, {'attr': {'class' : 'help-block'} }) }}
-
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    {{ form_label(newform.sold_rented, 'Verkocht/Verhuurd', {'attr': { 'class': 'control-label'} }) }}
-                                    <div class="controls">
-                                        {{ form_widget(newform.sold_rented, {'attr': { 'class': 'span12', 'data-provide' : 'ibutton', 'data-label-on' : 'Ja',  'data-label-off' : 'Nee'} }) }}
-                                        {{ form_errors(newform.sold_rented, {'attr': {'class' : 'help-block'} }) }}
-                                    </div>
-                                </div>
-                        </fieldset>
                         <fieldset>
                             <legend>
+                                <i class="icol-traffic"></i>
+                                Status
+                            </legend>
+                            <div class="control-group">
+                                {{ form_label(newform.rent_sell, 'Verkoop/Verhuur', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.rent_sell, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(newform.rent_sell, {'attr': {'class' : 'help-block'} }) }}
+
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(newform.sold_rented, 'Verkocht/Verhuurd', {'attr': { 'class': 'control-label'} }) }}
+                                <div class="controls">
+                                    {{ form_widget(newform.sold_rented, {'attr': { 'class': 'span12', 'data-provide' : 'ibutton', 'data-label-on' : 'Ja',  'data-label-off' : 'Nee'} }) }}
+                                    {{ form_errors(newform.sold_rented, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend><i class="icol-tag-blue"></i>
                                 Omschrijving
                             </legend>
                             <div class="control-group">
@@ -81,6 +82,7 @@
                         </fieldset>
                         <fieldset>
                             <legend>
+                                <i class="icol-exclamation"></i>
                                 Informatie
                             </legend>
                             <div class="control-group">
@@ -104,7 +106,6 @@
                                 <div class="controls">
                                     {{ form_widget(newform.chambers, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(newform.chambers, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                             <div class="control-group">
@@ -112,7 +113,6 @@
                                 <div class="controls">
                                     {{ form_widget(newform.living_area, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(newform.living_area, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                             <div class="control-group">
@@ -120,27 +120,26 @@
                                 <div class="controls">
                                     {{ form_widget(newform.total_area, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(newform.total_area, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                         </fieldset>
                         <fieldset>
                             <legend>
+                                <i class="icol-marker"></i>
                                 Locatie
                             </legend>
+                            <div class="control-group">
                                 {{ form_label(newform.city, 'Gemeente', {'attr': { 'class': 'control-label'} })}}
                                 <div class="controls">
                                     {{ form_widget(newform.city, {'attr': { 'class': 'span12 select2-select-00'} }) }}
                                     {{ form_errors(newform.city, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
-
                             <div class="control-group">
                                 {{ form_label(newform.street, 'Straat', {'attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(newform.street, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(newform.street, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                             <div class="control-group">
@@ -156,7 +155,6 @@
                                 <div class="controls">
                                     {{ form_widget(newform.bus, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(newform.bus, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                         </fieldset>

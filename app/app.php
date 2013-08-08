@@ -28,5 +28,6 @@ $app->get('/', function(Silex\Application $app) {
 });
 
 // Mount our controllers (dynamic routes)
+$app->mount('/profile', new Ikdoeict\Provider\Controller\Backend\AgenciesController());
 $app->mount('/auth', new Ikdoeict\Provider\Controller\Backend\AuthController());
 $app->mount('/advertisements', new Ikdoeict\Provider\Controller\Backend\AdvertisementController());

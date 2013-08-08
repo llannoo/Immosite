@@ -3,7 +3,7 @@
 
 {% form_theme editform 'themes.twig' %}
 
-{% set pageTitle = 'Edit Advertisement &raquo; lannimmoo' %}
+{% set pageTitle = 'lannimmoo :: Bewerk Advertentie' %}
 
 {# overwrite the pageContent block #}
 {% block pageContent %}
@@ -38,6 +38,7 @@
                     <form  form action="{{ path('backend.advertisements.edit', {'idAdvertisement' : advertisement.idAdvertisement}) }}" method="post" {{ form_enctype(editform) }} novalidate="novalidate" class="form-vertical">
                         <fieldset>
                             <legend>
+                                <i class="icol-traffic"></i>
                                 Status
                             </legend>
                             <div class="control-group">
@@ -57,7 +58,7 @@
                             </div>
                         </fieldset>
                         <fieldset>
-                            <legend>
+                            <legend><i class="icol-tag-blue"></i>
                                 Omschrijving
                             </legend>
                             <div class="control-group">
@@ -86,6 +87,7 @@
                         </fieldset>
                         <fieldset>
                             <legend>
+                                <i class="icol-exclamation"></i>
                                 Informatie
                             </legend>
                             <div class="control-group">
@@ -128,6 +130,7 @@
                         </fieldset>
                         <fieldset>
                             <legend>
+                                <i class="icol-marker"></i>
                                 Locatie
                             </legend>
                             <div class="control-group">

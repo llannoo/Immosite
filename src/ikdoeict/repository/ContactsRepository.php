@@ -20,6 +20,14 @@ class ContactsRepository extends \Knp\Repository{
     }
 
     /**
+     * @param $id
+     * @return array
+     */
+    public function findAllByAgency($id){
+        return $this->db->fetchAll('SELECT * FROM Contact WHERE idAgency = ?', array($id));
+    }
+
+    /**
      * @param mixed $data
      * @return array
      */

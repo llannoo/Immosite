@@ -57,20 +57,21 @@ class AdvertisementsRepository extends \Knp\Repository{
     }
 
     /**
-     * @param $idAgency
-     * @param $idAd
+     * @param array $id
      * @return array
      */
-    public function findAdByAgency($idAgency,$idAd ){
+    public function findAdByAgency( array $id){
         return $this->db->fetchAssoc(
-            'SELECT advertisements.*, cities.*, locations.*
+            'SELECT advertisements.*, cities.*, locations.*, provinces.name as province
 FROM advertisements
             INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
             INNER JOIN cities    ON locations.idCity = cities.idCity
+            INNER JOIN provinces ON provinces.idProvince = cities.idProvince
             WHERE idAgency = ? AND advertisements.idAdvertisement = ? ',
-            array($idAgency, $idAd)
+            array($id['idAgency'], $id['idAdvertisement'])
         );
     }
+
 
     /**
      * @return mixed

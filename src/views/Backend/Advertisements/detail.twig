@@ -3,21 +3,144 @@
 
 
 {# set the pagetitle in the parent tpl #}
-{% set pageTitle = 'My Website &raquo; Overview' %}
+{% set pageTitle = 'lannimmoo :: Detail' %}
 
 {% block pageContent %}
-    <p class="breadcrumb"><a href="{{ path('backend.advertisements.overview') }}">My Website</a> &raquo; <a href="{{ path('backend.advertisements.overview') }}">Advertisements</a> &raquo; Overview</p>
+    <div id="main-header" class="page-header">
+        <ul class="breadcrumb">
+            <li>
+                <a href="{{ path('backend.advertisements.overview') }}"><i class="icon-home"></i></a>lannimmoo
+                <span class="divider">&raquo;</span>
+            </li>
+            <li>
+                <a href="{{ path('backend.advertisements.detail', {'idAdvertisement' : advertisement.idAdvertisement }) }}">Advertentie</a>
+            </li>
+        </ul>
 
-    <article>
-        <h1>
-            <a href="{{ app.request.baseUrl }}/advertisements/{{ advertisement.idAdvertisement }}">{{advertisement.propertytype}} te {{ advertisement.name }}</a>
+        <h1 id="main-heading">
+            Overzicht advertenties
         </h1>
-        <footer>
-            <ul>
-                <li>Prijs: {{ advertisement.price }}</li>
-                <li>Views: {{ advertisement.views }}</li>
-                <li>Updated on: {{ advertisement.updated_on }}</li>
-            </ul>
-        </footer>
-    </article>
+    </div>
+
+    <div id="main-content">
+        <div class="row-fluid">
+
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title">Detail overzicht</span>
+                    <div class="toolbar">
+                        <div class="btn-group">
+                            <span class="btn dropdown-toggle" data-toggle="dropdown">
+                                <i class="icon-pencil"></i> Action <i class="caret"></i>
+                            </span>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="{{ path('backend.advertisements.edit', {'idAdvertisement' : advertisement.idAdvertisement}) }}"><i class="icol-pencil"></i> Edit</a></li>
+                                <li><a href="{{ path('backend.advertisements.delete', {'idAdvertisement' : advertisement.idAdvertisement}) }}"><i class="icol-cross"></i> Delete</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-content table-container">
+                    <table class="table table-striped table-detail-view">
+                        <thead>
+                        <tr>
+                            <th colspan="2"><i class="icol-traffic"></i> Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>Verkoop/Verhuur</th>
+                            <td>{{ advertisement.rent_sell ? 'Verkoop' : 'Verhuur' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Verkocht/Verhuurd</th>
+                            <td>{{ advertisement.sold_rented ? 'Ja' : 'Nee' }}</td>
+                        </tr>
+                        </tbody>
+
+                        <thead>
+                        <tr>
+                            <th colspan="2"><li class="icol-tag-blue"></li> Omschrijving</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>Vastgoedtype</th>
+                            <td>{{ advertisement.rent_sell }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prijs</th>
+                            <td>{{ advertisement.price | number_format(2, ',', ' ') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Beschrijving</th>
+                            <td>{{ advertisement.description }}</td>
+                        </tr>
+                        </tbody>
+                        <thead>
+                        <tr>
+                            <th colspan="2"><i class="icol-exclamation"></i> Informatie</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>EPC</th>
+                            <td>{{ advertisement.EPC | number_format(2, ',', ' ') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Kadastraal inkomen</th>
+                            <td>{{ advertisement.ki | number_format(2, ',', ' ') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Kamers</th>
+                            <td>{{ advertisement.chambers | number_format(0, ',', ' ') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Bewoonbare oppervlakte</th>
+                            <td>{{ advertisement.living_area | number_format(0, ',', ' ') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Totale oppervlakte</th>
+                            <td>{{ advertisement.total_area | number_format(0, ',', ' ') }}</td>
+                        </tr>
+                        </tbody>
+
+                        <thead>
+                        <tr>
+                            <th colspan="2"><i class="icol-world"></i> Locatie</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>Provincie</th>
+                            <td>{{ advertisement.province }}</td>
+                        </tr>
+                        <tr>
+                            <th>Postcode</th>
+                            <td>{{ advertisement.code }}</td>
+                        </tr>
+                        <tr>
+                            <th>Gemeente</th>
+                            <td>{{ advertisement.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Straat</th>
+                            <td>{{ advertisement.street }}</td>
+                        </tr>
+                        <tr>
+                            <th>Huisnummer</th>
+                            <td>{{ advertisement.housenumber }}</td>
+                        </tr>
+                        <tr>
+                            <th>Bus</th>
+                            <td>{{ advertisement.bus }}</td>
+                        </tr>
+                        </tbody>
+
+                        <thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

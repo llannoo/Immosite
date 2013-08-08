@@ -19,6 +19,18 @@ class AgenciesRepository extends \Knp\Repository{
         return 'Agencies';
     }
 
+    /**
+     * @param mixed $id
+     * @return array
+     */
+    public function find($id){
+        return $this->db->fetchAssoc('SELECT * from agencies WHERE idAgency = ?', array($id));
+    }
+
+    /**
+     * @param array $data
+     * @return int|void
+     */
     public function delete($data){
         $this->db->delete(
             'agencies',array(
