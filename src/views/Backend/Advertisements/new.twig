@@ -128,14 +128,6 @@
                             <legend>
                                 Locatie
                             </legend>
-                            <div class="control-group">
-                                {{ form_label(newform.code, 'Postcode', {'attr': { 'class': 'control-label'} } )}}
-                                <div class="controls">
-                                    {{ form_widget(newform.code, {'attr': { 'class': 'span12 select2-select-00'} }) }}
-                                    {{ form_errors(newform.code, {'attr': {'class' : 'help-block'} }) }}
-
-                                </div>
-
                                 {{ form_label(newform.city, 'Gemeente', {'attr': { 'class': 'control-label'} })}}
                                 <div class="controls">
                                     {{ form_widget(newform.city, {'attr': { 'class': 'span12 select2-select-00'} }) }}

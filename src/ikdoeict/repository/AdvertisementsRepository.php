@@ -50,7 +50,8 @@ class AdvertisementsRepository extends \Knp\Repository{
             FROM advertisements
             INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
             INNER JOIN cities    ON locations.idCity = cities.idCity
-            WHERE idAgency = ?',
+            WHERE idAgency = ?
+            ORDER BY advertisements.updated_on DESC',
             array($id)
         );
     }
@@ -66,7 +67,7 @@ class AdvertisementsRepository extends \Knp\Repository{
 FROM advertisements
             INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
             INNER JOIN cities    ON locations.idCity = cities.idCity
-            WHERE idAgency = ? AND advertisements.idAdvertisement = ?',
+            WHERE idAgency = ? AND advertisements.idAdvertisement = ? ',
             array($idAgency, $idAd)
         );
     }
@@ -112,22 +113,20 @@ FROM advertisements
      * @return int|void
      */
     public function update(array $data, array $id){
+        date_default_timezone_set('Europe/Brussels');
         $this->db->update(
             'advertisements', array(
-                'idAgency'      => $data['idAgency'],
-                'idLocation'    => $data['idLocation'],
                 'rent_sell'     => $data['rent_sell'],
                 'sold_rented'   => $data['sold_rented'],
                 'propertytype'  => $data['propertytype'],
                 'price'         => $data['price'],
-                'EPC'           => $data['EPC'],
+                'EPC'           => $data['epc'],
                 'ki'            => $data['ki'],
                 'chambers'      => $data['chambers'],
                 'living_area'   => $data['living_area'],
                 'total_area'    => $data['total_area'],
                 'description'   => $data['description'],
-                'views'         => $data['views'],
-                'updated_on'    => $data['updated_on']
+                'updated_on'    => date("Y-m-d H:i:s")
             ),
             array('idAdvertisement' => $id['idAdvertisement'], 'idAgency' => $id['idAgency'])
         );

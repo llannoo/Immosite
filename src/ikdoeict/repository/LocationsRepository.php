@@ -36,9 +36,11 @@ class LocationsRepository extends \Knp\Repository {
 
     /**
      * @param array $data
+     * @param array $id
      * @return int|void
      */
     public function update(array $data, array $id){
+        var_dump($data);
         $this->db->update(
             'locations',array(
                 'idCity' =>      isset($data['idCity'])      ? $data['idCity'] : null,

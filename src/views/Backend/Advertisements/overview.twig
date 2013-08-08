@@ -9,7 +9,7 @@
     <div id="main-header" class="page-header">
         <ul class="breadcrumb">
             <li>
-                <i class="icon-home"></i>lannimmoo
+                <a href="{{ path('backend.advertisements.overview') }}"><i class="icon-home"></i></a>lannimmoo
                 <span class="divider">&raquo;</span>
             </li>
             <li>
@@ -35,6 +35,8 @@
                     <table class="table table-striped table-flipscroll">
                         <thead>
                         <tr>
+                            <th>Verhuur/Verkoop</th>
+                            <th>Verkocht/Verhuurd</th>
                             <th>Gemeente</th>
                             <th>Vastgoedtype</th>
                             <th>prijs</th>
@@ -47,14 +49,18 @@
 
                             {% for ad in advertisements %}
                                 <tr>
+                                    <td>{{ ad.rent_sell ? 'Verkoop' : 'Verhuur' }}</td>
+                                    <td>{{ ad.sold_rented ? 'Ja' : 'Nee' }}</td>
                                     <td>{{ ad.name }}</td>
                                     <td>{{ ad.propertytype }}</td>
                                     <td>{{ ad.price | number_format(2, ',', ' ') }}</td>
                                     <td>{{ ad.views | number_format  }}</td>
                                     <td>{{ ad.updated_on | date('Y-m-d H:i:s') }}</td>
-                                    <td><a href="{{ path('backend.advertisements.delete', {'idAdvertisement': ad.idAdvertisement}) }}" class="icos-trashcan" title="Delete"></a>
+                                    <td>
+                                        <a href="{{ path('backend.advertisements.detail',{'idAdvertisement': ad.idAdvertisement}) }}" class="icos-preview" title="detail"></a>
                                         <a href="{{ path('backend.advertisements.edit',{'idAdvertisement': ad.idAdvertisement}) }}" class="icos-pencil" title="edit"></a>
-                                        <a href="{{ path('backend.advertisements.detail',{'idAdvertisement': ad.idAdvertisement}) }}" class="icos-preview" title="detail"></a></td>
+                                        <a href="{{ path('backend.advertisements.delete', {'idAdvertisement': ad.idAdvertisement}) }}" class="icos-trashcan" title="Delete"></a>
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>

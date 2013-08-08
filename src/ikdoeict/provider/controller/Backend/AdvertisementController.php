@@ -76,6 +76,11 @@ class AdvertisementController implements ControllerProviderInterface{
         return $app['twig']->render('Backend/Advertisements/overview.twig', array('advertisements' => $advertisements, 'session' => $app['session']->get('contact')));
     }
 
+    /**
+     * @param Application $app
+     * @param             $idAdvertisement
+     * @return mixed
+     */
     public function detail(Application $app, $idAdvertisement){
         $contact = $app['session']->get('contact');
         $advertisement = $app['advertisements']->findAdByAgency($contact['idAgency'], $idAdvertisement);
@@ -106,7 +111,6 @@ class AdvertisementController implements ControllerProviderInterface{
         if (!$advertisement) {
             $app->abort(404, 'Internship does not exist');
         }
-
         $propertytypes1 = $app['advertisements']->fetchPropertytype();
         $propertytypes = $this->reorderArray($propertytypes1);
         $cities2 = $app['cities']->findAll();
@@ -165,7 +169,6 @@ class AdvertisementController implements ControllerProviderInterface{
 
             ->add('ki','money', array(
                 'constraints' => array(
-                    new Assert\NotBlank(),
                 ),
                 'data' => $advertisement['ki']
             ))
@@ -238,7 +241,9 @@ class AdvertisementController implements ControllerProviderInterface{
 
             ->add('street','text', array(
                 'constraints' => array(
-                    new Assert\NotBlank(),
+                    new Assert\NotBlank(array(
+                        'message' => 'Gelieve een straat in te geven'
+                    )),
                 ),
                         'data' => $advertisement['street']
             ))
@@ -262,22 +267,9 @@ class AdvertisementController implements ControllerProviderInterface{
                 'constraints' => array(),
                 'data' => $advertisement['bus']
             ))
-
-            ->add('code','choice', array(
-                'choices' => $codes,
-                'constraints' => array(
-                    new Assert\Choice(
-                        array(
-                            'choices' => $codes,
-                            'message' => 'Kies een optie uit de lijst',
-                            'strict' => true
-                        )
-                    )
-                ),
-                'data' => $advertisement['code']
-            ))
-
             ->add('city','choice', array(
+                'empty_value' => $advertisement['name'],
+                'empty_data' => $advertisement['name'],
                 'choices' => $cities,
                 'constraints' => array(
                     new Assert\Choice(
@@ -292,40 +284,32 @@ class AdvertisementController implements ControllerProviderInterface{
 
         if ('POST' == $app['request']->getMethod()) {
             $editform->bind($app['request']);
+            $data = $editform->getData();
+            if ($data['city'] == null){
+                $editform->get('city')->addError(new \Symfony\Component\Form\FormError('Gelieve een postcode of een gemeente in te vullen'));
+            }
 
             if ($editform->isValid()) {
                 $data = $editform->getData();
-
-                //check postcode met citynaam
-                if(isset($data['code'])){
-                    $resultCode = $app['cities']->findByCode($data);
-                    if (!$resultCode){
-                        $editform->get('code')->addError(new \Symfony\Component\Form\FormError('Postcode wordt niet herkend'));
-                    }
-                }
-                elseif(isset($data['city'])){
-                    $data['city'] = strtolower($data['city']);
-                    $resultCode = $app['cities']->findByCityName($data);
-                    if (!$resultCode){
-                        $editform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
-                    }
-                }
-                elseif(isset($data['city']) && isset($data['code'])){
-                    $data['city'] = strtolower($data['city']);
-                    $resultCode = $app['cities']->findByCityAndCode($data);
-                    if (!$resultCode){
-                        $editform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente en postcode stemmen niet overeen'));
-                    }
+                $data['city'] = strtolower($data['city']);
+                $resultCode = $app['cities']->findByCityName($data);
+                if (!$resultCode){
+                    $editform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
                 }
                 $data['idCity'] = $resultCode['idCity'];
-                $app['locations']->update($data);
-                $data['idLocation'] = $app['locations']->getLastInsertedId();
 
+                $id['idAgency'] = $contact['idAgency'];
+                $id['idAdvertisement'] = $idAdvertisement;
+                $id['idLocation'] = $advertisement['idLocation'];
+
+                $app['locations']->update($data, $id);
+
+                $app['advertisements']->update($data, $id);
+//@todo fotos uploaden
 
 
                 //@todo send mail and redirect to auth.login
-                return $app->redirect($app['url_generator']->generate('auth.login'));
-
+                return $app->redirect($app['url_generator']->generate('backend.advertisements.overview') . '?edited');
             }
         }
         return $app['twig']->render('Backend/Advertisements/edit.twig', array('advertisement' => $advertisement,'editform' => $editform->createView()));
@@ -392,7 +376,6 @@ class AdvertisementController implements ControllerProviderInterface{
             ))
             ->add('ki','money', array(
                 'constraints' => array(
-                    new Assert\NotBlank(),
                 ),
                 'data' => 0
             ))
@@ -476,19 +459,6 @@ class AdvertisementController implements ControllerProviderInterface{
             ->add('bus','text', array(
                 'constraints' => array(),
             ))
-
-            ->add('code','choice', array(
-                'choices' => $codes,
-                'empty_value' => '',
-                'constraints' => array(
-                    new Assert\Choice(
-                        array(
-                            'choices' => $codes,
-                            'message' => 'Kies een optie uit de lijst',
-                        )
-                    ),
-                )
-            ))
             ->add('city','choice', array(
                 'choices' => $cities,
                 'empty_value' => '',
@@ -502,8 +472,6 @@ class AdvertisementController implements ControllerProviderInterface{
                     ),
                 )
             ));
-var_dump($codes);
-        var_dump($cities);
         if ('POST' == $app['request']->getMethod()) {
             $newform->bind($app['request']);
             $data = $newform->getData();
@@ -514,33 +482,14 @@ var_dump($codes);
 
             if ($newform->isValid()) {
                 $data = $newform->getData();
-                var_dump($data);
-                //check postcode met citynaam
-                if(isset($data['code']) && $data['code'] != null){
-                    $resultCode = $app['cities']->findByCode($data);
-                    if (!$resultCode){
-                        $newform->get('code')->addError(new \Symfony\Component\Form\FormError('Postcode wordt niet herkend'));
-                    }
-                    $data['idCity'] = $resultCode['idCity'];
-                }
-                elseif(isset($data['city']) && $data['city'] != null ){
+
+                if(isset($data['city']) && $data['city'] != null ){
                     $data['city'] = strtolower($data['city']);
                     $resultCode = $app['cities']->findByCityName($data);
                     if (!$resultCode){
                         $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
                     }
                     $data['idCity'] = $resultCode['idCity'];
-                }
-                elseif(isset($data['city']) && isset($data['code']) && $data['code'] != null && $data['city'] != null){
-                    $data['city'] = strtolower($data['city']);
-                    $resultCode = $app['cities']->findByCityAndCode($data);
-                    if (!$resultCode){
-                        $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente en postcode stemmen niet overeen'));
-                    }
-                    $data['idCity'] = $resultCode['idCity'];
-                }
-                elseif ($data['city'] == null && $data['code'] == null){
-                    $newform->get('city')->addError(new \Symfony\Component\Form\FormError('Gelieve een postcode of een gemeente in te vullen'));
                 }
 
                 $data['idAgency'] = $contact['idAgency'];
@@ -550,8 +499,7 @@ var_dump($codes);
 
                 $app['advertisements']->insert($data);
 
-
-
+                //@todo fotos uploaden
                 //@todo send mail and redirect to auth.login
                 return $app->redirect($app['url_generator']->generate('backend.advertisements.overview') . '?added');
             }

@@ -23,7 +23,7 @@
         </ul>
 
         <h1 id="main-heading">
-            Nieuwe advertentie
+            Bewerk advertentie
         </h1>
     </div>
 
@@ -32,7 +32,7 @@
         <div class="row-fluid">
             <div class="span12 widget">
                 <div class="widget-header">
-                    <span class="title"><i class="icon-business-card"></i> Nieuwe advertentie</span>
+                    <span class="title"><i class="icon-pencil"></i> Bewerk advertentie</span>
                 </div>
                 <div class="widget-content form-container">
                     <form  form action="{{ path('backend.advertisements.edit', {'idAdvertisement' : advertisement.idAdvertisement}) }}" method="post" {{ form_enctype(editform) }} novalidate="novalidate" class="form-vertical">
@@ -109,7 +109,6 @@
                                 <div class="controls">
                                     {{ form_widget(editform.chambers, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.chambers, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                             <div class="control-group">
@@ -117,7 +116,6 @@
                                 <div class="controls">
                                     {{ form_widget(editform.living_area, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.living_area, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                             <div class="control-group">
@@ -125,7 +123,6 @@
                                 <div class="controls">
                                     {{ form_widget(editform.total_area, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.total_area, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                         </fieldset>
@@ -134,26 +131,17 @@
                                 Locatie
                             </legend>
                             <div class="control-group">
-                                {{ form_label(editform.code, 'Postcode', {'attr': { 'class': 'control-label'} } )}}
-                                <div class="controls">
-                                    {{ form_widget(editform.code, {'attr': { 'class': 'span12 select2-select-00'} }) }}
-                                    {{ form_errors(editform.code, {'attr': {'class' : 'help-block'} }) }}
-
-                                </div>
-
                                 {{ form_label(editform.city, 'Gemeente', {'attr': { 'class': 'control-label'} })}}
                                 <div class="controls">
                                     {{ form_widget(editform.city, {'attr': { 'class': 'span12 select2-select-00'} }) }}
                                     {{ form_errors(editform.city, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
-
                             <div class="control-group">
                                 {{ form_label(editform.street, 'Straat', {'attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.street, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.street, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                             <div class="control-group">
@@ -169,7 +157,6 @@
                                 <div class="controls">
                                     {{ form_widget(editform.bus, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.bus, {'attr': {'class' : 'help-block'} }) }}
-
                                 </div>
                             </div>
                         </fieldset>
