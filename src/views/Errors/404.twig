@@ -3,9 +3,18 @@
 
 
 {# set the pagetitle in the parent tpl #}
-{% set pageTitle = 'My Website &raquo; 404 - File Not Found' %}
+{% set pageTitle = 'lannimmoo :: 404 - File Not Found' %}
 
 {% block pageContent %}
-    <p class="breadcrumb"><a href="">My Website</a> &raquo; 404 - File Not Found</p>
-    <p>{{ error }}</p>
+    <div id="error-wrap">
+        <div id="error-digits">
+            <span class="animated">4</span>
+            <span class="animated delay300">0</span>
+            <span class="animated delay600">4</span>
+        </div>
+
+        <h1>We seem to have misguided you to the wrong page.</h1>
+        <h3>{{ error }}</h3>
+        <p>The page you're looking for is not found. Maybe you should <a href="{{ path('backend.advertisements.overview') }}">go back home</a></p>
+    </div>
 {% endblock %}

@@ -73,7 +73,7 @@ class AdvertisementController implements ControllerProviderInterface{
     public function overview(Application $app){
         $contact = $app['session']->get('contact');
         $advertisements = $app['advertisements']->findAllByAgency($contact['idAgency']);
-        return $app['twig']->render('Backend/Advertisements/overview.twig', array('advertisements' => $advertisements, 'session' => $app['session']->get('contact')));
+        return $app['twig']->render('Backend/Advertisements/overview.twig', array('advertisements' => $advertisements, 'session' => $contact));
     }
 
     /**
@@ -87,12 +87,11 @@ class AdvertisementController implements ControllerProviderInterface{
         $id['idAgency'] = $contact['idAgency'];
         $id['idAdvertisement'] = $idAdvertisement;
         $advertisement = $app['advertisements']->findAdByAgency($id);
-
         if (!$advertisement) {
-            $app->abort(404, 'Internship does not exist');
+            $app->abort(404, 'Advertisement does not exist');
         }
 
-        return $app['twig']->render('Backend/advertisements/detail.twig', array('advertisement' => $advertisement, 'session' => $contact));
+        return $app['twig']->render('Backend/advertisements/detail.twig', array('id' => $advertisement['idAdvertisement'], 'session' => $contact));
     }
 
     /**
@@ -118,17 +117,13 @@ class AdvertisementController implements ControllerProviderInterface{
         $id['idAdvertisement'] = $idAdvertisement;
         $advertisement = $app['advertisements']->findAdByAgency($id);
         if (!$advertisement) {
-            $app->abort(404, 'Internship does not exist');
+            $app->abort(404, 'Advertisement does not exist');
         }
         $propertytypes1 = $app['advertisements']->fetchPropertytype();
         $propertytypes = $this->reorderArray($propertytypes1);
         $cities2 = $app['cities']->findAll();
         $cities1 = $this->reorder2dArray($cities2, 'name');
         $cities = $this->reorderArray($cities1);
-
-        $codes2 = $app['cities']->findAllCodes();
-        $codes1 = $this->reorder2dArray($codes2, 'code');
-        $codes = $this->reorderArray($codes1);
 
         $editform = $app['form.factory']->createNamed('editform')
             ->add('propertytype', 'choice', array(
@@ -321,7 +316,7 @@ class AdvertisementController implements ControllerProviderInterface{
                 return $app->redirect($app['url_generator']->generate('backend.advertisements.overview') . '?edited');
             }
         }
-        return $app['twig']->render('Backend/Advertisements/edit.twig', array('advertisement' => $advertisement,'editform' => $editform->createView()));
+        return $app['twig']->render('Backend/Advertisements/edit.twig', array('id' => $advertisement['idAdvertisement'],'editform' => $editform->createView(), 'session' => $contact));
     }
 
     /**
@@ -336,10 +331,6 @@ class AdvertisementController implements ControllerProviderInterface{
         $cities2 = $app['cities']->findAll();
         $cities1 = $this->reorder2dArray($cities2, 'name');
         $cities = $this->reorderArray($cities1);
-
-        $codes2 = $app['cities']->findAllCodes();
-        $codes1 = $this->reorder2dArray($codes2, 'code');
-        $codes = $this->reorderArray($codes1);
 
         $newform = $app['form.factory']->createNamed('newform')
             ->add('propertytype', 'choice', array(
@@ -514,7 +505,7 @@ class AdvertisementController implements ControllerProviderInterface{
             }
         }
 
-    return $app['twig']->render('Backend/Advertisements/new.twig', array('newform' => $newform->createView()));
+    return $app['twig']->render('Backend/Advertisements/new.twig', array('newform' => $newform->createView(), 'session' => $contact));
 
     }
 

@@ -4,6 +4,8 @@
 
 {# set the pagetitle in the parent tpl #}
 {% set pageTitle = 'lannimmoo :: Detail' %}
+{% set sessionUser = session.username %}
+{% set sessionLogo = session.logo %}
 
 {% block pageContent %}
     <div id="main-header" class="page-header">
@@ -66,7 +68,7 @@
                         <tbody>
                         <tr>
                             <th>Vastgoedtype</th>
-                            <td>{{ advertisement.rent_sell }}</td>
+                            <td>{{ advertisement.propertytype }}</td>
                         </tr>
                         <tr>
                             <th>Prijs</th>

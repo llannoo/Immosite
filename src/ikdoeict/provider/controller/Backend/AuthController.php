@@ -85,14 +85,17 @@ class AuthController implements ControllerProviderInterface {
                     $data['password'] = sha1($data['password'] . $app['PASSWORD_SALT']);
 
                     $userData = $app['contacts']->findContact($data);
-
+                    $agency = $app['agencies']->find($userData['idAgency']);
                     //@todo get user and password + check
                     if ($userData['email']      == $data['email'] &&
                         $userData['password']   == $userData['password']) {
 
                         $app['session']->set('contact', array(
+                            'idContact' => $userData['idContact'],
                             'idAgency' => $userData['idAgency'],
-                            'username' => $userData['email']
+                            'username' => $userData['email'],
+                            'agencyName' => $agency['name'],
+                            'logo' =>  $agency['logo']
                         ));
 
                         return $app->redirect($app['url_generator']->generate('backend.advertisements.overview'));
@@ -157,14 +160,6 @@ class AuthController implements ControllerProviderInterface {
             ))
             ->add('bus','text', array(
                 'constraints' => array(),
-            ))
-            ->add('code','integer', array(
-                'constraints' => array(
-                    new Assert\Range(array(
-                        'min' => 1000,
-                        'max' => 9999
-                    ))
-                )
             ))
             ->add('city','text', array(
                 'constraints' => array()
@@ -239,27 +234,13 @@ class AuthController implements ControllerProviderInterface {
                     }
 
                     //check postcode met citynaam
-                    if(isset($data['code'])){
-                        $resultCode = $app['cities']->findByCode($data);
-                        if (!$resultCode){
-                            $registerform->get('code')->addError(new \Symfony\Component\Form\FormError('Postcode wordt niet herkend'));
-                        }
-                    }
-                    elseif(isset($data['city'])){
+                    if(isset($data['city'])){
                         $data['city'] = strtolower($data['city']);
                         $resultCode = $app['cities']->findByCityName($data);
                         if (!$resultCode){
                             $registerform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
                         }
                     }
-                    elseif(isset($data['city']) && isset($data['code'])){
-                        $data['city'] = strtolower($data['city']);
-                        $resultCode = $app['cities']->findByCityAndCode($data);
-                        if (!$resultCode){
-                            $registerform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente en postcode stemmen niet overeen'));
-                        }
-                    }
-
 
                     $data['idCity'] = $resultCode['idCity'];
 var_dump($data);

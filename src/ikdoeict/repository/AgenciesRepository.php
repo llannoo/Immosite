@@ -24,16 +24,21 @@ class AgenciesRepository extends \Knp\Repository{
      * @return array
      */
     public function find($id){
-        return $this->db->fetchAssoc('SELECT * from agencies WHERE idAgency = ?', array($id));
+        return $this->db->fetchAssoc('
+        SELECT agencies.*, locations.*, cities.name as city from agencies
+        INNER JOIN contacts ON contacts.idAgency = agencies.idAgency
+        INNER JOIN locations ON locations.idLocatie = agencies.idLocation
+        INNER JOIN cities ON cities.idCity = locations.idCity
+        WHERE agencies.idAgency = ? AND contacts.idContact = ?', array($id['idAgency'], $id['idContact']));
     }
 
     /**
      * @param array $data
      * @return int|void
      */
-    public function delete($data){
+    public function delete(array $data){
         $this->db->delete(
-            'agencies',array(
+            'agencies', array(
                 'idAgency' => $data['idAgency']
             )
         );
@@ -42,11 +47,11 @@ class AgenciesRepository extends \Knp\Repository{
      * @param array $data
      * @return int|void
      */
-    public function insert($data){
+    public function insert(array $data){
         $this->db->insert(
             'agencies',array(
-                'idLocation' => $data['idLocation'],
-                'name' => $data['agencyname'],
+                'idLocation' =>     $data['idLocation'],
+                'name' =>           $data['agencyname'],
                 'logo' =>       isset($data['logoName'])    ? $data['logoName'] : null,
                 'website' =>    isset($data['website'])     ? $data['website']:null,
                 'description' => isset($data['description'])? $data['description']: null,
@@ -55,22 +60,23 @@ class AgenciesRepository extends \Knp\Repository{
             )
         );
     }
+
     /**
      * @param array $data
+     * @param array $id
      * @return int|void
      */
-    public function update($data){
+    public function update(array $data, array $id){
         $this->db->update(
             'agencies',array(
-                'idLocation' => $data['idLocation'],
-                'name' => $data['agencyname'],
+                'name' =>       $data['agencyname'],
                 'logo' =>       isset($data['logoName'])    ? $data['logoName'] : null,
                 'website' =>    isset($data['website'])     ? $data['website']:null,
                 'description' => isset($data['description'])? $data['description']: null,
                 'tel' =>        isset($data['tel'])         ? $data['tel'] : null,
                 'fax' =>        isset($data['fax'])         ? $data['fax'] : null
             ),
-            array('idAgency' => $data['idAgency'])
+            array('idAgency' => $id['idAgency'])
         );
     }
 

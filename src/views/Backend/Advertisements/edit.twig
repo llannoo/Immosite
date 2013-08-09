@@ -4,6 +4,8 @@
 {% form_theme editform 'themes.twig' %}
 
 {% set pageTitle = 'lannimmoo :: Bewerk Advertentie' %}
+{% set sessionUser = session.username %}
+{% set sessionLogo = session.logo %}
 
 {# overwrite the pageContent block #}
 {% block pageContent %}
@@ -14,11 +16,11 @@
                 <span class="divider">&raquo;</span>
             </li>
             <li>
-                <a href="{{ path('backend.advertisements.detail', {'idAdvertisement' : advertisement.idAdvertisement}) }}">Advertentie</a>
+                <a href="{{ path('backend.advertisements.detail', {'idAdvertisement' : id}) }}">Advertentie</a>
                 <span class="divider">&raquo;</span>
             </li>
             <li>
-                <a href="{{ path('backend.advertisements.edit', {'idAdvertisement' : advertisement.idAdvertisement})  }}">Bewerk advertentie</a>
+                <a href="{{ path('backend.advertisements.edit', {'idAdvertisement' : id})  }}">Bewerk advertentie</a>
             </li>
         </ul>
 
@@ -35,14 +37,14 @@
                     <span class="title"><i class="icon-pencil"></i> Bewerk advertentie</span>
                 </div>
                 <div class="widget-content form-container">
-                    <form  form action="{{ path('backend.advertisements.edit', {'idAdvertisement' : advertisement.idAdvertisement}) }}" method="post" {{ form_enctype(editform) }} novalidate="novalidate" class="form-vertical">
+                    <form  form action="{{ path('backend.advertisements.edit', {'idAdvertisement' : id}) }}" method="post" {{ form_enctype(editform) }} novalidate="novalidate" class="form-vertical">
                         <fieldset>
                             <legend>
                                 <i class="icol-traffic"></i>
                                 Status
                             </legend>
                             <div class="control-group">
-                                {{ form_label(editform.rent_sell, 'Verkoop/Verhuur', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.rent_sell, 'Verkoop/Verhuur', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.rent_sell, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.rent_sell, {'attr': {'class' : 'help-block'} }) }}
@@ -50,7 +52,7 @@
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.sold_rented, 'Verkocht/Verhuurd', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.sold_rented, 'Verkocht/Verhuurd', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.sold_rented, {'attr': { 'class': 'span12', 'data-provide' : 'ibutton', 'data-label-on' : 'Ja',  'data-label-off' : 'Nee'} }) }}
                                     {{ form_errors(editform.sold_rented, {'attr': {'class' : 'help-block'} }) }}
@@ -62,21 +64,21 @@
                                 Omschrijving
                             </legend>
                             <div class="control-group">
-                                {{ form_label(editform.propertytype, 'Vastgoedtype', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.propertytype, 'Vastgoedtype', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.propertytype, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.propertytype, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.description, 'Beschrijving', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.description, 'Beschrijving', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.description, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.description, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.price, 'Prijs', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.price, 'Prijs', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     <div class="input-prepend">
                                         <span class="add-on">&#8364;</span>{{ form_widget(editform.price, {'attr': { 'class': 'span11'} }) }}
@@ -91,37 +93,37 @@
                                 Informatie
                             </legend>
                             <div class="control-group">
-                                {{ form_label(editform.epc, 'EPC', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.epc, 'EPC', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.epc, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.epc, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.ki, 'K.I.', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.ki, 'K.I.', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     <div class="input-prepend ">
                                         <span class="add-on">&#8364;</span>{{ form_widget(editform.ki, {'attr': { 'class': 'span11'} }) }}
-                                        {{ form_errors(editform.ki, {'attr': {'class' : 'help-block'} }) }}
+                                        {{ form_errors(editform.ki, {'label_attr': {'class' : 'help-block'} }) }}
                                     </div>
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.chambers, 'Kamers', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.chambers, 'Kamers', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.chambers, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.chambers, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.living_area, 'Bewoonbare opp.', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.living_area, 'Bewoonbare opp.', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.living_area, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.living_area, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.total_area, 'Totale opp.', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.total_area, 'Totale opp.', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.total_area, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.total_area, {'attr': {'class' : 'help-block'} }) }}
@@ -134,21 +136,21 @@
                                 Locatie
                             </legend>
                             <div class="control-group">
-                                {{ form_label(editform.city, 'Gemeente', {'attr': { 'class': 'control-label'} })}}
+                                {{ form_label(editform.city, 'Gemeente', {'label_attr': { 'class': 'control-label'} })}}
                                 <div class="controls">
                                     {{ form_widget(editform.city, {'attr': { 'class': 'span12 select2-select-00'} }) }}
                                     {{ form_errors(editform.city, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.street, 'Straat', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.street, 'Straat', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.street, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.street, {'attr': {'class' : 'help-block'} }) }}
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.housenumber, 'Huisnummer', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.housenumber, 'Huisnummer', {'label_attr': { 'class': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.housenumber, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.housenumber, {'attr': {'class' : 'help-block'} }) }}
@@ -156,7 +158,7 @@
                                 </div>
                             </div>
                             <div class="control-group">
-                                {{ form_label(editform.bus, 'Bus', {'attr': { 'class': 'control-label'} }) }}
+                                {{ form_label(editform.bus, 'Bus', {'attr': { 'label_attr': 'control-label'} }) }}
                                 <div class="controls">
                                     {{ form_widget(editform.bus, {'attr': { 'class': 'span12'} }) }}
                                     {{ form_errors(editform.bus, {'attr': {'class' : 'help-block'} }) }}
@@ -165,7 +167,7 @@
                         </fieldset>
                         <div class="form-actions">
                             {{ form_widget(editform._token) }}
-                            <input type="submit" name="submit"  class="btn btn-primary" value="Toevoegen" />
+                            <input type="submit" name="submit"  class="btn btn-primary" value="Bewerken" />
                             <button class="btn">Cancel</button>
                         </div>
                     </form>

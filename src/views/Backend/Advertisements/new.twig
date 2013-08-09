@@ -4,6 +4,8 @@
 {% form_theme newform 'themes.twig' %}
 
 {% set pageTitle = 'lannimmoo :: Nieuwe Advertentie' %}
+{% set sessionUser = session.username %}
+{% set sessionLogo = session.logo %}
 
 {# overwrite the pageContent block #}
 {% block pageContent %}

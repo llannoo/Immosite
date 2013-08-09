@@ -1,0 +1,72 @@
+{# extend the parent tpl #}
+{% extends '/Backend/layout.twig' %}
+
+{% set pageTitle = 'lannimmoo :: Profiel' %}
+{% set sessionUser = session.username %}
+{% set sessionLogo = session.logo %}
+
+{% block pageContent %}
+    <div id="main-header" class="page-header">
+        <ul class="breadcrumb">
+            <li>
+                <a href="{{ path('backend.advertisements.overview') }}"><i class="icon-home"></i></a>lannimmoo
+                <span class="divider">&raquo;</span>
+            </li>
+            <li>
+                <a href="{{ path('backend.agency.profile') }}">Profiel</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="main-content">
+
+        <div class="profile">
+            <div class="clearfix">
+                <div class="profile-head clearfix">
+                    <div class="profile-info pull-left">
+                        <h1 class="profile-username">{{ agency.name }}</h1>
+                        <ul class="profile-attributes">
+                            <li><i class="icon-map-marker"></i> {{ agency.city }}, {{ agency.street }} {{ agency.housenumber }} {{ agency.bus }}</li>
+
+                        </ul>
+                        <ul class="profile-attributes">
+                            <li><i class="icon-phone"></i> {{ agency.tel }},  <i class="icon-print"></i> {{ agency.fax ? agency.fax : 'Geen fax' }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profile-sidebar">
+                    <div class="thumbnail">
+                        <img src="{{ agency.logo }}">
+                    </div>
+                    <ul class="nav nav-tabs nav-stacked">
+                        <li class="active"><a href="#"><i class="icos-user"></i> Profiel</a></li>
+                        <li><a href="{{ path('backend.agency.edit') }}"><i class="icos-pencil"></i> Bewerk</a></li>
+                    </ul>
+                </div>
+                <div class="profile-content">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="profile">
+                            <h4 class="sub"><span>Beschrijving</span></h4>
+                            <p>
+                                {% if agency.description != null %}
+                                    {{ agency.description }}
+                                {% else %}
+                                    Nog geen bijschrijving beschikbaar
+                                {% endif %}
+                            </p>
+                            <h4 class="sub"><span>Contactpersonen</span></h4>
+                            <address>
+                                <ul>
+                                    {% for contact in contacts %}
+                                        <li>{{ contact.email }}, {{ contact.tel }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

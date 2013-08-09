@@ -4,6 +4,8 @@
 
 {# set the pagetitle in the parent tpl #}
 {% set pageTitle = 'lannimmoo :: Overzicht Advertenties' %}
+{% set sessionUser = session.username %}
+{% set sessionLogo = session.logo %}
 
 {% block pageContent %}
     <div id="main-header" class="page-header">

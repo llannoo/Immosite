@@ -84,18 +84,23 @@
                             </form>
                         </div>
 
+
+
                         <div id="header-functions" class="pull-right">
                             <div id="user-info" class="clearfix">
                                 <span class="info">
                                     Welkom
-                                    <span class="name"></span>
+                                    <span class="name">{{ sessionUser }}</span>
                                 </span>
                                 <div class="avatar">
                                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                                        <img src="{{ app.request.baseurl }}/assets/images/pp.jpg" alt="Avatar">
+                                        {% if sessionLogo != null %}
+                                        <img src="{{ app.request.baseurl }}/assets/images/empty.png" alt="Avatar">
+                                        {% endif %}
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="profile.html"><i class="icos-user"></i> Mijn Profiel</a></li>
+                                        <li><a href="{{ path('backend.agency.profile') }}"><i class="icos-user"></i> Mijn Profiel</a></li>
+                                        <li><a href="{{ path('backend.agency.profile') }}"><i class="icol-pencil"></i> Bewerk Profiel</a></li>
                                         <li class="divider"></li>
                                         <li><a href="{{ path('auth.logout') }}"><i class="icol-key"></i> Logout</a></li>
                                     </ul>
@@ -105,6 +110,8 @@
                                 <a href="{{ path('auth.logout') }}"><i class="icon-off"></i></a>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -118,28 +125,24 @@
                             <nav id="navigation" class="collapse">
                                 <ul>
                                     <li>
-                                        <a href="{{ path('backend.advertisements.overview') }}"
-                                            <span title="General">
-                                                <i class="icon-list"></i>
-                                                <span class="nav-title">Overzicht</span>
-                                            </span>
-                                        </a>
+                                        <span title="Advertenties">
+                                            <i class="icon-th-list"></i>
+                                            <span class="nav-title">Advertenties</span>
+                                        </span>
+                                        <ul class="inner-nav">
+                                            <li><a href="{{ path('backend.advertisements.overview') }}"><i class="icol-table"></i>Overzicht</a></li>
+                                            <li><a href="{{ path('backend.advertisements.new') }}"><i class="icol-add"></i>Toevoegen</a></li>
+                                        </ul>
                                     </li>
                                     <li>
-                                        <a href="{{ path('backend.advertisements.new') }}"
-                                            <span title="Nieuw">
-                                                <i class="icon-plus"></i>
-                                                <span class="nav-title">Nieuw</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=""
-                                            <span title="Profiel">
-                                                <i class="icon-official"></i>
-                                                <span class="nav-title">Profiel</span>
-                                            </span>
-                                        </a>
+                                        <span title="Profiel">
+                                            <i class="icon-official"></i>
+                                            <span class="nav-title">Profiel</span>
+                                        </span>
+                                        <ul class="inner-nav">
+                                            <li><a href="{{ path('backend.agency.profile') }}"><i class="icol-user-business-boss"></i>Profiel</a></li>
+                                            <li><a href="{{ path('backend.agency.edit') }}"><i class="icol-pencil"></i>Bewerk profiel</a></li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </nav>

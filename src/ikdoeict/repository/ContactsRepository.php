@@ -24,14 +24,14 @@ class ContactsRepository extends \Knp\Repository{
      * @return array
      */
     public function findAllByAgency($id){
-        return $this->db->fetchAll('SELECT * FROM Contact WHERE idAgency = ?', array($id));
+        return $this->db->fetchAll('SELECT * FROM Contacts WHERE idAgency = ?', array($id));
     }
 
     /**
      * @param mixed $data
      * @return array
      */
-    public function findContact($data){
+    public function findContact(array $data){
         var_dump($data);
         return $this->db->fetchAssoc(
             'SELECT * FROM contacts
@@ -44,7 +44,7 @@ class ContactsRepository extends \Knp\Repository{
      * @param array $data
      * @return int|void
      */
-    public function insert($data){
+    public function insert(array $data){
         $this->db->insert(
             'contacts',array(
                 'idAgency' => $data['idAgency'],

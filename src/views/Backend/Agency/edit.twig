@@ -1,0 +1,142 @@
+{# extend the parent tpl #}
+{% extends '/Backend/layout.twig' %}
+
+{% form_theme profileform 'themes.twig' %}
+
+{% set pageTitle = 'lannimmoo :: Bewerk profiel' %}
+{% set sessionUser = session.username %}
+{% set sessionLogo = session.logo %}
+
+{# overwrite the pageContent block #}
+{% block pageContent %}
+    <div id="main-header" class="page-header">
+        <ul class="breadcrumb">
+            <li>
+                <a href="{{ path('backend.advertisements.overview') }}"><i class="icon-home"></i></a>lannimmoo
+                <span class="divider">&raquo;</span>
+            </li>
+            <li>
+                <a href="{{ path('backend.agency.profile') }}">Profiel</a>
+                <span class="divider">&raquo;</span>
+            </li>
+            <li>
+                <a href="{{ path('backend.agency.edit')  }}">Bewerk profiel</a>
+            </li>
+        </ul>
+
+        <h1 id="main-heading">
+            Bewerk profiel
+        </h1>
+    </div>
+
+    <div id="main-content">
+
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title"><i class="icon-pencil"></i> Bewerk profiel</span>
+                </div>
+                <div class="widget-content form-container">
+                     <form action="{{ path('backend.agency.edit') }}" class="form-vertical" method="post" {{ form_enctype(profileform) }} novalidate="novalidate">{# disable HTML5 formchecking #}
+
+                        <fieldset>
+                            <legend>
+                                <i class="icol-exclamation"></i> Informatie
+                            </legend>
+                            <div class="control-group">
+                                {{ form_label(profileform.agencyname, 'Agentschap', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.agencyname, {'attr': { 'class': 'span12'} } ) }}
+                                    {{ form_errors(profileform.agencyname, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(profileform.website, 'Website', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.website, {'attr': { 'class': 'span12'} } ) }}
+                                    {{ form_errors(profileform.website, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(profileform.logo, 'Logo', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.logo, {'attr': { 'class': 'span12'} } ) }}
+                                    {{ form_errors(profileform.logo, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(profileform.description, 'Beschrijving', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.description, {'attr': { 'class': 'span12'} } ) }}
+                                    {{ form_errors(profileform.description, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>
+                                <i class="icol-marker"></i> Locatie
+                            </legend>
+                            <div class="control-group">
+                                {{ form_label(profileform.city, 'Gemeente', {'label_attr': {'class': 'control-label'} })}}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.city, {'attr': { 'class': 'span12 select2-select-00'} }) }}
+                                    {{ form_errors(profileform.city, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(profileform.street, 'Street', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.street, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(profileform.street, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(profileform.housenumber, 'Housenumber', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.housenumber, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(profileform.housenumber, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                {{ form_label(profileform.bus, 'Bus', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.bus, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(profileform.bus, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>
+                                <i class="icol-telephone"></i> Contact
+                            </legend>
+                            <div class="control-group">
+                                {{ form_label(profileform.tel, 'Telefoon', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.tel, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(profileform.tel, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                {{ form_label(profileform.fax, 'Fax', {'label_attr': {'class': 'control-label'} }) }}
+                                <div  class="controls">
+                                    {{ form_widget(profileform.fax, {'attr': { 'class': 'span12'} }) }}
+                                    {{ form_errors(profileform.fax, {'attr': {'class' : 'help-block'} }) }}
+                                </div>
+                            </div>
+                        </fieldset>
+                        {#@todo cancel button laten werken#}
+                        <div class="form-actions">
+                            {{ form_widget(profileform._token) }}
+                            <input type="submit" name="submit"  class="btn btn-primary" value="Bewerken" />
+                            <button class="btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
