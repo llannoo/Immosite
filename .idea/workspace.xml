@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="09eb60dc-b696-4fda-8ae0-6581e319dadf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/Backend/layout.twig" afterPath="$PROJECT_DIR$/src/views/Backend/layout.twig" />
+    </list>
+    <ignored path="Immo.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376050044920" ignored="false" />
+    <file path="/AuthController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376039851604" ignored="false" />
+    <file path="/login.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375192449245" ignored="false" />
+    <file path="/index.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373380886961" ignored="false" />
+    <file path="/app.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375976225946" ignored="false" />
+    <file path="/register.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375192453888" ignored="false" />
+    <file path="/404.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375991659825" ignored="false" />
+    <file path="/AuthRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373479107231" ignored="false" />
+    <file path="/ContactsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375999165198" ignored="false" />
+    <file path="/LocationsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375957469044" ignored="false" />
+    <file path="/AgenciesRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376049508293" ignored="false" />
+    <file path="/AdvertisementsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375989338099" ignored="false" />
+    <file path="/PhotosRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375798103614" ignored="false" />
+    <file path="/CitiesRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375728746972" ignored="false" />
+    <file path="$PROJECT_DIR$/../ws2-sws-fiddles-silex2/11.session-upload/src/ikdoeict/provider/controller/photologcontroller.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373566356149" ignored="false" />
+    <file path="/layoutAuth.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375190452767" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ac/jquery_autocomplete.html" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373631974476" ignored="false" />
+    <file path="/Data.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373636725495" ignored="false" />
+    <file path="/a.dummy" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374407524785" ignored="false" />
+    <file path="/bootstrap.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373653796832" ignored="false" />
+    <file path="/TwigDataExtension.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374142920763" ignored="false" />
+    <file path="/a.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373655174564" ignored="false" />
+    <file path="/Data Source" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374432293851" ignored="false" />
+    <file path="/AdvertisementController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376040182303" ignored="false" />
+    <file path="$PROJECT_DIR$/../ws2-sws-fiddles-silex2/11.session-upload/src/views/layout.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374408260549" ignored="false" />
+    <file path="/overview.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375989978156" ignored="false" />
+    <file path="/a.regexp" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374515758728" ignored="false" />
+    <file path="/new.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375989934390" ignored="false" />
+    <file path="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Constraints/Range.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374521826336" ignored="false" />
+    <file path="/detail.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375992937135" ignored="false" />
+    <file path="/edit.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376045637923" ignored="false" />
+    <file path="$PROJECT_DIR$/../Templates/mooncake/themeforest-3138068-mooncake-responsive-admin-template/HTML/creative/index.html" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374852988015" ignored="false" />
+    <file path="/layout.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375994986092" ignored="false" />
+    <file path="/login.css" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375111002815" ignored="false" />
+    <file path="$PROJECT_DIR$/../Templates/mooncake/themeforest-3138068-mooncake-responsive-admin-template/HTML/creative/form_wizard.html" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375104299057" ignored="false" />
+    <file path="/field_error.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375110101669" ignored="false" />
+    <file path="$PROJECT_DIR$/../Templates/mooncake/themeforest-3138068-mooncake-responsive-admin-template/HTML/creative/responsive_tables.html" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375188802318" ignored="false" />
+    <file path="/responsive_tables.html" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375188797295" ignored="false" />
+    <file path="$PROJECT_DIR$/../Templates/mooncake/themeforest-3138068-mooncake-responsive-admin-template/HTML/creative/form_elements.html" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375314115325" ignored="false" />
+    <file path="/themes.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375867136180" ignored="false" />
+    <file path="/error.css" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375866996676" ignored="false" />
+    <file path="/AgenciesController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376049453062" ignored="false" />
+    <file path="/layoutError.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375991596802" ignored="false" />
+    <file path="/profile.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376049890063" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Immo" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="AdvertisementController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="0" selection-start="929" selection-end="961" vertical-scroll-proportion="-1.5098039">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AuthController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="221" column="0" selection-start="7981" selection-end="8726" vertical-scroll-proportion="-4.3076925">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgenciesController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AgenciesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="184" column="16" selection-start="6661" selection-end="6661" vertical-scroll-proportion="-23.961538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgenciesRepository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="35" selection-start="2595" selection-end="2595" vertical-scroll-proportion="-23.153847">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/Backend/Agency/edit.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="89" selection-start="1365" selection-end="1365" vertical-scroll-proportion="-27.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/Backend/layout.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="0" selection-start="3297" selection-end="3297" vertical-scroll-proportion="0.2494382">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/app/app.php" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" />
+        <option value="$PROJECT_DIR$/src/views/Errors/layoutError.twig" />
+        <option value="$PROJECT_DIR$/src/views/Errors/404.twig" />
+        <option value="$PROJECT_DIR$/src/views/Backend/Advertisements/detail.twig" />
+        <option value="$PROJECT_DIR$/src/views/Backend/Advertisements/new.twig" />
+        <option value="$PROJECT_DIR$/src/views/Backend/Advertisements/overview.twig" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/repository/ContactsRepository.php" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" />
+        <option value="$PROJECT_DIR$/src/views/Backend/Advertisements/edit.twig" />
+        <option value="$PROJECT_DIR$/src/views/Backend/Agency/edit.twig" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AuthController.php" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AgenciesController.php" />
+        <option value="$PROJECT_DIR$/src/views/Backend/Agency/profile.twig" />
+        <option value="$PROJECT_DIR$/src/views/Backend/layout.twig" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="56" />
+    <option name="y" value="-8" />
+    <option name="width" value="1872" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Errors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Agency" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Advertisements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ikdoeict" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ikdoeict" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ikdoeict" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ikdoeict" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="Template Data Languages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ws2-sws-fiddles-silex2" />
+    <property name="FullScreen" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\lorenzo.lannoo\Immo\web" />
+      <recent name="C:\wamp\www\lorenzo.lannoo\Immo\resources" />
+      <recent name="C:\wamp\www\lorenzo.lannoo\Immo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\lorenzo.lannoo\Immo\src\views\Backend\auth" />
+      <recent name="C:\wamp\www\lorenzo.lannoo\Immo\src\views\Backend" />
+      <recent name="C:\wamp\www\lorenzo.lannoo\Immo\src\ikdoeict\lib" />
+      <recent name="C:\wamp\www\lorenzo.lannoo\Immo\src\ikdoeict" />
+      <recent name="C:\wamp\www\lorenzo.lannoo\Immo\src\views" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09eb60dc-b696-4fda-8ae0-6581e319dadf" name="Default" comment="" />
+      <created>1373372149799</created>
+      <updated>1373372149799</updated>
+    </task>
+    <task id="LOCAL-00001" summary="start">
+      <created>1375111316273</created>
+      <updated>1375111316273</updated>
+    </task>
+    <task id="LOCAL-00002" summary="start">
+      <created>1375111793867</created>
+      <updated>1375111793867</updated>
+    </task>
+    <task id="LOCAL-00003" summary="split en design register en login">
+      <created>1375125416353</created>
+      <updated>1375125416353</updated>
+    </task>
+    <task id="LOCAL-00004" summary="edit en add page aanmaken">
+      <created>1375730170259</created>
+      <updated>1375730170259</updated>
+    </task>
+    <task id="LOCAL-00005" summary="aanvullen db repositories">
+      <created>1375798333391</created>
+      <updated>1375798333391</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add page bijna af, foto upload nog laten werken">
+      <created>1375889831843</created>
+      <updated>1375889831843</updated>
+    </task>
+    <task id="LOCAL-00007" summary="edit add bijna af">
+      <created>1375967431861</created>
+      <updated>1375967431861</updated>
+    </task>
+    <task id="LOCAL-00008" summary="detail af&#10;">
+      <created>1375990020168</created>
+      <updated>1375990020168</updated>
+    </task>
+    <task id="LOCAL-00009" summary="profiel af">
+      <created>1376050050235</created>
+      <updated>1376050050235</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="56" y="-8" width="1872" height="1096" extended-state="7" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16029724" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11767956" sideWeight="0.8397028" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21381216" sideWeight="0.8397028" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15458423" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30997878" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="profiel af" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="start" />
+    <MESSAGE value="split en design register en login" />
+    <MESSAGE value="edit en add page aanmaken" />
+    <MESSAGE value="aanvullen db repositories" />
+    <MESSAGE value="add page bijna af, foto upload nog laten werken" />
+    <MESSAGE value="edit add bijna af" />
+    <MESSAGE value="detail af&#10;" />
+    <MESSAGE value="profiel af" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/views/Errors/layoutError.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="11" selection-start="852" selection-end="852" vertical-scroll-proportion="0.19101124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Errors/404.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="25" selection-start="220" selection-end="220" vertical-scroll-proportion="0.16179775">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/Advertisements/detail.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="153" selection-end="230" vertical-scroll-proportion="-4.1538463">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/Advertisements/new.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="36" selection-start="239" selection-end="239" vertical-scroll-proportion="-4.8461537">
+          <folding>
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1375995068564" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/Advertisements/overview.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="36" selection-start="246" selection-end="246" vertical-scroll-proportion="0.06214039">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/auth/register.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="34" selection-start="2642" selection-end="3145" vertical-scroll-proportion="-12.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/ContactsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="58" selection-start="513" selection-end="513" vertical-scroll-proportion="-5.4615383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="35" selection-start="2595" selection-end="2595" vertical-scroll-proportion="-23.153847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="929" selection-end="961" vertical-scroll-proportion="-1.5098039">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="0" selection-start="7981" selection-end="8726" vertical-scroll-proportion="-4.3076925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AgenciesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="184" column="16" selection-start="6661" selection-end="6661" vertical-scroll-proportion="-23.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/Agency/profile.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="54" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.23146068">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/Agency/edit.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="89" selection-start="1365" selection-end="1365" vertical-scroll-proportion="-27.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/layout.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="3297" selection-end="3297" vertical-scroll-proportion="0.2494382">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/Advertisements/edit.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="83" selection-start="4373" selection-end="4373" vertical-scroll-proportion="0.3329821">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

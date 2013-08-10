@@ -1,8 +1,6 @@
-# Project Praxis 
+# Project Immosite 
 # @author: lorenzo.lannoo@kahosl.be
-# @date: 1/05/2013
-
-http://lorenzolannoo.ikdoeict.be/lorenzolannoo/Praxis/web
+# @date: 14/08/2013
 
 
 ## Requirements
@@ -19,14 +17,11 @@ http://lorenzolannoo.ikdoeict.be/lorenzolannoo/Praxis/web
 ## Running the project
 
 -Login 
-lorenzo@kahosl.be
+luc@rosseel.be
 -password
 Azerty123
 
--Login 
-bramus@kahosl.be
--password
-Azerty123
+Iedere gebruiker heeft password Azerty123
 
 ### Using PHP 5.4
 
@@ -40,8 +35,8 @@ Azerty123
 	- See [http://silex.sensiolabs.org/doc/web_servers.html](http://silex.sensiolabs.org/doc/web_servers.html) for more info
 	- A `.htaccess` for use with Apache is already included
 ### Layout
-- Template from http://medialoot.com/item/html5-admin-template/
-- Template from http://html5up.net/arcana/
+-Template admin: http://themeforest.net/item/mooncake-responsive-admin-template/3138068
+-Template frontend: http://themeforest.net/item/casa-fresco-a-responsive-real-estate-template/3010697
 
 
 
