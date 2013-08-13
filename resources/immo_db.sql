@@ -85,8 +85,8 @@ CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Agencies` (
   `idAgency` INT NOT NULL AUTO_INCREMENT ,
   `idLocation` INT NOT NULL ,
   `name` VARCHAR(45) NOT NULL ,
-  `logo` BLOB NULL ,
-  `website` BLOB NULL DEFAULT NULL ,
+  `logo` MEDIUMTEXT NULL ,
+  `website` MEDIUMTEXT NULL DEFAULT NULL ,
   `description` TEXT NULL DEFAULT NULL ,
   `tel` VARCHAR(15) NULL DEFAULT NULL ,
   `fax` VARCHAR(15) NULL DEFAULT NULL ,
@@ -145,8 +145,10 @@ DROP TABLE IF EXISTS `Immo_DB`.`Photos` ;
 CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Photos` (
   `idPhotos` INT NOT NULL AUTO_INCREMENT ,
   `idAdvertisement` INT NOT NULL ,
-  `URL` BLOB NOT NULL ,
-  `priority` ENUM('High','Medium', 'Low') NOT NULL ,
+  `URL` TEXT NOT NULL ,
+  `front` TINYINT(1) NOT NULL ,
+  `width` INT NOT NULL ,
+  `heigth` INT NOT NULL ,
   PRIMARY KEY (`idPhotos`) ,
   INDEX `fk_Photos_Advertisements1_idx` (`idAdvertisement` ASC) ,
   CONSTRAINT `fk_Photos_Advertisements1`
@@ -179,24 +181,35 @@ CREATE  TABLE IF NOT EXISTS `Immo_DB`.`Contacts` (
 
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
 
 
 -- ----------------------------
 -- Records of advertisements
 -- ----------------------------
-INSERT INTO `advertisements` VALUES ('1', '1', '5', '0', '0', 'Appertement', '650', '145', '0000000000', '0000000002', '0000000072', '0000000072', '\"Dit appartement is gelegen op de derde verdieping. Het appartement beschikt over een leefruimte, open ingerichte keuken en berging. Verder zijn er 2 kleine kamers alsook een badkamer met ligbad, apart toilet. Bovenop de huur komen maandelijks €50 algemene kosten. Het appartement is onmiddellijk beschikbaar en te bezoeken na afspraak met Agence Rosseel.\"', '0000000500', '2013-08-05 15:13:00');
-INSERT INTO `advertisements` VALUES ('2', '2', '1', '1', '0', 'Huis', '142000', '981', '0000000000', '0000000001', '0000000000', '0000001028', '\"Knesselare/Ursel: Domein \"Groen Ursel\"; Rustig gelegen instapklare volledig vergund en instapklaar weekendverblijf, modernistisch houten chalet met alle comfort gelegen in een rustige doodlopende straat, hoekperceel, 1028m², privaat bos met landelijk vergezichten.Ideaal voor wie eens wilt uitblazen in deze drukke maatschappij en niet het land wilt rond crossen om tot eindbestemming te komen maar alle comfort wenst aan een te betalen prijs. Instapklare VOLLEDIG vergunde vakantiewoning bestaande uit ruime living met ruime eetkamer, salonhoek, open modieuze ingerichte keuken, ruime slaapkamer en verzorgde badkamer met douche en badkamermeubel, burohoek en berging + tuinberging en groot terras. Rustige ligging, betaalbaar en met alle comfort, vernieuwde electriciteit, keuken, ramen dubbel glas, internetaansluiting aanwezig, distributie, enz... . Ook geschikt voor ouder koppel, mensen met een handicap of natuurmens. Gunstige prijs, gewezen buitenkans!! Kijklustigen zich te onthouden, eigenaars staan op hen privacy, weekendverblijf. EPC 981 UC520858VP 142 000 €INFO OF CONTACT 0478/ 66 67 22BIV 502578\"', '0000000376', '2013-06-06 12:05:00');
-INSERT INTO `advertisements` VALUES ('3', '3', '3', '1', '0', 'Kantoor & Handelszaak', '149000', '0', '0000000000', '0000000002', '0000000105', '0000000105', '\"In het centrum gelegen handelspand met woonst. Op het gelijkvloers winkelpand met keuken, op de eerste verdieping living en badkamer en op de tweede verdieping twee slaapkamers. De ramen werden vervangen en centrale verwarming op gas werd gelegd. Ook het dak werd vernieuwd met inbegrip van isolatie.\"', '0000000736', '2013-04-02 09:03:22');
-INSERT INTO `advertisements` VALUES ('4', '4', '6', '1', '0', 'Opbrengsteigendom', '545000', '0', '0000000000', '0000000003', '0000000125', '0000000125', '\"Exclusief project met top architectuur Smaragd Met Smaragd kiest U voor het allermooiste appartement van Crystal Residence. Behalve een adembenemend uitzicht op zee hebt U dankzij de twee terrassen ook altijd zon. Alle drie de slaapkamers en de leefruimtes geven uit op het terras en staan borg voor een onbetaalbaar zeegevoel. Uiteraard is ook de afwerking navenant. Twee badkamers in wit marmer met regendouche, een volledig ingerichte keuken met werkblad in natuursteen, stijlvol parket en een geklimatiseerde wijnkast: luxueus is hier een understatement. CHATEAU RESIDENTIES Tel. 059800000\"', '0000001036', '2013-07-01 13:23:04');
-INSERT INTO `advertisements` VALUES ('5', '5', '8', '1', '0', 'Parkeerplaats of Garage', '50', '0', '0000000000', '0000000000', '0000000000', '0000000000', 'nieuwbouw afgesloten garagebox', '0000000015', '2013-05-29 15:02:33');
-INSERT INTO `advertisements` VALUES ('6', '6', '11', '0', '0', 'Huis', '635', '297', '0000000000', '0000000002', '0000000150', '0000000200', '\"Deze recent gerenoveerde woning is gelegen nabij het centrum van Sint-Kruis. Op wandelafstand van verschillende buurtwinkels en scholen.Het gelijkvloerse bestaat uit een inkomhall met afzonderlijk toilet, woonkamer met nieuwe ingerichte keuken. Via de woonkamer is er toegang tot de tuin. Ook is er nog een praktische bergruimte.Op de bovenverdieping is er de nachthall met ingerichte badkamer met ligbad, lavabo, toilet en aansluiting voor de WM, 2 slaapkamers.In de dakverdieping is er een grote zolder.Er is overal CV op aadgas.EPC 297 kWh/m² jaar.Beschikbaar vanaf 1 augustus 2013. Referentie 872447\"', '0000000680', '2013-07-20 12:30:34');
-INSERT INTO `advertisements` VALUES ('7', '7', '13', '0', '0', 'Huis', '995', '102', '0000000000', '0000000003', '0000000200', '0000000300', 'Woning in moderne architectuur, rustig gelegen én in het centrum met veel lichtinval, 3 slaapkamers en carport. Energievriendelijk verwarmingssysteem! EPB 102 kWh/m². Vrij 1/9/13', '0000001239', '2013-01-12 10:36:19');
-INSERT INTO `advertisements` VALUES ('8', '8', '15', '1', '0', 'Speciale eigendom', '345000', '452', '0000000000', '0000000007', '0000000190', '0000000190', '\"GENT - Een woning met 7 studentenkamers, welke allen VERGUND zijn, vlakbij Gent Zuid. Een ideale opbrengsteigendom. De huuropbrengst bedraagt €23.520 per jaar (excl. energiekosten), wat neerkomt op een rendement van 5,5%. Wenst u een bezoek? Gelieve een afspraak te maken op het nummer 0499 24 85 72. Wche-Vg-Gvv-Vkr-Gdv.\"', '0000000056', '2013-05-30 16:23:29');
-INSERT INTO `advertisements` VALUES ('9', '9', '17', '0', '0', 'Appertement', '375', '281', '0000000000', '0000000001', '0000000050', '0000000050', '\"Mooie studio gelegen in centrum Kortrijk. Living in laminaat met open ingerichte keukenblok, zonne terras, vestiaire, badkamer. epc 281 kWh/m² uc 1404559. Alg. onkosten 45 euro op afrekening. Vrij op heden. Voor verdere info of een vrijblijvend bezoek, gelieve telefonisch contact op te nemen op het nummer 056/21.81.00 of 056/21.58.00, waarvoor onze dank.\"', '0000000348', '2013-07-15 17:20:12');
-INSERT INTO `advertisements` VALUES ('10', '10', '19', '1', '0', 'Grond', '185000', '0', '0000000000', '0000000000', '0000000000', '0000001234', '\"Prachtig stuk bouwgrond voor open bebouwing. Perceelsopp. 1.234 m² Bestemming : hoofdbestemming : residentieel gebruik Stad : Dilsen-Stokkem, 5de afdeling sectie A, deel van nr 204 H. Breedte aan de straat 17,61m Breedte achteraan 27,85 m Diepte perceel rechts 67,22 m Diepte perceel links 51,73 m Geen bouwverplichting. Bebouwbare zone: 204 m². (Op plan: lot 3 + lot 5) Info 0495 52 40 55\"', '0000000458', '2013-08-02 10:49:14');
+INSERT INTO `advertisements` VALUES (1, 1, 5, 0, 0, 'Appartement', 650.0000, 145, NULL, 0000000002, 0000000072, 0000000072, '\"Dit appartement is gelegen op de derde verdieping. Het appartement beschikt over een leefruimte, open ingerichte keuken en berging. Verder zijn er 2 kleine kamers alsook een badkamer met ligbad, apart toilet. Bovenop de huur komen maandelijks €50 algemene kosten. Het appartement is onmiddellijk beschikbaar en te bezoeken na afspraak met Agence Rosseel.\"', 0000000500, '2013-8-5 15:13:00');
+INSERT INTO `advertisements` VALUES (2, 2, 1, 1, 0, 'Huis', 142000.0000, 981, NULL, 0000000001, NULL, 0000001028, '\"Knesselare/Ursel: Domein \"Groen Ursel\"; Rustig gelegen instapklare volledig vergund en instapklaar weekendverblijf, modernistisch houten chalet met alle comfort gelegen in een rustige doodlopende straat, hoekperceel, 1028m², privaat bos met landelijk vergezichten.Ideaal voor wie eens wilt uitblazen in deze drukke maatschappij en niet het land wilt rond crossen om tot eindbestemming te komen maar alle comfort wenst aan een te betalen prijs. Instapklare VOLLEDIG vergunde vakantiewoning bestaande uit ruime living met ruime eetkamer, salonhoek, open modieuze ingerichte keuken, ruime slaapkamer en verzorgde badkamer met douche en badkamermeubel, burohoek en berging + tuinberging en groot terras. Rustige ligging, betaalbaar en met alle comfort, vernieuwde electriciteit, keuken, ramen dubbel glas, internetaansluiting aanwezig, distributie, enz... . Ook geschikt voor ouder koppel, mensen met een handicap of natuurmens. Gunstige prijs, gewezen buitenkans!! Kijklustigen zich te onthouden, eigenaars staan op hen privacy, weekendverblijf. EPC 981 UC520858VP 142 000 €INFO OF CONTACT 0478/ 66 67 22BIV 502578\"', 0000000376, '2013-6-6 12:05:00');
+INSERT INTO `advertisements` VALUES (3, 3, 3, 1, 0, 'Kantoor & Handelszaak', 149000.0000, NULL, NULL, 0000000002, 0000000105, 0000000105, '\"In het centrum gelegen handelspand met woonst. Op het gelijkvloers winkelpand met keuken, op de eerste verdieping living en badkamer en op de tweede verdieping twee slaapkamers. De ramen werden vervangen en centrale verwarming op gas werd gelegd. Ook het dak werd vernieuwd met inbegrip van isolatie.\"', 0000000736, '2013-4-2 09:03:22');
+INSERT INTO `advertisements` VALUES (4, 4, 6, 1, 0, 'Opbrengsteigendom', 545000.0000, NULL, NULL, 0000000003, 0000000125, 0000000125, '\"Exclusief project met top architectuur Smaragd Met Smaragd kiest U voor het allermooiste appartement van Crystal Residence. Behalve een adembenemend uitzicht op zee hebt U dankzij de twee terrassen ook altijd zon. Alle drie de slaapkamers en de leefruimtes geven uit op het terras en staan borg voor een onbetaalbaar zeegevoel. Uiteraard is ook de afwerking navenant. Twee badkamers in wit marmer met regendouche, een volledig ingerichte keuken met werkblad in natuursteen, stijlvol parket en een geklimatiseerde wijnkast: luxueus is hier een understatement. CHATEAU RESIDENTIES Tel. 059800000\"', 0000001036, '2013-7-1 13:23:04');
+INSERT INTO `advertisements` VALUES (5, 5, 8, 1, 0, 'Parkeerplaats of Garage', 50.0000, NULL, NULL, NULL, NULL, 0000000017, 'nieuwbouw afgesloten garagebox', 0000000015, '2013-5-29 15:02:33');
+INSERT INTO `advertisements` VALUES (6, 6, 11, 0, 0, 'Appartement', 635.0000, 297, NULL, 0000000002, 0000000150, 0000000200, '\"Deze recent gerenoveerde woning is gelegen nabij het centrum van Sint-Kruis. Op wandelafstand van verschillende buurtwinkels en scholen.Het gelijkvloerse bestaat uit een inkomhall met afzonderlijk toilet, woonkamer met nieuwe ingerichte keuken. Via de woonkamer is er toegang tot de tuin. Ook is er nog een praktische bergruimte.Op de bovenverdieping is er de nachthall met ingerichte badkamer met ligbad, lavabo, toilet en aansluiting voor de WM, 2 slaapkamers.In de dakverdieping is er een grote zolder.Er is overal CV op aadgas.EPC 297 kWh/m² jaar.Beschikbaar vanaf 1 augustus 2013. Referentie 872447\"', 0000000680, '2013-7-20 12:30:34');
+INSERT INTO `advertisements` VALUES (7, 7, 13, 0, 0, 'Appartement', 995.0000, 102, NULL, 0000000003, 0000000200, 0000000300, 'Woning in moderne architectuur, rustig gelegen én in het centrum met veel lichtinval, 3 slaapkamers en carport. Energievriendelijk verwarmingssysteem! EPB 102 kWh/m². Vrij 1/9/13', 0000001239, '2013-1-12 10:36:19');
+INSERT INTO `advertisements` VALUES (8, 8, 15, 1, 0, 'Speciale eigendom', 345000.0000, 452, NULL, 0000000007, 0000000190, 0000000190, '\"GENT - Een woning met 7 studentenkamers, welke allen VERGUND zijn, vlakbij Gent Zuid. Een ideale opbrengsteigendom. De huuropbrengst bedraagt €23.520 per jaar (excl. energiekosten), wat neerkomt op een rendement van 5,5%. Wenst u een bezoek? Gelieve een afspraak te maken op het nummer 0499 24 85 72. Wche-Vg-Gvv-Vkr-Gdv.\"', 0000000056, '2013-5-30 16:23:29');
+INSERT INTO `advertisements` VALUES (9, 9, 17, 0, 0, 'Appartement', 375.0000, 281, NULL, 0000000001, 0000000050, 0000000050, '\"Mooie studio gelegen in centrum Kortrijk. Living in laminaat met open ingerichte keukenblok, zonne terras, vestiaire, badkamer. epc 281 kWh/m² uc 1404559. Alg. onkosten 45 euro op afrekening. Vrij op heden. Voor verdere info of een vrijblijvend bezoek, gelieve telefonisch contact op te nemen op het nummer 056/21.81.00 of 056/21.58.00, waarvoor onze dank.\"', 0000000348, '2013-7-15 17:20:12');
+INSERT INTO `advertisements` VALUES (10, 10, 19, 1, 0, 'Grond', 185000.0000, NULL, NULL, NULL, NULL, 0000001234, 'Prachtig stuk bouwgrond voor open bebouwing. Perceelsopp. 1.234 m² Bestemming : hoofdbestemming : residentieel gebruik Stad : Dilsen-Stokkem, 5de afdeling sectie A, deel van nr 204 H. Breedte aan de straat 17,61m Breedte achteraan 27,85 m Diepte perceel rechts 67,22 m Diepte perceel links 51,73 m Geen bouwverplichting. Bebouwbare zone: 204 m². (Op plan: lot 3 + lot 5) Info 0495 52 40 55\"', 0000000458, '2013-8-2 10:49:14');
+INSERT INTO `advertisements` VALUES (11, 11, 21, 0, 0, 'Kantoor & Handelszaak', 300.0000, NULL, NULL, NULL, 0000000070, 0000000070, 'Opslagruimte van ca 70m² met goede bereikbaarheid en een heel centrale ligging. Omvat een schuifpoort over de volledige breedte, basisverlichting, tegelvloer en natuurlijke lichtinval. Meer info op www.turner-dewaele.be.', 0000000246, '2013-8-1 12:34:18');
+INSERT INTO `advertisements` VALUES (12, 12, 23, 0, 0, 'Appartement', 500.0000, 154, NULL, 0000000001, 0000000050, 0000000050, 'Volledig recent gerenoveerd appartement met 1 slaapkamer in kleinschalig gebouw. Appartement op eerste verdiep; bestaat uit een leefruimte, open keuken, badkamer met douche en lavabo, apart toilet, inkomhal en slaapkamer. Inclusief zonnig balkon. Huurwaarbog: 2 maanden huur op geblokkeerde bankrekening. Geen lift; geen syndickosten. Referentie 874007', 0000000989, '2013-7-12 15:27:20');
+INSERT INTO `advertisements` VALUES (13, 13, 25, 0, 0, 'Appartement', 620.0000, NULL, NULL, 0000000002, 0000000175, 0000000220, 'Ruime gezinswoning in het hartje van Assebroek, gesitueerd in een rustige woonwijk nabij Brugge centrum. De woning omvat: ruime inkomhal,leefruimte,keuken,badkamer,toilet,berging,2slaapkamers,zolderkamer en een geïsoleerde zolder. Mogelijkheid tot het huren van een garage: ?55/mnd. Vrij op 1/10/2013 Info en bezoek: 050/816767', 0000001023, '2013-4-29 13:29:20');
+INSERT INTO `advertisements` VALUES (14, 14, 27, 0, 0, 'Kantoor & Handelszaak', 450.0000, NULL, NULL, 0000000001, 0000000080, 0000000080, 'Direkt vrij. Deze gelijkvloerse ruimte ligt op de hoek van de hoofdwinkelstraat van de deelgemeente Eine en de straat naar de kerk. Vlotte verbinding naar de N60. Voldoende parking vlakbij. Huurprijs te vermeerderen met de onroerende voorheffing. Voorzien van recente airconditioning. EPC : niet van toepassing.', 0000000438, '2013-6-12 14:29:30');
+INSERT INTO `advertisements` VALUES (15, 1, 29, 0, 0, 'Appartement', 560.0000, 265, NULL, 0000000002, 0000000090, 0000000090, 'Het appartement bevindt zich op de 2e verdieping en bestaat uit een inkomhall, living, ingerichte keuken, 2 slaapkamers en een douche. Verder is er ook een kelder aanwezig. Bovenop de huur komen maandelijks €120 kosten, provisie voor verwarming en warm water inbegrepen. Het appartement is vrij vanaf 01/09/2013 en te bezoeken na afspraak met Agence Rosseel.', 0000000678, '2013-7-1 16:20:39');
+INSERT INTO `advertisements` VALUES (16, 1, 30, 0, 0, 'Appartement', 595.0000, 289, NULL, 0000000002, 0000000155, 0000000180, 'Deze centraal gelegen rijwoning beschikt over een ruime inkomhal, apart toilet, ingerichte keuken, living, 2 slaapkamers en een badkamer met ligbad. De woning beschikt ook over een zuidgericht terras. Zeker de moeite waard! Het pand is beschikbaar vanaf 01/09/2013 en te bezoeken na afspraak met Agence Rosseel.', 0000000989, '2013-6-29 09:20:34');
+INSERT INTO `advertisements` VALUES (17, 15, 31, 0, 0, 'Parkeerplaats of Garage', 75.0000, NULL, NULL, NULL, NULL, 0000000015, 'Ideaal gelegen, in het centrum van Mortsel! Een garagebox nr. 21 in een garagecomplex gelegen in de Sint-Benedictusstraat 124 wordt te huur aangeboden. Bereikbaar met een automatische poort. Afmeting:2,6m x 5,75m. Er is geen water of elektriciteit. Deze garage wordt eveneens te koop aangeboden aan € 20.000,- Voor meer info over deze garageboxen kan u terecht in alle Promocon-kantoren, telefonisch op 03/443 21 15 (24/24) of via www.promocon.be.', 0000000459, '2013-5-19 13:39:38');
+INSERT INTO `advertisements` VALUES (18, 16, 33, 1, 0, 'Huis', 66000.0000, 548, NULL, 0000000001, 0000000078, 0000000170, 'Kleine woning met tuin voor doe-het-zelver in Louise-Marie (in de Parel der Vlaamse Ardennen) af te werken met deels renovatie beneden. Nieuw dak en onderdak met grote velux, isolatie deels klaar (overig materiaal ligt te wachten). Beneden vooraan 27m² is in te delen naar wens, schouw kan gebruikt worden voor open haard. Overal in huis is centrale verwarming op gas met condensatieketel hoogste klasse. Keuken 12m² wacht op renovatie, badkamer 9m² (ligbad, lavabo, aansluiting voor wasmachine), toilet apart met kleine berging. Boven 21m² en ruimte voor mezzanine is mogelijk. Hier wonen is rustig en groen wonen, weg van de drukte . Alle grote winkels zijn op 3 tot 5 km afstand. Tuin van 90m² met zon van ZO tot ZW. Bezoek na afspraak met IMMO BEGUIN: 055/60 66 67.', 0000000389, '2013-7-23 15:39:20');
+INSERT INTO `advertisements` VALUES (19, 17, 35, 1, 0, 'Appartement', 152875.0000, NULL, NULL, 0000000001, 0000000073, 0000000073, 'Dit appartement met een bewoonbare oppervlakte van 73m² is gelegen op het gelijkvloers van het nieuwbouwprojekt \"Kloosterhof\" en heeft 1 slaapkamer. Het appartement wordt volledig afgewerkt, de koper heeft echter nog inspraak in de keuze van vloeren, keuken,..... Autostaanplaatsen en kelderberging kunnen bijgekocht worden. De aankoop geschiedt onder het stelsel van registratierechten GEEN BTW!Maak vandaag nog een afspraak voor een rondleiding ter plaatse. ', 0000000989, '2013-7-1 09:05:29');
+INSERT INTO `advertisements` VALUES (20, 18, 37, 1, 0, 'Speciale eigendom', 450000.0000, NULL, NULL, 0000000005, 0000000350, 0000000350, 'Deze unieke woonboot biedt u een zeer aparte en bijzondere woonervaring. De boot heeft een totale bewoonbare oppervlakte van 350 m², verdeeld over verschillende etages. Er zijn 5 slaapkamers, waarvan twee slaapkamers momenteel gebruikt worden als B&B kamer. De open keuken staat in de grote leefruimte die een zeer ruim gevoel geeft. Een tweede ruimte kan creatief ingevuld worden. Omwille van het huidig gebruik van de boot als B&B, is er ruim voldoende sanitair aanwezig op verschillende plaatsen. Daarnaast heeft men ook voorzien in een sauna. Neem contact op met de dossierverantwoordelijke voor bijkomende informatie, ook omtrent de huidige ligplaats. Dit is een verkoop van roerend goed. Meer informatie op www.dewaele.com', 0000000689, '2013-8-2 08:45:59');
+
+
 
 -- ----------------------------
 -- Records of agencies
@@ -210,7 +223,10 @@ INSERT INTO `agencies` VALUES ('6', '12', 'Meuleman vastgoed', 'meuleman_vastgoe
 INSERT INTO `agencies` VALUES ('7', '14', 'First Immo Kalmthout', 'first_immo.png', 'http://www.firstimmo.be', null, '03 666 99 73', null);
 INSERT INTO `agencies` VALUES ('8', '16', 'De Fooz en Zonen', 'de_fooz.jpg', 'http://www.defooz.com', null, '09 225 00 78', '09 233 34 31');
 INSERT INTO `agencies` VALUES ('9', '18', 'LVB Vandenbulcke', 'lvb.png', 'http://www.immo-lvb.be', null, '056 21 58 00', '056 21 21 35');
-INSERT INTO `agencies` VALUES ('10', '20', 'Immo De Leyn', 'de_leyn.png', 'http://www.deleyn.com/', 'Immo De Leyn is uw partner voor de aankoop, v', '050 54 41 44', '050 54 41 45');
+INSERT INTO `agencies` VALUES ('10', '20', 'Immo De Leyn', 'de_leyn.png', 'http://www.deleyn.com/', 'Immo De Leyn is uw partner voor de aankoop, verkoop en verhuur van onroerend goed. U vindt in ons aanbod onroerende goederen uit het ruime gebied van de West-Vlaamse kust gaande van Knokke tot De Panne en in West-Vlaanderen van het polderlandschap in Damme, over het stedelijk gebied Brugge tot Roeselare. Ook in Oost-Vlaanderen kunnen wij u in de regio Meetjesland en Aalter van dienst zijn.', '050 54 41 44', '050 54 41 45');
+
+
+
 
 -- ----------------------------
 -- Records of cities
@@ -2992,84 +3008,148 @@ INSERT INTO `cities` VALUES ('14296', 'sint-joost-ten-node', '4.3704657000', '50
 -- ----------------------------
 -- Records of contacts
 -- ----------------------------
-INSERT INTO `contacts` VALUES ('1', '1', 'luc@rosseel.be ', '', '0475 252 911');
-INSERT INTO `contacts` VALUES ('2', '1', 'steve@rosseel.be ', '', '0495 18 69 11');
-INSERT INTO `contacts` VALUES ('3', '1', 'sarah@rosseel.be ', '', '0476 335 341');
-INSERT INTO `contacts` VALUES ('4', '1', 'sofie@rosseel.be ', '', '0497 299 442');
-INSERT INTO `contacts` VALUES ('5', '2', 'immotveld@gmail.com', '', '0478 666 722');
-INSERT INTO `contacts` VALUES ('6', '3', 'info@immodilleenclement', '', '03 888 44 01');
-INSERT INTO `contacts` VALUES ('7', '4', 'info@chateauresidenties.be', '', '05 980 00 00');
-INSERT INTO `contacts` VALUES ('8', '5', 'info@vastgoedschepens.be', '', '09 380 25 99');
-INSERT INTO `contacts` VALUES ('9', '6', 'info@meulemanvastgoed.be', '', '050 68 52 75');
-INSERT INTO `contacts` VALUES ('10', '7', 'info@firstimmo.be', '', '03 666 99 73');
-INSERT INTO `contacts` VALUES ('11', '8', 'info@defooz.be', '', '09 225 00 78');
-INSERT INTO `contacts` VALUES ('12', '9', 'info@immolvb.be', '', '056 21 58 00 ');
-INSERT INTO `contacts` VALUES ('13', '10', 'info@deleyn.be', '', '050 54 41 44 ');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (1, 1, 'luc@rosseel.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '0475 252 911');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (2, 1, 'steve@rosseel.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '0495 18 69 11');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (3, 1, 'sarah@rosseel.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '0476 335 341');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (4, 1, 'sofie@rosseel.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '0497 299 442');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (5, 2, 'immotveld@gmail.com', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '0478 666 722');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (6, 3, 'info@immodilleenclement', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '03 888 44 01');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (7, 4, 'info@chateauresidenties.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '05 980 00 00');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (8, 5, 'info@vastgoedschepens.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '09 380 25 99');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (9, 6, 'info@meulemanvastgoed.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '050 68 52 75');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (10, 7, 'info@firstimmo.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '03 666 99 73');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (11, 8, 'info@defooz.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '09 225 00 78');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (12, 9, 'info@immolvb.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '056 21 58 00 ');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (13, 10, 'info@deleyn.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '050 54 41 44 ');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (14, 11, 'lorenzo@kahosl.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', NULL);
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (15, 12, 'info@turnerdewaele.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '051 21 22 23');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (16, 13, 'depanne@groepcaenen.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '058 41 17 29 ');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (17, 14, 'info@bricx.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '050 81 67 67');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (18, 15, 'info@lambrechtbernard.eu', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '0475 43 20 81');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (19, 16, 'mortsel@promocom.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '03 443 21 15');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (20, 17, 'info@immobebuin.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '055 60 66 67');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (21, 18, 'info@vastoeddevos.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '09 258 13 13');
+INSERT INTO `contacts` (`idContact`, `idAgency`, `email`, `password`, `tel`) VALUES (22, 19, 'info@dewaele.be', '5af4a6695f8ef6272cd1bc8c0ffdfe58d821964e', '09 234 34 34');
 
 -- ----------------------------
 -- Records of locations
 -- ----------------------------
-INSERT INTO `locations` VALUES ('1', '659', 'Voskensdreef', '56', null);
-INSERT INTO `locations` VALUES ('2', '1108', 'Elbestraat', '50', null);
-INSERT INTO `locations` VALUES ('3', '131', 'Blauwstraat', '8', null);
-INSERT INTO `locations` VALUES ('4', '131', 'Grote Markt', '22', null);
-INSERT INTO `locations` VALUES ('5', '379', 'Gebroeders Vandeveldestraat', '0', null);
-INSERT INTO `locations` VALUES ('6', '956', 'Troonstraat', '133', null);
-INSERT INTO `locations` VALUES ('7', '956', 'Archimedestraat', '7', null);
-INSERT INTO `locations` VALUES ('8', '635', 'Langemunt', '37', null);
-INSERT INTO `locations` VALUES ('9', '611', 'Gentstraat', '70', '2');
-INSERT INTO `locations` VALUES ('10', '379', 'Kortrijksesteenweg', '74', null);
-INSERT INTO `locations` VALUES ('11', '927', 'Oude Hoogweg', '158', null);
-INSERT INTO `locations` VALUES ('12', '927', 'Moerkerkse Steenweg', '177', null);
-INSERT INTO `locations` VALUES ('13', '147', 'Kijkuitstraat', '3', null);
-INSERT INTO `locations` VALUES ('14', '1', 'Italiëlei', '54', null);
-INSERT INTO `locations` VALUES ('15', '379', 'Hertstraat', '5', null);
-INSERT INTO `locations` VALUES ('16', '379', 'Zuidstationstraat', '28', null);
-INSERT INTO `locations` VALUES ('17', '990', 'Handelskaai', '1', 'F');
-INSERT INTO `locations` VALUES ('18', '990', 'Onze-Lieve-Vrouwestraat', '26', null);
-INSERT INTO `locations` VALUES ('19', '211', 'Nieuwstraat', '0', null);
-INSERT INTO `locations` VALUES ('20', '949', 'Dorpsstraat', '113', null);
-
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (1, 659, 'Voskensdreef', 56, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (2, 1108, 'Elbestraat', 50, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (3, 131, 'Blauwstraat', 8, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (4, 131, 'Grote Markt', 22, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (5, 379, 'Gebroeders Vandeveldestraat', NULL, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (6, 956, 'Troonstraat', 133, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (7, 956, 'Archimedestraat', 7, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (8, 635, 'Langemunt', 37, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (9, 611, 'Gentstraat', 70, '2');
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (10, 379, 'Kortrijksesteenweg', 74, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (11, 927, 'Oude Hoogweg', 158, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (12, 927, 'Moerkerkse Steenweg', 177, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (13, 147, 'Kijkuitstraat', 3, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (14, 1, 'Italiëlei', 54, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (15, 379, 'Hertstraat', 5, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (16, 379, 'Zuidstationstraat', 28, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (17, 990, 'Handelskaai', 1, 'F');
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (18, 990, 'Onze-Lieve-Vrouwestraat', 26, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (19, 211, 'Nieuwstraat', NULL, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (20, 949, 'Dorpsstraat', 113, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (21, 1117, 'Koning Albert I Laan', 62, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (22, 1117, 'Grote markt ', 13, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (23, 1073, 'Brouwersstraat', 124, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (24, 1073, 'Nieuwpoortlaan ', 29, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (25, 926, 'Daverlostraat', 42, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (26, 924, 'Gistelsesteenweg', 550, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (27, 594, 'Nestor de Tièrestraat', 149, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (28, 594, 'Hoogstraat', 40, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (29, 379, 'Voskenslaan', 23, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (30, 379, 'Vaderlandstraat', 3, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (31, 113, 'Sint-Benedictusstraat', 124, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (32, 113, 'Liersesteenweg', 2, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (33, 576, 'La salettestraat', 8, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (34, 537, 'Grote Markt', 26, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (35, 430, 'Dorp', 27, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (36, 666, 'Dorpsplein', 1, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (37, 379, 'Zuidkaai', 43, NULL);
+INSERT INTO `locations` (`idLocatie`, `idCity`, `street`, `housenumber`, `bus`) VALUES (38, 379, 'Kouter', 98, NULL);
 -- ----------------------------
 -- Records of photos
 -- ----------------------------
-INSERT INTO `photos` VALUES ('1', '1', '6ad598ba3adb8594e2f4e93f46a617d5.jpg', 'High');
-INSERT INTO `photos` VALUES ('2', '1', '4488ac4cbc9858e201616ec451d04b50.jpg', 'Low');
-INSERT INTO `photos` VALUES ('3', '1', 'cd860dd6913f8d7ac2d25f7337b22746.jpg', 'Low');
-INSERT INTO `photos` VALUES ('4', '1', '0bdcd2503b9ee1a0b3734f94a4882ea2.jpg', 'Low');
-INSERT INTO `photos` VALUES ('5', '1', 'aa6d8e834f5d1a49fe587e5e5976073a.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('6', '2', '02f14b881f101563d3db4b16a0dbe568.jpg', 'High');
-INSERT INTO `photos` VALUES ('7', '2', 'f0b31bde5ef00747a9ef1f10eba3a7da.jpg', 'Low');
-INSERT INTO `photos` VALUES ('8', '2', '8df2b9b3d8e0313a0bf609f58f01a911.jpg', 'Low');
-INSERT INTO `photos` VALUES ('9', '2', 'a0698c416b6b0d4916948903f3c13a1c.jpg', 'Low');
-INSERT INTO `photos` VALUES ('10', '2', 'e1175ab8f1cce082e77c2604c8096392.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('11', '3', '028cf81e03fc07ca7b360e88eefba0d1.jpg', 'High');
-INSERT INTO `photos` VALUES ('12', '3', '226d0978c3d476252cbbd6f6b8aa4192.jpg', 'Low');
-INSERT INTO `photos` VALUES ('13', '3', 'f46f97cb80df33b090c0c9c73baa887d.jpg', 'Low');
-INSERT INTO `photos` VALUES ('14', '4', '1292e722721ebc5a47055ac7df5612df.jpg', 'High');
-INSERT INTO `photos` VALUES ('15', '4', '5a275dce141e518890529e43f321a7b4.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('16', '4', 'ea50b7875e3a92e22b5aaaff1d37ba48.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('17', '4', '8476024d4f3be7cd779e37bbbcbd5d15.jpg', 'Low');
-INSERT INTO `photos` VALUES ('18', '5', 'f9bd094b06c7e223ee68973e80338e65.jpg', 'High');
-INSERT INTO `photos` VALUES ('19', '6', '599f528a716bf0e5421d8c4e94ae2c7d.jpg', 'High');
-INSERT INTO `photos` VALUES ('20', '6', '9af29f076dd5f3db59fac592901e89ea.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('21', '6', '42967c58ebb8af8ee560a693b5aa6c5a.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('22', '6', 'f7ebb55edb8d5c297663399bf8776aaf.jpg', 'Low');
-INSERT INTO `photos` VALUES ('23', '7', '866b4086ead0f2490b0bae0a2da6aedb.jpg', 'High');
-INSERT INTO `photos` VALUES ('24', '7', '88dd2613479bd3d051eee2580d17154c.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('25', '7', '9097c7e21a1c48a8a605eba5ff8e3757.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('26', '7', '99039fdd0557574358f09a8acf2d2c4e.jpg', 'Low');
-INSERT INTO `photos` VALUES ('27', '7', 'f19bd229e5431163ceeb62b5d7dbfd29.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('28', '8', 'a38ca8611d516ebe5ea1f7e9016d4d3a.jpg', 'High');
-INSERT INTO `photos` VALUES ('29', '8', '7bfa9cf45b7499a52289981386fb94d4.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('30', '8', '7839254f3940cd9ac008d6ea2145b15c.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('31', '8', 'ea340e4f3f2c803ad87572d160e8e010.jpg', 'Low');
-INSERT INTO `photos` VALUES ('32', '9', 'b7869133ee4e26e9295bc51dd469ac23.jpg', 'High');
-INSERT INTO `photos` VALUES ('33', '9', '98d54d494dd6c9fd7bd038653e5da084.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('34', '9', '07e4686bdc4336a3d787c401bee2fe84.jpg', 'Low');
-INSERT INTO `photos` VALUES ('35', '10', '5f6a15a0ba40c9a0d71125a6d230f7e4.jpg', 'High');
-INSERT INTO `photos` VALUES ('36', '10', '6fc8654f7e1311c1b2ad2878999eb891.jpg', 'Medium');
-INSERT INTO `photos` VALUES ('37', '10', '12fc033d028042e7b831da4d3dfbd5ed.jpg', 'Low');
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (1, 1, '6ad598ba3adb8594e2f4e93f46a617d5.jpg', 1, 440, 294);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (2, 1, '4488ac4cbc9858e201616ec451d04b50.jpg', 0, 640, 425);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (3, 1, 'cd860dd6913f8d7ac2d25f7337b22746.jpg', 0, 640, 425);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (4, 1, '0bdcd2503b9ee1a0b3734f94a4882ea2.jpg', 0, 640, 428);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (5, 1, 'aa6d8e834f5d1a49fe587e5e5976073a.jpg', 0, 640, 425);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (6, 2, '02f14b881f101563d3db4b16a0dbe568.jpg', 1, 440, 330);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (7, 2, 'f0b31bde5ef00747a9ef1f10eba3a7da.jpg', 0, 600, 450);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (8, 2, '8df2b9b3d8e0313a0bf609f58f01a911.jpg', 0, 600, 450);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (9, 2, 'a0698c416b6b0d4916948903f3c13a1c.jpg', 0, 600, 450);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (10, 2, 'e1175ab8f1cce082e77c2604c8096392.jpg', 0, 600, 450);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (11, 3, '028cf81e03fc07ca7b360e88eefba0d1.jpg', 1, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (12, 3, '226d0978c3d476252cbbd6f6b8aa4192.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (13, 3, 'f46f97cb80df33b090c0c9c73baa887d.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (14, 4, '1292e722721ebc5a47055ac7df5612df.jpg', 1, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (15, 4, '5a275dce141e518890529e43f321a7b4.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (16, 4, 'ea50b7875e3a92e22b5aaaff1d37ba48.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (17, 4, '8476024d4f3be7cd779e37bbbcbd5d15.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (18, 5, 'f9bd094b06c7e223ee68973e80338e65.jpg', 1, 800, 536);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (19, 6, '599f528a716bf0e5421d8c4e94ae2c7d.jpg', 1, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (20, 6, '9af29f076dd5f3db59fac592901e89ea.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (21, 6, '42967c58ebb8af8ee560a693b5aa6c5a.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (22, 6, 'f7ebb55edb8d5c297663399bf8776aaf.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (23, 7, '866b4086ead0f2490b0bae0a2da6aedb.jpg', 1, 800, 536);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (24, 7, '88dd2613479bd3d051eee2580d17154c.jpg', 0, 800, 532);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (25, 7, '9097c7e21a1c48a8a605eba5ff8e3757.jpg', 0, 800, 532);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (26, 7, '99039fdd0557574358f09a8acf2d2c4e.jpg', 0, 800, 532);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (27, 7, 'f19bd229e5431163ceeb62b5d7dbfd29.jpg', 0, 800, 532);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (28, 8, 'a38ca8611d516ebe5ea1f7e9016d4d3a.jpg', 1, 800, 596);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (29, 8, '7bfa9cf45b7499a52289981386fb94d4.jpg', 0, 800, 532);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (30, 8, '7839254f3940cd9ac008d6ea2145b15c.jpg', 0, 800, 532);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (31, 8, 'ea340e4f3f2c803ad87572d160e8e010.jpg', 0, 800, 532);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (32, 9, 'b7869133ee4e26e9295bc51dd469ac23.jpg', 1, 185, 330);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (33, 9, '98d54d494dd6c9fd7bd038653e5da084.jpg', 0, 800, 450);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (34, 9, '07e4686bdc4336a3d787c401bee2fe84.jpg', 0, 337, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (35, 10, '5f6a15a0ba40c9a0d71125a6d230f7e4.jpg', 1, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (36, 10, '6fc8654f7e1311c1b2ad2878999eb891.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (37, 10, '12fc033d028042e7b831da4d3dfbd5ed.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (38, 11, 'handelszaak-te-huur-in-roeselare-701c96a7f64b0b13d4b5323d419e9b74.jpg', 1, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (39, 11, 'handelszaak-te-huur-in-roeselare-70m-234b97c4408a969cc3b88125a67ec7ad.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (40, 11, 'handelszaak-te-huur-in-roeselare-300-euro-4255a0ed5d4ff1d792e10cf373453ca3.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (41, 11, 'handelszaak-te-huur-in-roeselare-goed-gelegen-fafa78f7d1a0f45cee0adb986c80a40d.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (42, 12, 'appartement-te-huur-in-de-panne-6335b10338a757d53324f600ed79f20e.JPG', 1, 448, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (43, 12, 'appartement-te-huur-in-de-panne-500-euro-8df59e32904dad19ee3f7a39f7007b13.JPG', 0, 800, 598);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (44, 12, 'appartement-te-huur-in-de-panne-gas-210b5d0c15e5c1dfa8eccbf3a8a4eefa.jpg', 0, 448, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (45, 13, 'huis-te-huur-in-assebroek-f1f1d13a76f27fbf89dd842d47c5ec6c.jpg', 1, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (46, 13, 'huis-te-huur-in-assebroek-3-slaapkamers-3b996efff2cb75be28349b9b4105dd98.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (47, 13, 'huis-te-huur-in-assebroek-gas-94a974fe6d53dc6eda3d860b7fc82fa5.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (48, 13, 'huis-te-huur-in-assebroek-aangenaam-eef5acacb3db35fe9fa115136e65c8e2.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (49, 14, 'handelszaak-te-huur-in-oudenaarde-a6880f31c216ac3aad0887bf1a6fe9c4.jpg', 1, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (50, 14, 'handelszaak-te-huur-in-oudenaarde-goed-gelegen-1b5d2a6775d1211d0a4e9c2a7826b67c.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (51, 15, 'appartement-te-huur-in-gent-0195c18dbcb20e5ce5763c592c56e474.jpg', 1, 440, 292);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (52, 15, 'appartement-te-huur-in-gent-121m-204c6239eed4b5f38c0c1b38fdb045ad.jpg', 0, 640, 428);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (53, 15, 'appartement-te-huur-in-gent-1-toilette-661cca32a9e8c3eed33866ab5d3ce611.jpg', 0, 640, 428);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (54, 15, 'appartement-te-huur-in-gent-1-badkamer-a27a50a63ce9055d9c539af59e7795ab.jpg', 0, 640, 428);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (55, 16, 'huis-te-huur-in-gent-2-slaapkamers-3ddde9d4348c4059d7e5d302c63534a4.jpg', 1, 640, 428);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (56, 16, 'huis-te-huur-in-gent-50e8d08162a494f7db40ec1ca9ed9a32.jpg', 0, 640, 428);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (57, 16, 'huis-te-huur-in-gent-andere-41e39c05e4a2d9b76d246d25b679d61c.jpg', 0, 640, 425);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (58, 16, 'huis-te-huur-in-gent-goed-gelegen-6b927b36509a7fff5095e41b9038db61.jpg', 0, 640, 425);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (59, 16, 'huis-te-huur-in-gent-prijs-64c8b2129b6f672148e8e9578c488506.jpg', 0, 640, 425);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (60, 17, 'garage-te-huur-in-mortsel-3bb51689dcd68e30e944f6784c19dc40.jpg', 1, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (61, 17, 'garage-te-huur-in-mortsel-75-euro-98d74a6782e4bbe6d6db81db0f11d052.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (62, 17, 'garage-te-huur-in-mortsel-aangenaam-b8615066b575259561459f4fa886454f.jpg', 0, 800, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (63, 18, 'huis-te-koop-in-maarkedal-bc02dbdda4b64d9b66ca8a79b7caac09.jpg', 1, 500, 375);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (64, 18, 'huis-te-koop-in-maarkedal-66000-euro-83ab21c28af27a7e7a96b8d4976b35b6.jpg', 0, 500, 375);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (65, 18, 'huis-te-koop-in-maarkedal-prijs-2c7c43b78ee03bb85ffa3089ae067e34.jpg', 0, 450, 600);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (66, 18, 'huis-te-koop-in-maarkedal-voorzieningen-dichtbij-19f9f4b9748c1e99efc9251ef25b821b.jpg', 0, 500, 375);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (67, 19, 'appartement-te-koop-in-wachtebeke-22a448f5e82dc635d320b1d2b53b301f.jpg', 1, 440, 274);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (68, 19, 'appartement-te-koop-in-wachtebeke-73m-fb2b74944083f519961d44017d632ce2.jpg', 0, 451, 320);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (69, 19, 'appartement-te-koop-in-wachtebeke-1-slaapkamers-70e4b279375270de67101e044e0855a5.jpg', 0, 640, 360);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (70, 20, 'speciale-eigendom-te-koop-in-gent-5-slaapkamers-1adaabb91932773f62246d54445ccd9e.jpg', 1, 440, 330);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (71, 20, 'speciale-eigendom-te-koop-in-gent-450000-euro-a606969a727933e0836b48be50d92306.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (72, 20, 'speciale-eigendom-te-koop-in-gent-aangenaam-aa0d22da128f8dce9c06861ab2bb0ba1.jpg', 0, 640, 480);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (73, 20, 'speciale-eigendom-te-koop-in-gent-de7b1efe2f218c314fba52c5a6c7dee9.jpg', 0, 440, 330);
+INSERT INTO `photos` (`idPhotos`, `idAdvertisement`, `URL`, `front`, `width`, `heigth`) VALUES (74, 20, 'speciale-eigendom-te-koop-in-gent-voorzieningen-dichtbij-d9df98575394b331654e3fe1ba8ac9b8.jpg', 0, 640, 480);
+
 
 -- ----------------------------
 -- Records of provinces
@@ -3085,3 +3165,10 @@ INSERT INTO `provinces` VALUES ('8', 'Brabant Wallon');
 INSERT INTO `provinces` VALUES ('9', 'Luxembourg');
 INSERT INTO `provinces` VALUES ('10', 'Namur');
 INSERT INTO `provinces` VALUES ('23', 'Brussel');
+
+
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

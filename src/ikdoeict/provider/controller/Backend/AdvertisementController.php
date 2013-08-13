@@ -98,6 +98,7 @@ class AdvertisementController implements ControllerProviderInterface{
      * @param Application $app
      * @param             $idAdvertisement
      */
+    //@todo delete functie in werking stellen
     public function delete(Application $app, $idAdvertisement){
         $contact = $app['session']->get('contact');
         $id['idAgency'] = $contact['idAgency'];

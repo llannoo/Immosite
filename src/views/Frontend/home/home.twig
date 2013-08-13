@@ -1,0 +1,94 @@
+{# extend the parent tpl #}
+{% extends '/Frontend/layout.twig' %}
+{% set body = '' %}
+
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'lannimmoo :: Home' %}
+
+{% block pageContent %}
+    <div id="page_container">
+        <div id="featured">
+            <div class="flexslider clearfix">
+                <ul class="slides">
+                    {% for advertisement in headliners %}
+                        <li><a href="{{ path('frontend.advertisement.detail', {'idAdvertisement' : advertisement.idAdvertisement }) }}"><img src="{{ app.request.baseUrl }}{{ advertisement.photopath }}" alt="Image" /></a>
+                            <div class="flex-caption">
+                                <h3>{{ advertisement.propertytype }} te {{ advertisement.city }}</h3>
+.                                <span class="price"><a href="#">&#8364; {{ advertisement.price  | number_format(2, ',', ' ') }}</a></span>
+                                <span class="buynow"><a href="{{ path('frontend.advertisement.detail', {'idAdvertisement' : advertisement.idAdvertisement }) }}">Lees meer!</a></span>
+                            </div>
+                        </li>
+                     {%  endfor %}
+.                </ul>
+            </div><!--end:flexslider-->
+        </div><!--end:featured-->
+    <div class="find_property">
+        <h2>Zoek je eigendom</h2>
+        <form action="#" method="post">
+            <ul>
+                <li>
+                    {{ form_label(homeform.from_price, 'Prijs') }} <br>
+                    {{ form_widget(homeform.from_price, { 'attr': { 'class' : 's-1'} }) }}
+
+                    tot
+
+                    {{ form_widget(homeform.to_price, { 'attr': { 'class' : 's-1'} }) }}
+                    {{ form_errors(homeform.from_price) }}
+                    {{ form_errors(homeform.to_price) }}
+
+                </li>
+                <li>
+                    {{ form_label(homeform.province, 'Provincie') }}
+                    {{ form_widget(homeform.province, { 'attr': { 'class' : 'location'} }) }}
+                    {{ form_errors(homeform.province) }}
+                </li>
+                <li class="s-2 first">
+                    {{ form_label(homeform.chambers, 'Kamers') }}
+                    {{ form_widget(homeform.chambers, { 'attr': { 'class' : 'min-bed'} }) }}
+                    {{ form_errors(homeform.chambers) }}
+                </li>
+                <li class="s-2">
+                    {{ form_label(homeform.propertytype, 'Vastgoedtype') }}
+                    {{ form_widget(homeform.propertytype, { 'attr': { 'class' : 'property-type'} }) }}
+                    {{ form_errors(homeform.propertytype) }}
+                </li>
+            </ul>
+                {{ form_widget(homeform._token) }}
+                <p><span><input type="submit" name="submit"  class="search" value="Zoeken" /></span></p>
+        </form>
+
+    </div><!--end:.find_property-->
+    <div class="list_work">
+        <ul id="mycarousel" class="jcarousel-skin-tango">
+
+            <!-- 7 stuks -->
+            {% for advertisement in carousel %}
+                <li class="mosaic-block1 circle">
+                    <a href="{{ app.request.baseUrl }}/Frontend/images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here" class="mosaic-overlay"></a>
+
+                    <img src="{{ app.request.baseUrl }}{{ advertisement.photopath }}" alt="" />
+                    <small><a href="{{ path('frontend.advertisement.detail', {'idAdvertisement' : advertisement.idAdvertisement }) }}">{{ advertisement.rent_sell ? 'Te Koop' : 'Te Huur' }}</a></small>
+                    <p><span class="row">Vastgoedtype:</span><span class="row1">{{ advertisement.propertytype }}</span></p>
+                    <p><span class="row">Gemeente:</span><span class="row1">{{ advertisement.city }}</span></p>
+                    <p><span class="row">Kamers:</span><span class="row1">{{ advertisement.chambers  | number_format(0, ',', ' ') }}</span></p>
+                    <span class="price">&#8364; {{ advertisement.price | number_format(2, ',', ' ') }}</span>
+                    <span class="readmore"><a href="{{ path('frontend.advertisement.detail', {'idAdvertisement' : advertisement.idAdvertisement }) }}">Lees meer</a></span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div><!--end:list_work-->
+    <section id="content">
+        <h2 class="top-agent">Agentschappen</h2>
+        <div class="agents">
+            {% for agency in agencies %}
+                <div>
+                    <a href="agent.html"><img src="{{ app.request.baseUrl }}{{ agency.logopath }}" alt="" /></a>
+                    <h3><strong><a href="#">{{ agency.name }}</a></strong><span><a href="agent.html">{{ agency.aantal | number_format (0, ',', 0) }} {{ agency.aantal == 1 ? 'eigendom': 'eigendommen' }} &raquo;</a></span></h3>
+                    <p>{{ agency.description ? agency.description : 'Geen bescrhijving beschikbaar' }}</p>
+                    <h3><span class="viewprof"><a href="agent.html">Bekijk profiel &raquo;</a></span></h3>
+                </div>
+            {% endfor %}
+        </div>
+    </section><!--end:#content-->
+    </div><!--end:#page_container-->
+{% endblock %}

@@ -32,6 +32,17 @@ class AgenciesRepository extends \Knp\Repository{
         WHERE agencies.idAgency = ? AND contacts.idContact = ?', array($id['idAgency'], $id['idContact']));
     }
 
+    public function findBestAgencies(){
+        return $this->db->fetchAll(
+            'SELECT count(advertisements.idAdvertisement) as aantal, agencies.*  FROM agencies
+            INNER JOIN advertisements ON advertisements.idAgency = agencies.idAgency
+            GROUP BY agencies.name
+            ORDER BY aantal DESC
+            LIMIT 0,3
+            '
+        );
+    }
+
     /**
      * @param array $data
      * @return int|void

@@ -84,6 +84,73 @@ FROM advertisements
     }
 
     /**
+     * @return array
+     */
+    public function findMostViews(){
+        return $this->db->fetchAll('
+        SELECT advertisements.*, locations.*, cities.name as city, photos.*
+        FROM advertisements
+        INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
+        INNER JOIN photos ON photos.idAdvertisement = advertisements.idAdvertisement
+        INNER JOIN cities ON cities.idCity = locations.idLocatie
+        WHERE photos.front = true
+        ORDER BY advertisements.views DESC
+        LIMIT 0,5
+        ');
+    }
+
+    /**
+     * @return array
+     */
+    public function findMostRecent(){
+        return $this->db->fetchAll('
+        SELECT advertisements.*, locations.*, cities.name as city, photos.*
+        FROM advertisements
+        INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
+        INNER JOIN photos ON photos.idAdvertisement = advertisements.idAdvertisement
+        INNER JOIN cities ON cities.idCity = locations.idLocatie
+        WHERE photos.front = true
+        ORDER BY advertisements.updated_on DESC
+        LIMIT 0,10
+        ');
+    }
+
+
+    /**
+     * @param $data
+     * @return array
+     */
+    public function findAllByHomeFilter($data){
+        if($data['from_price'] != null){
+            $where[] = sprintf(" advertisements.price <= %u", $data['from_price'] );
+        }
+        else if($data['to_price'] != null && $data['from_price'] != null){
+            $where[] = sprintf(" price >= %u", $data['to_price'] );
+        }
+        else if($data['from_price']){
+            $where[] = sprintf(" advertisements.price BETWEEN %u AND  %u", $data['from_price'], $data['to_price'] );
+        }
+        if($data['province'] != null){
+            $where[] = sprintf(" provinces.name = \"%s\"",$data['province']);
+        }
+        if($data['propertytype'] != null){
+            $where[] = sprintf(" advertisements.propertytype = \"%s\"", $data['propertytype']);
+        }
+        if($data['chambers'] != null){
+            $where[] = sprintf(" advertisements.chambers = %u", $data['chambers']);
+        }
+        $where2 = implode(' AND ',$where);
+//var_dump($where2);
+        return $this->db->fetchAll(sprintf('
+        SELECT * FROM advertisements
+        INNER JOIN locations  ON locations.idLocatie = advertisements.idLocation
+        INNER JOIN cities     ON cities.idCity = locations.idCity
+        INNER JOIN provinces  ON provinces.idProvince = cities.idProvince
+        INNER JOIN agencies ON agencies.idAgency = advertisements.idAgency
+        WHERE %s', $where2));
+    }
+
+    /**
      * @param array $data
      * @return int|void
      */

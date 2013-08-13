@@ -19,9 +19,9 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'app' 
 
 // Inject the current path onto the app
 $app['logo.base_path'] = __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'logos';
-$app['logo.base_url'] = '/files/logos';
+$app['logo.base_url'] = '/files/logos/';
 
 $app['photos.base_path'] = __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'fotos';
-$app['photos.base_url'] = '/files/photos';
+$app['photos.base_url'] = '/files/photos/';
 
 $app->run();

@@ -26,7 +26,7 @@ class PhotosRepository extends \Knp\Repository{
      */
     public function find($idAdvertisment){
         return $this->db->fetchAssoc(
-            'SELECT URL, priority FROM Photos WHERE idAdvertisement = ?',
+            'SELECT * FROM Photos WHERE idAdvertisement = ?',
             array($idAdvertisment));
     }
 
@@ -51,7 +51,9 @@ class PhotosRepository extends \Knp\Repository{
             array(
                 'idAdvertisement' =>$data['idAdvertisement'],
                 'url' => $data['url'],
-                'priority' => $data['priority']
+                'priority' => $data['priority'],
+                'width' => $data['width'],
+                'heigth' => $data['height']
             )
         );
     }

@@ -20,6 +20,9 @@ class CitiesRepository extends \Knp\Repository{
         return 'Cities';
     }
 
+    public function findAllProvinces(){
+        return $this->db->fetchAll('SELECT name FROM provinces');
+    }
     /**
      * @return array
      */
