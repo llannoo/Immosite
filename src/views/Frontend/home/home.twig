@@ -1,6 +1,5 @@
 {# extend the parent tpl #}
 {% extends '/Frontend/layout.twig' %}
-{% set body = '' %}
 
 {# set the pagetitle in the parent tpl #}
 {% set pageTitle = 'lannimmoo :: Home' %}
@@ -24,7 +23,7 @@
         </div><!--end:featured-->
     <div class="find_property">
         <h2>Zoek je eigendom</h2>
-        <form action="#" method="post">
+        <form action="{{ path('frontend.home') }}" method="post" {{ form_enctype(homeform) }} novalidate="novalidate">
             <ul>
                 <li>
                     {{ form_label(homeform.from_price, 'Prijs') }} <br>
@@ -64,7 +63,7 @@
             <!-- 7 stuks -->
             {% for advertisement in carousel %}
                 <li class="mosaic-block1 circle">
-                    <a href="{{ app.request.baseUrl }}/Frontend/images/preview/work_2_l.jpg" rel="prettyPhoto[gallery1]" title="Image Title Here" class="mosaic-overlay"></a>
+                    <a href="{{ app.request.baseUrl }}{{ advertisement.photopath }}" rel="prettyPhoto[gallery1]" title="Image Title Here" class="mosaic-overlay"></a>
 
                     <img src="{{ app.request.baseUrl }}{{ advertisement.photopath }}" alt="" />
                     <small><a href="{{ path('frontend.advertisement.detail', {'idAdvertisement' : advertisement.idAdvertisement }) }}">{{ advertisement.rent_sell ? 'Te Koop' : 'Te Huur' }}</a></small>
@@ -85,8 +84,9 @@
                     <a href="agent.html"><img src="{{ app.request.baseUrl }}{{ agency.logopath }}" alt="" /></a>
                     <h3><strong><a href="#">{{ agency.name }}</a></strong><span><a href="agent.html">{{ agency.aantal | number_format (0, ',', 0) }} {{ agency.aantal == 1 ? 'eigendom': 'eigendommen' }} &raquo;</a></span></h3>
                     <p>{{ agency.description ? agency.description : 'Geen bescrhijving beschikbaar' }}</p>
-                    <h3><span class="viewprof"><a href="agent.html">Bekijk profiel &raquo;</a></span></h3>
+                    <h3><span class="viewprof"><a href="{{ path('frontend.agency.contact' ,{'idAgency' :agency.idAgency }) }}">Bekijk profiel &raquo;</a></span></h3>
                 </div>
+
             {% endfor %}
         </div>
     </section><!--end:#content-->

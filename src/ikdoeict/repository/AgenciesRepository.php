@@ -19,6 +19,14 @@ class AgenciesRepository extends \Knp\Repository{
         return 'Agencies';
     }
 
+    public function findAll(){
+        return $this->db->fetchAll(
+            'SELECT count(advertisements.idAdvertisement) as aantal, agencies.*  FROM agencies
+            INNER JOIN advertisements ON advertisements.idAgency = agencies.idAgency
+            GROUP BY agencies.name
+            ORDER BY aantal DESC');
+    }
+
     /**
      * @param mixed $id
      * @return array
@@ -32,6 +40,22 @@ class AgenciesRepository extends \Knp\Repository{
         WHERE agencies.idAgency = ? AND contacts.idContact = ?', array($id['idAgency'], $id['idContact']));
     }
 
+    /**
+     * @param mixed $id
+     * @return array
+     */
+    public function findAgency($id){
+        return $this->db->fetchAssoc('
+        SELECT agencies.*, locations.*, cities.name as city, contacts.email as email  from agencies
+        INNER JOIN contacts ON contacts.idAgency = agencies.idAgency
+        INNER JOIN locations ON locations.idLocatie = agencies.idLocation
+        INNER JOIN cities ON cities.idCity = locations.idCity
+        WHERE agencies.idAgency = ?', array($id));
+    }
+
+    /**
+     * @return array
+     */
     public function findBestAgencies(){
         return $this->db->fetchAll(
             'SELECT count(advertisements.idAdvertisement) as aantal, agencies.*  FROM agencies

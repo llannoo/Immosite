@@ -1,5 +1,14 @@
 <?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: Lorenzo
+ * Date: 13/08/13
+ * Time: 22:33
+ * To change this template use File | Settings | File Templates.
+ */
+
 namespace Ikdoeict\Provider\Controller\Frontend;
+
 
 use Silex\Application;
 use Silex\ControllerCollection;
@@ -7,30 +16,31 @@ use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
-/**
- * Created by JetBrains PhpStorm.
- * User: Lorenzo
- * Date: 10/08/13
- * Time: 14:38
- * To change this template use File | Settings | File Templates.
- */
 
-class HomeController implements \Silex\ControllerProviderInterface{
-/**
- * Returns routes to connect to the given application.
- *
- * @param Application $app An Application instance
- *
- * @return ControllerCollection A ControllerCollection instance
- */
+class AdvertisementController  implements  ControllerProviderInterface{
+
+
+    /**
+     * Returns routes to connect to the given application.
+     *
+     * @param Application $app An Application instance
+     *
+     * @return ControllerCollection A ControllerCollection instance
+     */
     public function connect (Application $app) {
         // TODO: Implement connect() method.
         $controllers = $app['controllers_factory'];
 
         $controllers
-            ->match('/', array($this, 'home'))
+            ->match('/', array($this, 'overview'))
             ->method('GET|POST')
-            ->bind('frontend.home');
+            ->bind('frontend.advertisements.overview');
+
+        $controllers
+            ->match('/{idAdvertisement}/detail', array($this, 'detail'))
+            ->assert('idAdvertisement', '\d+')
+            ->method('GET|POST')
+            ->bind('frontend.advertisement.detail');
 
         return $controllers;
     }
@@ -39,7 +49,12 @@ class HomeController implements \Silex\ControllerProviderInterface{
      * @param Application $app
      * @return mixed
      */
-    public function home (Application $app){
+    public function overview (Application $app){
+        $advertisements = $app['advertisements']->findAll();
+        foreach($advertisements as $key=>$value) {
+            $advertisements[$key]['photopath'] = $app['photos.base_url'] . $advertisements[$key]['URL'];
+        }
+
         $provinces2 = $app['cities']->findAllProvinces();
         $provinces1 = $this->reorder2dArray($provinces2, 'name');
         $provinces = $this->reorderArray($provinces1);
@@ -50,7 +65,7 @@ class HomeController implements \Silex\ControllerProviderInterface{
         $propertytypes = $this->reorderArray($propertytypes1);
 //ar_dump($propertytypes);
 
-        $homeform = $app['form.factory']->createNamed('profileform')
+        $filterform = $app['form.factory']->createNamed('filterform')
             ->add('from_price','text', array(
                 'required' => false,
                 'constraints' => array(
@@ -118,17 +133,17 @@ class HomeController implements \Silex\ControllerProviderInterface{
             ));
 
         if ('POST' == $app['request']->getMethod()) {
-            $homeform->bind($app['request']);
-            if ($homeform->isValid()) {
-                $data = $homeform->getData();
+            $filterform->bind($app['request']);
+            if ($filterform->isValid()) {
+                $data = $filterform->getData();
                 $data['city'] = strtolower($data['city']);
                 $resultCode = $app['cities']->findByCityName($data);
                 if (!$resultCode){
-                    $homeform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
+                    $filterform->get('city')->addError(new \Symfony\Component\Form\FormError('Naam van de gemeente wordt niet herkend'));
                 }
                 if(isset($data['to_price']) && ($data['from_price'])){
                     if ($data['to_price'] <= $data['from_price']){
-                        $homeform->get('to_price')->addError(new \Symfony\Component\Form\FormError('Het bereik van de prijs is foutief'));
+                        $filterform->get('to_price')->addError(new \Symfony\Component\Form\FormError('Het bereik van de prijs is foutief'));
                     }
                 }
 
@@ -139,27 +154,26 @@ class HomeController implements \Silex\ControllerProviderInterface{
             }
         }
 
-        $headliners = $app['advertisements']->findMostViews();
-        foreach($headliners as $key=>$value) {
-            $headliners[$key]['photopath'] = $app['photos.base_url'] . $headliners[$key]['URL'];
+        return $app['twig']->render('Frontend/Advertisements/overview.twig', array('filterform' => $filterform->createView(), 'advertisements' => $advertisements));
+    }
+
+    /**
+     * @param Application $app
+     * @param             $idAdvertisement
+     * @return mixed
+     */
+    public function detail (Application $app, $idAdvertisement){
+        $advertisement = $app['advertisements']->find($idAdvertisement);
+        if (!$advertisement) {
+            $app->abort(404, 'Advertisement does not exist');
         }
-  //      var_dump($headliners);
-        $carousel = $app['advertisements']->findMostRecent();
-        foreach($carousel as $key=>$value) {
-            $carousel[$key]['photopath'] = $app['photos.base_url'] . $carousel[$key]['URL'];
-        }
-        $agencies = $app['agencies']->findBestAgencies();
-       // var_dump($agencies);
-        foreach($agencies as $key=>$value) {
-            $agencies[$key]['logopath'] = $app['logo.base_url'] . $agencies[$key]['logo'];
+        $photos = $app['photos']->find($idAdvertisement);
+        foreach($photos as $key=>$value) {
+            $photos[$key]['photopath'] = $app['photos.base_url'] . $photos[$key]['URL'];
         }
 
-        return $app['twig']->render('Frontend/home/home.twig',
-            array(
-                'agencies' => $agencies,
-                'carousel' => $carousel,
-                'headliners' => $headliners,
-                'homeform' => $homeform->createView()));
+        $app['advertisements']->updateView($advertisement, $idAdvertisement);
+        return $app['twig']->render('Frontend/Advertisements/detail.twig', array('photos' => $photos, 'advertisement' => $advertisement));
     }
 
     /**

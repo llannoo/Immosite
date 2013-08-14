@@ -1,0 +1,31 @@
+{# extend the parent tpl #}
+{% extends '/Frontend/layout.twig' %}
+
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'lannimmoo :: Overzicht agentschappen' %}
+
+{% block pageContent %}
+    <div id="page_container">
+        <div class="breadcrumbs">
+            <div class="bread-top">
+                <h2>Agenschappen overzicht</h2>
+                <span class="left"><a href="{{ path('frontend.home') }}">Home &rArr;</a></span>
+                <span><a href="{{ path('frontend.agency.overview') }}">Agentschappen &rArr;</a></span>
+                <span>Overzicht </span>
+            </div>
+        </div><!--end:.breadcrumbs-->
+
+            <h2>Agents</h2>
+            <div class="agents">
+                {% for agency in agencies %}
+                    <div>
+                        <a href="agent.html"><img src="{{ app.request.baseUrl }}{{ agency.logopath }}" alt="" /></a>
+                        <h3><strong><a href="#">{{ agency.name }}</a></strong><span><a href="agent.html">{{ agency.aantal | number_format (0, ',', 0) }} {{ agency.aantal == 1 ? 'eigendom': 'eigendommen' }} &raquo;</a></span></h3>
+                        <p>{{ agency.description ? agency.description : 'Geen bescrhijving beschikbaar' }}</p>
+                        <h3><span class="viewprof"><a href="{{ path('frontend.agency.contact' ,{'idAgency' :agency.idAgency }) }}">Bekijk profiel &raquo;</a></span></h3>
+                    </div>
+                {% endfor %}
+            </div>
+
+    </div><!--end:#page_container-->
+{% endblock %}

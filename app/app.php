@@ -35,3 +35,5 @@ $app->mount('/admin/advertisements', new Ikdoeict\Provider\Controller\Backend\Ad
 
 //frontend
 $app->mount('/', new Ikdoeict\Provider\Controller\Frontend\HomeController());
+$app->mount('/advertisements', new Ikdoeict\Provider\Controller\Frontend\AdvertisementController());
+$app->mount('/contact', new Ikdoeict\Provider\Controller\Frontend\ContactController());

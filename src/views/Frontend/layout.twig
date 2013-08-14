@@ -13,10 +13,10 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Arvo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 </head>
 
-<body {{ body | raw }}>
+<body >
 <div id="toTop">&uArr;</div>
 <div id="page_wrap">
-<h1 class="logo"><a href="index-2.html">Casa Fresco</a></h1>
+<h1 class="logo"><a href="{{ path('frontend.home') }}">lannimmoo</a></h1>
 <div id="login-box" class="login-popup">
     <a href="#" class="close"><img src="{{ app.request.baseUrl }}/Frontend/images/process-stop.png" class="btn_close" title="Close Window" alt="Close" /></a>
     <form method="post" class="signin" action="#">
@@ -36,39 +36,13 @@
         </fieldset>
     </form>
 </div>
-<span class="login"><a href="#login-box" class="login-window">Login / Sign In</a></span>
+<span class="login"><a href="{{ path('auth.login') }}"> Login / Sign In</a></span>
 <header>
     <nav id="smoothmenu1" class="ddsmoothmenu">
         <ul>
-            <li><a href="index-2.html" class="current no-border-left">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="building.html">Building</a></li>
-            <li><a href="buying.html">Buying</a></li>
-            <li><a href="selling.html">Selling</a></li>
-            <li><a href="leasing.html">Leasing</a></li>
-            <li><a href="news.html">News</a>
-                <ul>
-                    <li class="no-border-top"><a href="single.html">Single</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Features</a>
-                <ul>
-                    <li class="no-border-top"><a href="index2.html">Camera Slider</a></li>
-                    <li><a href="index-2.html">Flex Slider</a></li>
-                    <li><a href="under-construction.html">Site Under Construction</a></li>
-                    <li><a href="testimonial.html">Testimonial Page</a></li>
-                    <li><a href="faqs.html">FAQs Page</a></li>
-                    <li><a href="column.html">Column Page</a></li>
-                    <li><a href="fullwidth.html">Fullwidth Page</a></li>
-                    <li><a href="button.html">Button Page</a></li>
-                    <li><a href="list.html">List Page</a></li>
-                    <li><a href="typography.html">Typography Page</a></li>
-                    <li><a href="sitemap.html">Sitemap</a></li>
-                    <li><a href="404page.html">404 Page</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{{ path('frontend.home') }}" class="current no-border-left">Home</a></li>
+            <li><a href="{{ path('frontend.advertisements.overview') }}">Overzicht</a></li>
+            <li><a href="{{ path('frontend.agency.overview') }}">Agentschappen</a></li>
         </ul>
     </nav>
 </header>
@@ -93,19 +67,12 @@
                 <li><a href="#">Luxury</a></li>
             </ul>
         </div>
-        <div class="one-fourth">
-            <h3>Recent Tweet</h3>
-            <p class="tweet"><a href="#">@louiejie: </a> Proin vitae mi sed felis suscipit dictum</p>
-            <p class="tweet"><a href="#">@joefrey: </a> Hendre maurs phaselus. Etmagnis montes, <a href="#">#ametpetbus</a> nascetur ridiculus musulla cursusdui. </p>
-        </div>
     </div><!--end:#footer_wrap-->
     <div id="copy_right">
-        <p>&copy; 2012. All Rights Reserved. <strong>HTML5 &amp; CSS3</strong>. Created by: <strong><a href="#">louiejiemahusay</a></strong></p>
+        <p>&copy; 2013. All Rights Reserved. Created by: <strong><a href="#">Lorenzo Lannoo</a></strong></p>
         <ul class="footer-menu">
             <li><a href="index-2.html">Home</a>/</li>
-            <li><a href="about.html">About</a>/</li>
-            <li><a href="building.html">Building</a>/</li>
-            <li><a href="news.html">News</a>/</li>
+            <li><a href="about.html">Overzicht</a>/</li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
@@ -119,6 +86,7 @@
 
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/css3-mediaqueries.js"></script><!--mediaqueries-->
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/modernizr-1.7.min.js"></script><!--modernizr-->
+
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/ddsmoothmenu.js"></script> <!--menu-->
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/jquery.flexslider-min.js"></script> <!-- FlexSlider -->
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/jquery.jcarousel.min.js"></script> <!-- list_work -->
@@ -128,7 +96,7 @@
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/jquery.prettyPhoto.js"></script><!-- prettyPhoto -->
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/jquery.tipsy.js"></script><!--tooltip-->
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/organictabs.jquery.js"></script><!--tabs-->
-<script src="js/responsivethumbnailgallery.js"></script><!--responsive gallery-->
+<script type="text/javascript"src="{{ app.request.baseUrl }}/Frontend/js/responsivethumbnailgallery.js"></script><!--responsive gallery-->
 <script type="text/javascript" src="{{ app.request.baseUrl }}/Frontend/js/custom.js"></script>
 </body>
 </html>

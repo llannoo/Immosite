@@ -1,0 +1,164 @@
+{# extend the parent tpl #}
+{% extends '/Frontend/layout.twig' %}
+
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'lannimmoo :: Detail advertentie' %}
+
+{% block script %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var gallery = new $.ThumbnailGallery($('#gallery'));
+        });
+    </script>
+{% endblock %}
+
+{% block pageContent %}
+    <div id="page_container">
+        <div class="breadcrumbs">
+            <div class="bread-top">
+                <h2>Detail advertentie</h2>
+                <span class="left"><a href="{{ path('frontend.home') }}">Home &rArr;</a></span>
+                <span><a href="{{ path('frontend.advertisements.overview') }}"> Overzicht advertenties &rArr;</a></span>
+                <span> Detail advertentie</span>
+            </div>
+        </div><!--end:.breadcrumbs-->
+        <section id="content">
+            <h2>Mandeville Canyon Rd<br><span class="area">Toronto Canada</span></h2>
+            <div id="gallery">
+                <p>Put your alt no-js content here.</p>
+            </div>
+            <ul class="info">
+                <li><strong>Size: </strong>7,450 sq ft.</li>
+                <li><strong>Size: </strong>13,900 sq ft.</li>
+                <li><strong>Bedrooms: </strong>5</li>
+                <li><strong>Bathrooms: </strong>3</li>
+                <li><strong>Car Garage </strong>2</li>
+                <li><strong>Garage Size: </strong>400 sq ft.</li>
+                <li><strong>Date Available: </strong>Immediately</li>
+                <li><strong>Total Rooms: </strong>12</li>
+                <li><strong>Basement: </strong>Finished</li>
+                <li><strong>Year Built: </strong>2012</li>
+            </ul>
+            <p>Vivamus fringilla sem, sit amet gravida felis fringilla non. Cras vitae aliquet nisl. Nulla facilisi. Praesent facilisis vulputate nunc, et sagittis nibh eleifend sit amet. Nam ultrices aliquet quam, sed sollicitudin mi iaculis ac. Mauris id sapien nec libero Nullam eget diam eu urna pharetra pellentesque ac pellentesque justo.</p>
+            <p>Vivamus fringilla sem, sit amet gravida felis fringilla non. Cras vitae aliquet nisl. Nulla facilisi. Praesent facilisis vulputate nunc, et sagittis nibh eleifend sit amet. Nam ultrices aliquet quam, sed sollicitudin mi iaculis ac. Mauris id sapien nec libero Nullam eget diam eu urna pharetra pellentesque ac pellentesque justo.</p>
+            <div class="whole">
+                <h2>Mandeville Canyon Rd Map Location</h2>
+                <div id="map_canvas"></div>
+            </div>
+            <div class="whole">
+                <h2>Features</h2>
+                <div class="one-third first">
+                    <ul class="list star">
+                        <li><a href="#">Attic</a></li>
+                        <li><a href="#">Gas Heat</a></li>
+                        <li><a href="#">Ocean View</a></li>
+                        <li><a href="#">Wine Cellar</a></li>
+                    </ul>
+                </div>
+                <div class="one-third">
+                    <ul class="list star">
+                        <li><a href="#">Basketball Court</a></li>
+                        <li><a href="#">Gym</a></li>
+                        <li><a href="#">Pond</a></li>
+                        <li><a href="#">Swimming Pool</a></li>
+                    </ul>
+                </div>
+                <div class="one-third">
+                    <ul class="list star">
+                        <li><a href="#">Fireplace</a></li>
+                        <li><a href="#">Lake view</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section><!--end:content-->
+        <aside id="sidebar">
+            <div class="side">
+                <div class="find_property find_property2">
+                    <h2>Find Your Property</h2>
+                    <form action="#" method="post">
+                        <ul>
+                            <li>
+                                <label>Price</label> <br>
+                                <select name="price-per-month" class="s-1">
+                                    <option></option>
+                                    <option>$10,000.00</option>
+                                    <option>$20,000.00</option>
+                                    <option>$30,000.00</option>
+                                </select>
+                                to
+                                <select name="price-per-month" class="s-1">
+                                    <option></option>
+                                    <option>$20,000.00</option>
+                                    <option>$40,000.00</option>
+                                    <option>$60,000.00</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label>Location</label> <br>
+                                <select name="location" class="location">
+                                    <option></option>
+                                    <option>Washington, D.C</option>
+                                    <option>Melbourne Australia</option>
+                                    <option>Charlottesville Virginia</option>
+                                    <option>Xenia Ohio</option>
+                                    <option>Xalapa Mexico</option>
+                                </select>
+                            </li>
+                            <li class="s-2 first">
+                                <label>Min Bedrooms</label> <br>
+                                <select name="min-bed" class="min-bed">
+                                    <option></option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </li>
+                            <li class="s-2">
+                                <label>Property Type</label> <br>
+                                <select name="property-type" class="property-type">
+                                    <option></option>
+                                    <option>Vacant Land</option>
+                                    <option>Residential Properties</option>
+                                    <option>Commercial Properties</option>
+                                </select>
+                            </li>
+                            <li class="s-2 first">
+                                <label>Availability</label> <br>
+                                <select name="min-bed" class="min-bed">
+                                    <option></option>
+                                    <option>10</option>
+                                    <option>15</option>
+                                    <option>20</option>
+                                    <option>25</option>
+                                </select>
+                            </li>
+                            <li class="s-2">
+                                <label>Furnished</label> <br>
+                                <select name="furnished" class="furnished">
+                                    <option></option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </form>
+                    <p><span><a href="#" class="search">Search</a></span> <a href="#">Advance Search</a></span></p>
+                </div><!--end:.find_property-->
+            </div>
+            <div class="side">
+                <h2>8 Steps of Buying a Home</h2>
+                <ol class="steps">
+                    <li><a href="#">Donec sem nibh, egestas quis eleifend sit amet.</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet consectetur.</a></li>
+                    <li><a href="#">Etiam ut turpis vel nisl facilisis suscipit.</a></li>
+                    <li><a href="#">Vivamus fringilla sem, sit amet gravida.</a></li>
+                    <li><a href="#">Cras vitae aliquet nisl. Nulla facilisi. </a></li>
+                    <li><a href="#">Fusce porttitor gravida porttitor. Integer facilisis pulvinar</a></li>
+                    <li><a href="#">Fusce porttitor gravida porttitor. Integer facilisis</a></li>
+                    <li><a href="#">Donec sem nibh, egestas quis eleifend sit amet.</a></li>
+                </ol>
+            </div>
+        </aside><!--end:sidebar-->
+    </div><!--end:#page_container-->
+{% endblock %}

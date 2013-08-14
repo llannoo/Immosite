@@ -212,7 +212,6 @@ class AuthController implements ControllerProviderInterface {
 
             if ($registerform->isValid()) {
                 $data = $registerform->getData();
-                var_dump($data);
 
                 if ($data['password'] == $data['confirmpass']) {
                     //check password
@@ -243,7 +242,6 @@ class AuthController implements ControllerProviderInterface {
                     }
 
                     $data['idCity'] = $resultCode['idCity'];
-var_dump($data);
                     $app['locations']->insert($data);
                     $data['idLocation'] = $app['locations']->getLastInsertedId();
 

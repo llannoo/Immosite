@@ -49,7 +49,6 @@ class AdvertisementController implements ControllerProviderInterface{
             ->before(array($this, 'checkLogin'))
             ->bind('backend.advertisements.edit');
 
-
         $controllers
             ->get('/{idAdvertisement}/delete', array($this, 'delete'))
             ->assert('idAdvertisement', '\d+')
@@ -72,7 +71,8 @@ class AdvertisementController implements ControllerProviderInterface{
      */
     public function overview(Application $app){
         $contact = $app['session']->get('contact');
-        $advertisements = $app['advertisements']->findAllByAgency($contact['idAgency']);
+
+        $advertisements = $app['advertisements']->findAllByAgency($contact);
         return $app['twig']->render('Backend/Advertisements/overview.twig', array('advertisements' => $advertisements, 'session' => $contact));
     }
 

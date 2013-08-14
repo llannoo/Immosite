@@ -20,6 +20,19 @@ class AdvertisementsRepository extends \Knp\Repository{
         return 'Advertisements';
     }
 
+    public function find($id){
+        return $this->db->fetchAssoc(
+            'SELECT advertisements.*, cities.*, locations.*, provinces.name as province, agencies.*
+FROM advertisements
+            INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
+            INNER JOIN cities    ON locations.idCity = cities.idCity
+            INNER JOIN provinces ON provinces.idProvince = cities.idProvince
+            INNER JOIN agencies ON agencies.idAgency = advertisement.idAgency
+            WHERE idAgency = ? AND advertisements.idAdvertisement = ? ',
+            array($id['idAgency'], $id['idAdvertisement'])
+        );
+    }
+
     /**
      * returns all full adv
      * @return array
@@ -28,15 +41,16 @@ class AdvertisementsRepository extends \Knp\Repository{
         return $this->db->fetchAll(
             'SELECT
             advertisements.*,
-            photos.URL,
+            photos.*,
             locations.street,
             locations.housenumber,
             locations.bus,
-            cities.name
+            cities.name as city
             FROM advertisements
-            INNER JOIN locations ON locations.idLocation = advertisements.idLocation
+            INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
             INNER JOIN cities    ON locations.idCity = cities.idCity
-            INNER JOIN photos    ON advertisments.idAdvertisement = photos.idAdvertisement'
+            INNER JOIN photos    ON advertisements.idAdvertisement = photos.idAdvertisement
+            WHERE photos.front = true AND advertisements.sold_rented = false'
         );
     }
 
@@ -44,15 +58,15 @@ class AdvertisementsRepository extends \Knp\Repository{
      * @param $id
      * @return array
      */
-    public function findAllByAgency($id){
+    public function findAllByAgency(array $id){
         return $this->db->fetchAll(
             'SELECT advertisements.*, cities.name
             FROM advertisements
             INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
             INNER JOIN cities    ON locations.idCity = cities.idCity
-            WHERE idAgency = ?
+            WHERE advertisements.idAgency = ?
             ORDER BY advertisements.updated_on DESC',
-            array($id)
+            array($id['idAgency'])
         );
     }
 
@@ -93,7 +107,7 @@ FROM advertisements
         INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
         INNER JOIN photos ON photos.idAdvertisement = advertisements.idAdvertisement
         INNER JOIN cities ON cities.idCity = locations.idLocatie
-        WHERE photos.front = true
+        WHERE photos.front = true  AND advertisements.sold_rented = false
         ORDER BY advertisements.views DESC
         LIMIT 0,5
         ');
@@ -109,7 +123,7 @@ FROM advertisements
         INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
         INNER JOIN photos ON photos.idAdvertisement = advertisements.idAdvertisement
         INNER JOIN cities ON cities.idCity = locations.idLocatie
-        WHERE photos.front = true
+        WHERE photos.front = true  AND advertisement.sold_rented = false
         ORDER BY advertisements.updated_on DESC
         LIMIT 0,10
         ');
@@ -120,7 +134,7 @@ FROM advertisements
      * @param $data
      * @return array
      */
-    public function findAllByHomeFilter($data){
+    public function findAllByFilter($data){
         if($data['from_price'] != null){
             $where[] = sprintf(" advertisements.price <= %u", $data['from_price'] );
         }
@@ -147,7 +161,8 @@ FROM advertisements
         INNER JOIN cities     ON cities.idCity = locations.idCity
         INNER JOIN provinces  ON provinces.idProvince = cities.idProvince
         INNER JOIN agencies ON agencies.idAgency = advertisements.idAgency
-        WHERE %s', $where2));
+        INNER JOIN photos ON photos.idAdvertisement = advertisements.idAdvertisement
+        WHERE photos.front = true AND %s', $where2));
     }
 
     /**
@@ -197,6 +212,16 @@ FROM advertisements
                 'updated_on'    => date("Y-m-d H:i:s")
             ),
             array('idAdvertisement' => $id['idAdvertisement'], 'idAgency' => $id['idAgency'])
+        );
+    }
+
+    public function updateViews(array $data, array $id){
+        date_default_timezone_set('Europe/Brussels');
+        $this->db->update(
+            'advertisements', array(
+                'views' => $data['views'] + 1
+            ),
+            array('idAdvertisement' => $id)
         );
     }
 

@@ -1,0 +1,68 @@
+{# extend the parent tpl #}
+{% extends '/Frontend/layout.twig' %}
+
+{# set the pagetitle in the parent tpl #}
+{% set pageTitle = 'lannimmoo :: Detail advertentie' %}
+
+{% block pageContent %}
+<div id="page_container">
+<div class="breadcrumbs">
+    <div class="bread-top">
+        <h2>Overzicht advertenties</h2>
+        <span class="left"><a href="{{ path('frontend.home') }}">Home &rArr;</a></span>
+        <span>Overzicht advertenties</span>
+    </div>
+</div><!--end:.breadcrumbs-->
+<section id="content">
+    {% set teller = 1 %}
+    {% for advertisement in advertisements %}
+        <div class="property-selling {{ loop.index % 2 ? 'first' : '' }}">
+            <a href="{{ path('frontend.advertisement.detail', {'idAdvertisement' : advertisement.idAdvertisement}) }}"><img width="{{ advertisement.width }}" heigth="{{ advertisement.heigth }}" src="{{ app.request.baseUrl }}{{ advertisement.photopath }}" alt="" /></a>
+            <h3><a href="{{ path('frontend.advertisement.detail', {'idAdvertisement' : advertisement.idAdvertisement}) }}">{{ advertisement.propertytype }} te {{ advertisement.city }}</a></h3>
+            <div class="item-row"><span>Vastgoedtype:</span><strong>{{ advertisement.propertytype }}</strong></a></div>
+            <div class="item-row"><span>Status</span> <strong>{{ advertisement.rent_sell ? 'Te Koop' : 'Te Huur' }}</strong></div>
+            <div class="item-row"><span>kamers:</span> <strong>{{ advertisement.chambers  | number_format(0, ',', ' ') }}</strong></div>
+            <span class="price">&#8364; {{ advertisement.price | number_format(2, ',', ' ') }}</span>
+            <span class="readmore"><a href="{{ path('frontend.advertisement.detail', {'idAdvertisement' : advertisement.idAdvertisement}) }}">Lees meer</a></span>
+        </div>
+    {% endfor %}
+</section><!--end:#content-->
+<aside id="sidebar">
+    <div class="side">
+            <form action="{{ path('frontend.advertisements.overview') }}" method="post" {{ form_enctype(filterform) }} novalidate="novalidate" class="find_agent">
+                <h3>Zoek je eigendom</h3>
+                <ul>
+                    <li>
+                        {{ form_label(filterform.from_price, 'Prijs') }} <br>
+                        {{ form_widget(filterform.from_price, { 'attr': { 'class' : 's-1'} }) }}
+                    </li>
+                    <li>
+                        {{ form_label(filterform.to_price, 'Tot') }} <br>
+                        {{ form_widget(filterform.to_price, { 'attr': { 'class' : 's-1'} }) }}
+                        {{ form_errors(filterform.from_price) }}
+                        {{ form_errors(filterform.to_price) }}
+
+                    </li>
+                    <li>
+                        {{ form_label(filterform.province, 'Provincie') }}
+                        {{ form_widget(filterform.province, { 'attr': { 'class' : 'location'} }) }}
+                        {{ form_errors(filterform.province) }}
+                    </li>
+                    <li class="s-2 first">
+                        {{ form_label(filterform.chambers, 'Kamers') }}
+                        {{ form_widget(filterform.chambers, { 'attr': { 'class' : 'min-bed'} }) }}
+                        {{ form_errors(filterform.chambers) }}
+                    </li>
+                    <li class="s-2">
+                        {{ form_label(filterform.propertytype, 'Vastgoedtype') }}
+                        {{ form_widget(filterform.propertytype, { 'attr': { 'class' : 'property-type'} }) }}
+                        {{ form_errors(filterform.propertytype) }}
+                    </li>
+                </ul>
+                {{ form_widget(filterform._token) }}
+                <p><span><input type="submit" name="submit"  class="search" value="Zoeken" /></span></p>
+            </form>
+    </div>
+</aside><!--end:#sidebar-->
+</div><!--end:#page_container-->
+{% endblock %}
