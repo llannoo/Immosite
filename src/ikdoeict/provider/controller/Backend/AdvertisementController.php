@@ -97,13 +97,20 @@ class AdvertisementController implements ControllerProviderInterface{
     /**
      * @param Application $app
      * @param             $idAdvertisement
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    //@todo delete functie in werking stellen
     public function delete(Application $app, $idAdvertisement){
         $contact = $app['session']->get('contact');
         $id['idAgency'] = $contact['idAgency'];
         $id['idAdvertisement'] = $idAdvertisement;
         $advertisement = $app['advertisements']->findAdByAgency($id);
+
+        if (!$advertisement) {
+            $app->abort(404, 'Advertisement does not exist');
+        }
+        $app['advertisement']->delete($id);
+
+        return $app->redirect($app['url_generator']->generate('backend.advertisements.overview') . '?deleted');
     }
 
     /**

@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09eb60dc-b696-4fda-8ae0-6581e319dadf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" afterPath="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php" afterPath="$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" afterPath="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Immo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501851781" ignored="false" />
+    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501855339" ignored="false" />
     <file path="/AuthController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376039851604" ignored="false" />
     <file path="/login.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375192449245" ignored="false" />
     <file path="/index.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373380886961" ignored="false" />
@@ -20,8 +25,8 @@
     <file path="/ContactsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375999165198" ignored="false" />
     <file path="/LocationsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375957469044" ignored="false" />
     <file path="/AgenciesRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376492600690" ignored="false" />
-    <file path="/AdvertisementsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501829518" ignored="false" />
-    <file path="/PhotosRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376424034544" ignored="false" />
+    <file path="/AdvertisementsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501922611" ignored="false" />
+    <file path="/PhotosRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376502048037" ignored="false" />
     <file path="/CitiesRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376212936556" ignored="false" />
     <file path="$PROJECT_DIR$/../ws2-sws-fiddles-silex2/11.session-upload/src/ikdoeict/provider/controller/photologcontroller.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373566356149" ignored="false" />
     <file path="/layoutAuth.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375190452767" ignored="false" />
@@ -32,13 +37,13 @@
     <file path="/TwigDataExtension.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374142920763" ignored="false" />
     <file path="/a.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373655174564" ignored="false" />
     <file path="/Data Source" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376232409191" ignored="false" />
-    <file path="/AdvertisementController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501613239" ignored="false" />
+    <file path="/AdvertisementController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376503065453" ignored="false" />
     <file path="$PROJECT_DIR$/../ws2-sws-fiddles-silex2/11.session-upload/src/views/layout.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374408260549" ignored="false" />
     <file path="/overview.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376500862742" ignored="false" />
     <file path="/a.regexp" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374515758728" ignored="false" />
     <file path="/new.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375989934390" ignored="false" />
     <file path="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Constraints/Range.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374521826336" ignored="false" />
-    <file path="/detail.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501092216" ignored="false" />
+    <file path="/detail.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376502999480" ignored="false" />
     <file path="/edit.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376045637923" ignored="false" />
     <file path="$PROJECT_DIR$/../Templates/mooncake/themeforest-3138068-mooncake-responsive-admin-template/HTML/creative/index.html" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374852988015" ignored="false" />
     <file path="/layout.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376491034668" ignored="false" />
@@ -82,70 +87,6 @@
     <groupTables value="false" />
     <sortChildren value="false" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="layout.twig" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/views/Frontend/layout.twig">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="49" column="18" selection-start="2827" selection-end="2827" vertical-scroll-proportion="-5.607843">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="HomeController.php" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/HomeController.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="3" column="0" selection-start="56" selection-end="251" vertical-scroll-proportion="-2.0769231">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="overview.twig" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/overview.twig">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="10" column="0" selection-start="270" selection-end="441" vertical-scroll-proportion="-3.8076923">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="detail.twig" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="18" column="33" selection-start="518" selection-end="524" vertical-scroll-proportion="-3.4705882">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="overview.twig" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/views/Frontend/Contact/overview.twig">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="17" column="27" selection-start="667" selection-end="667" vertical-scroll-proportion="-11.769231">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="AdvertisementController.php" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="93" column="88" selection-start="3108" selection-end="3108" vertical-scroll-proportion="0.3275862">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Immo" />
@@ -155,10 +96,19 @@
       <file leaf-file-name="AdvertisementController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="45" selection-start="5882" selection-end="5882" vertical-scroll-proportion="-6.5">
+            <state line="169" column="57" selection-start="6070" selection-end="6070" vertical-scroll-proportion="-11.346154">
               <folding>
                 <element signature="e#215#237#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/Backend/Advertisements/detail.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="85" selection-start="2366" selection-end="2419" vertical-scroll-proportion="0.38964242">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,13 +142,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdvertisementsRepository.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AdvertisementsRepository.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="58" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.39613527">
+            <state line="217" column="45" selection-start="7930" selection-end="7930" vertical-scroll-proportion="-2.490196">
               <folding>
                 <element signature="e#6#162#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhotosRepository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="35" selection-start="555" selection-end="555" vertical-scroll-proportion="-10.653846">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -222,22 +181,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/app.php" />
         <option value="$PROJECT_DIR$/src/views/Frontend/Contact/contact.twig" />
         <option value="$PROJECT_DIR$/src/views/Frontend/layout.twig" />
         <option value="$PROJECT_DIR$/src/views/Frontend/Contact/overview.twig" />
         <option value="$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php" />
         <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/ContactController.php" />
         <option value="$PROJECT_DIR$/src/views/Frontend/Contact/detail.twig" />
-        <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" />
         <option value="$PROJECT_DIR$/resources/immo_db.sql" />
         <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/HomeController.php" />
         <option value="$PROJECT_DIR$/web/Frontend/css/style.css" />
         <option value="$PROJECT_DIR$/src/views/Frontend/Advertisements/overview.twig" />
         <option value="$PROJECT_DIR$/src/views/Frontend/home/home.twig" />
-        <option value="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" />
-        <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php" />
         <option value="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php" />
+        <option value="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" />
       </list>
     </option>
   </component>
@@ -482,6 +441,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Errors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Immo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Advertisements" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -745,7 +752,11 @@
       <created>1376501853088</created>
       <updated>1376501853088</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="recovery">
+      <created>1376501857069</created>
+      <updated>1376501857069</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -770,7 +781,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="0" width="928" height="1080" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -778,7 +789,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32181427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290993" sideWeight="0.6846652" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27367204" sideWeight="0.67818576" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5265589" sideWeight="0.67818576" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -866,29 +877,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="59" selection-start="1404" selection-end="1404" vertical-scroll-proportion="-20.307692">
-          <folding>
-            <marker date="1376492626360" expanded="true" signature="687:743" placeholder="/** * @param..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Contact/detail.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="14" selection-start="3266" selection-end="3266" vertical-scroll-proportion="0.8803987">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Contact/overview.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="27" selection-start="667" selection-end="667" vertical-scroll-proportion="-11.769231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/immo_db.sql">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -913,23 +901,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/overview.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="270" selection-end="441" vertical-scroll-proportion="-3.8076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/Frontend/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="62" selection-start="8890" selection-end="8896" vertical-scroll-proportion="0.93793106">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="85" selection-start="1455" selection-end="1455" vertical-scroll-proportion="-21.461538">
           <folding />
         </state>
       </provider>
@@ -944,20 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="33" selection-start="518" selection-end="524" vertical-scroll-proportion="-3.4705882">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="88" selection-start="3108" selection-end="3108" vertical-scroll-proportion="0.3275862">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Frontend/home/home.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="143" selection-start="4031" selection-end="4031" vertical-scroll-proportion="-1.0980393">
@@ -965,21 +925,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="59" selection-start="1404" selection-end="1404" vertical-scroll-proportion="-20.307692">
+          <folding>
+            <marker date="1376492626360" expanded="true" signature="687:743" placeholder="/** * @param..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="85" selection-start="1455" selection-end="1455" vertical-scroll-proportion="-21.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="35" selection-start="555" selection-end="555" vertical-scroll-proportion="-10.653846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="45" selection-start="7930" selection-end="7930" vertical-scroll-proportion="-2.490196">
+          <folding>
+            <element signature="e#6#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Contact/overview.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="44" selection-start="745" selection-end="745" vertical-scroll-proportion="-13.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/overview.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="270" selection-end="441" vertical-scroll-proportion="-3.8076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="45" selection-start="5882" selection-end="5882" vertical-scroll-proportion="-6.5">
+        <state line="169" column="57" selection-start="6070" selection-end="6070" vertical-scroll-proportion="-11.346154">
           <folding>
             <element signature="e#215#237#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="58" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.39613527">
-          <folding>
-            <element signature="e#6#162#0" expanded="true" />
-          </folding>
+        <state line="28" column="70" selection-start="1139" selection-end="1139" vertical-scroll-proportion="-9.882353">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Backend/Advertisements/detail.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="85" selection-start="2366" selection-end="2419" vertical-scroll-proportion="0.38964242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="0" selection-start="3616" selection-end="3616" vertical-scroll-proportion="0.4426407">
+          <folding />
         </state>
       </provider>
     </entry>

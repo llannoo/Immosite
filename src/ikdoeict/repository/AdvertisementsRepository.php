@@ -27,9 +27,9 @@ FROM advertisements
             INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
             INNER JOIN cities    ON locations.idCity = cities.idCity
             INNER JOIN provinces ON provinces.idProvince = cities.idProvince
-            INNER JOIN agencies ON agencies.idAgency = advertisement.idAgency
-            WHERE idAgency = ? AND advertisements.idAdvertisement = ? ',
-            array($id['idAgency'], $id['idAdvertisement'])
+            INNER JOIN agencies ON agencies.idAgency = advertisements.idAgency
+            WHERE advertisements.idAdvertisement = ? ',
+            array($id)
         );
     }
 
@@ -215,7 +215,7 @@ FROM advertisements
         );
     }
 
-    public function updateViews(array $data, array $id){
+    public function updateViews(array $data, $id){
         date_default_timezone_set('Europe/Brussels');
         $this->db->update(
             'advertisements', array(

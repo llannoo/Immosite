@@ -25,7 +25,7 @@ class PhotosRepository extends \Knp\Repository{
      * @return array
      */
     public function find($idAdvertisment){
-        return $this->db->fetchAssoc(
+        return $this->db->fetchAll(
             'SELECT * FROM Photos WHERE idAdvertisement = ?',
             array($idAdvertisment));
     }
@@ -34,7 +34,7 @@ class PhotosRepository extends \Knp\Repository{
      * @param array $data
      * @return int|void
      */
-    public function delete($data){
+    public function delete(array $data){
         $this->db->delete(
             'photos', array(
                 'idAdvertisement' => $data['idAdvertisement']
@@ -46,7 +46,7 @@ class PhotosRepository extends \Knp\Repository{
      * @param array $data
      * @return int|void
      */
-    public function insert($data){
+    public function insert(array $data){
         $this->db->insert('photos',
             array(
                 'idAdvertisement' =>$data['idAdvertisement'],

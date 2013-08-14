@@ -171,8 +171,7 @@ class AdvertisementController  implements  ControllerProviderInterface{
         foreach($photos as $key=>$value) {
             $photos[$key]['photopath'] = $app['photos.base_url'] . $photos[$key]['URL'];
         }
-
-        $app['advertisements']->updateView($advertisement, $idAdvertisement);
+        $app['advertisements']->updateViews($advertisement, $idAdvertisement);
         return $app['twig']->render('Frontend/Advertisements/detail.twig', array('photos' => $photos, 'advertisement' => $advertisement));
     }
 
