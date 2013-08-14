@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09eb60dc-b696-4fda-8ae0-6581e319dadf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" afterPath="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php" afterPath="$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" afterPath="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Immo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501855339" ignored="false" />
+    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376503138201" ignored="false" />
     <file path="/AuthController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376039851604" ignored="false" />
     <file path="/login.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375192449245" ignored="false" />
     <file path="/index.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373380886961" ignored="false" />
@@ -25,7 +22,7 @@
     <file path="/ContactsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375999165198" ignored="false" />
     <file path="/LocationsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375957469044" ignored="false" />
     <file path="/AgenciesRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376492600690" ignored="false" />
-    <file path="/AdvertisementsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501922611" ignored="false" />
+    <file path="/AdvertisementsRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376503204861" ignored="false" />
     <file path="/PhotosRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376502048037" ignored="false" />
     <file path="/CitiesRepository.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376212936556" ignored="false" />
     <file path="$PROJECT_DIR$/../ws2-sws-fiddles-silex2/11.session-upload/src/ikdoeict/provider/controller/photologcontroller.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373566356149" ignored="false" />
@@ -43,7 +40,7 @@
     <file path="/a.regexp" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374515758728" ignored="false" />
     <file path="/new.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375989934390" ignored="false" />
     <file path="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Constraints/Range.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374521826336" ignored="false" />
-    <file path="/detail.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376502999480" ignored="false" />
+    <file path="/detail.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376503184181" ignored="false" />
     <file path="/edit.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376045637923" ignored="false" />
     <file path="$PROJECT_DIR$/../Templates/mooncake/themeforest-3138068-mooncake-responsive-admin-template/HTML/creative/index.html" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1374852988015" ignored="false" />
     <file path="/layout.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376491034668" ignored="false" />
@@ -104,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.twig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="detail.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/Backend/Advertisements/detail.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="85" selection-start="2366" selection-end="2419" vertical-scroll-proportion="0.38964242">
+            <state line="54" column="85" selection-start="2366" selection-end="2419" vertical-scroll-proportion="-7.3076925">
               <folding />
             </state>
           </provider>
@@ -136,7 +133,7 @@
       <file leaf-file-name="home.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/Frontend/home/home.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="143" selection-start="4031" selection-end="4031" vertical-scroll-proportion="-1.0980393">
+            <state line="71" column="143" selection-start="4031" selection-end="4031" vertical-scroll-proportion="-6.392157">
               <folding />
             </state>
           </provider>
@@ -145,7 +142,7 @@
       <file leaf-file-name="AdvertisementsRepository.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="45" selection-start="7930" selection-end="7930" vertical-scroll-proportion="-2.490196">
+            <state line="24" column="57" selection-start="546" selection-end="546" vertical-scroll-proportion="-4.901961">
               <folding>
                 <element signature="e#6#162#0" expanded="true" />
               </folding>
@@ -157,6 +154,15 @@
         <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="27" column="35" selection-start="555" selection-end="555" vertical-scroll-proportion="-10.653846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="0" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.5258427">
               <folding />
             </state>
           </provider>
@@ -193,18 +199,19 @@
         <option value="$PROJECT_DIR$/src/views/Frontend/Advertisements/overview.twig" />
         <option value="$PROJECT_DIR$/src/views/Frontend/home/home.twig" />
         <option value="$PROJECT_DIR$/src/ikdoeict/repository/PhotosRepository.php" />
-        <option value="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" />
         <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php" />
-        <option value="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" />
         <option value="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" />
+        <option value="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" />
+        <option value="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="width" value="928" />
-    <option name="height" value="1080" />
+    <option name="x" value="56" />
+    <option name="y" value="-8" />
+    <option name="width" value="1872" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -756,7 +763,11 @@
       <created>1376501857069</created>
       <updated>1376501857069</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Definitief">
+      <created>1376503142318</created>
+      <updated>1376503142318</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -780,8 +791,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="0" width="928" height="1080" extended-state="0" />
-    <editor active="false" />
+    <frame x="56" y="-8" width="1872" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -789,7 +800,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32181427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290993" sideWeight="0.6846652" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5265589" sideWeight="0.67818576" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2519337" sideWeight="0.67818576" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -846,7 +857,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="recovery" />
+    <option name="LAST_COMMIT_MESSAGE" value="Definitief" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -870,6 +881,7 @@
     <MESSAGE value="profiel af" />
     <MESSAGE value="home page af" />
     <MESSAGE value="recovery" />
+    <MESSAGE value="Definitief" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -918,13 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Frontend/home/home.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="143" selection-start="4031" selection-end="4031" vertical-scroll-proportion="-1.0980393">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="59" selection-start="1404" selection-end="1404" vertical-scroll-proportion="-20.307692">
@@ -945,15 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="35" selection-start="555" selection-end="555" vertical-scroll-proportion="-10.653846">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="45" selection-start="7930" selection-end="7930" vertical-scroll-proportion="-2.490196">
-          <folding>
-            <element signature="e#6#162#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -980,16 +976,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="70" selection-start="1139" selection-end="1139" vertical-scroll-proportion="-9.882353">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Backend/Advertisements/detail.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="85" selection-start="2366" selection-end="2419" vertical-scroll-proportion="0.38964242">
+        <state line="54" column="85" selection-start="2366" selection-end="2419" vertical-scroll-proportion="-7.3076925">
           <folding />
         </state>
       </provider>
@@ -997,6 +986,29 @@
     <entry file="file://$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="0" selection-start="3616" selection-end="3616" vertical-scroll-proportion="0.4426407">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="57" selection-start="546" selection-end="546" vertical-scroll-proportion="-4.901961">
+          <folding>
+            <element signature="e#6#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Frontend/home/home.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="143" selection-start="4031" selection-end="4031" vertical-scroll-proportion="-6.392157">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.5258427">
           <folding />
         </state>
       </provider>

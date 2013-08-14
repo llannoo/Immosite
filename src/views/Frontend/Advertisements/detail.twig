@@ -22,13 +22,8 @@
                 <span> Detail advertentie</span>
             </div>
         </div><!--end:.breadcrumbs-->
-            <h2, {{ advertisement.street }} {{ advertisement.housenumber }} {{ advertisement.bus }}<br><span class="area">{{ advertisement.city }}</span></h2>
+            <h2, {{ advertisement.street }} {{ advertisement.housenumber }} {{ advertisement.bus }}<br><span class="area">{{ advertisement.name }}</span></h2>
 
-        <ul>
-            {% for photo in photos %}
-            <li><img src="{{ app.request.baseUrl }}{{ photos.photopath }}"></li>
-            {% endfor %}
-        </ul>
 
 
             <ul class="info">
@@ -38,10 +33,7 @@
                 <li><strong>EPC: </strong>{{ advertisement.EPC | number_format(2, ',', ' ') }}</li>
                 <li><strong>KI: </strong>{{ advertisement.ki | number_format(2, ',', ' ') }}</li>
                 <li><strong>Kamers: </strong>{{ advertisement.chambers| number_format(0, ',', ' ') }}</li>
-                <li><strong>Garage Size: </strong>{{ advertisement. }}</li>
                 <li><strong>Gewijzigd op: </strong>I{{ advertisement.updated_on }}</li>
-                <li><strong>Total Rooms: </strong>{{ advertisement. }}</li>
-
                 <li><strong>Prijs: </strong>{{ advertisement.price | number_format(2, ',', ' ') }}</li>
             </ul>
             <p>{{ advertisement.description }}</p>

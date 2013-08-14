@@ -22,7 +22,7 @@ class AdvertisementsRepository extends \Knp\Repository{
 
     public function find($id){
         return $this->db->fetchAssoc(
-            'SELECT advertisements.*, cities.*, locations.*, provinces.name as province, agencies.*
+            'SELECT advertisements.*, cities.name as city, locations.*, provinces.name as province, agencies.*
 FROM advertisements
             INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
             INNER JOIN cities    ON locations.idCity = cities.idCity
