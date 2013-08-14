@@ -9,7 +9,7 @@
     </list>
     <ignored path="Immo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501837903" ignored="false" />
+    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501851781" ignored="false" />
     <file path="/AuthController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376039851604" ignored="false" />
     <file path="/login.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375192449245" ignored="false" />
     <file path="/index.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373380886961" ignored="false" />
@@ -741,7 +741,11 @@
       <created>1376501846824</created>
       <updated>1376501846824</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="recovery">
+      <created>1376501853088</created>
+      <updated>1376501853088</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
