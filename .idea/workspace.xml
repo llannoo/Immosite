@@ -5,194 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09eb60dc-b696-4fda-8ae0-6581e319dadf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/AdvertisementController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/ContactController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/Frontend/Advertisements/detail.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/Frontend/Contact/detail.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/Frontend/Advertisements/overview.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/Frontend/Contact/overview.twig" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\src\views\Frontend\home\detail.twig" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\customizer.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\alerts.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\boxes.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\charts.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\contact.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\dashboard.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\dataTables.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\file_manager.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\file_upload.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\form.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\form_validation.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\form_wizard.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\gallery.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\mail.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\statistic.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\ui_comps.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\widgets.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\demo\wysiwyg.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\docs.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\libs\excanvas.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\libs\excanvas.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\libs\jquery-1.8.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\libs\jquery.mousewheel.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\libs\jquery.mousewheel.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\libs\jquery.placeholder.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\libs\jquery.placeholder.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\login.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\setup.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\js\template.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-datepicker-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-datepicker-circle.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-datepicker-table-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-icons.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-slider-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-slider-handle-v.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-slider-handle.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-slider-range-h.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\images\ui-slider-range-v.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.all.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.autocomplete.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.base.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.button.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.core.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.datepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.dialog.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.progressbar.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.resizable.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.selectable.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.slider.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.tabs.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\css\jquery.ui.theme.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\jquery-ui.custom.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\jquery-ui.custom.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\jquery-ui.custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\jquery.ui.touch-punch.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\jquery.ui.touch-punch.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery-ui-i18n.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-af.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ar-DZ.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ar.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-az.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-bg.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-bs.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-cs.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-cy-GB.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-da.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-de.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-el.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-en-AU.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-en-GB.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-en-NZ.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-eo.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-es.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-et.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-eu.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-fa.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-fi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-fo.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-fr-CH.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-fr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-gl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-he.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-hi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-hr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-hu.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-hy.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-id.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-is.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-it.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ja.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ka.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-kk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-km.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ko.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-lb.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-lt.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-lv.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-mk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ml.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ms.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-nl-BE.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-nl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-no.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-pl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-pt-BR.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-pt.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-rm.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ro.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ru.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-sk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-sl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-sq.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-sr-SR.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-sr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-sv.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-ta.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-th.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-tj.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-tr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-uk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-vi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-zh-HK.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\i18n\jquery.ui.datepicker-zh-TW.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\jquery-ui-1.8.24.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\js\jquery-ui-1.8.24.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\spinner\jquery.ui.spinner.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\spinner\jquery.ui.spinner.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\spinner\jquery.ui.spinner.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\jquery-ui-timepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\jquery-ui-timepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\jquery-ui-timepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-af.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-bg.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-cs.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-de.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-el.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-es.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-et.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-fi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-fr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-gl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-he.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-hu.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-id.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-it.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-ja.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-ko.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-lt.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-nl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-no.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-pl.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-pt-BR.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-pt.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-ro.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-ru.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-sk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-sv.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-tr.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-uk.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-vi.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\lorenzo.lannoo\Immo\web\assets\jui\timepicker\localization\jquery-ui-timepicker-zh-TW.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AdvertisementController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" afterPath="$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php" afterPath="$PROJECT_DIR$/src/ikdoeict/repository/AgenciesRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AuthController.php" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Backend/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/HomeController.php" afterPath="$PROJECT_DIR$/src/ikdoeict/provider/controller/Frontend/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.php" afterPath="$PROJECT_DIR$/app/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/Frontend/home/home.twig" afterPath="$PROJECT_DIR$/src/views/Frontend/home/home.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/immo_db.sql" afterPath="$PROJECT_DIR$/resources/immo_db.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/Frontend/layout.twig" afterPath="$PROJECT_DIR$/src/views/Frontend/layout.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Frontend/css/style.css" afterPath="$PROJECT_DIR$/web/Frontend/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Immo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376425643139" ignored="false" />
+    <file path="/Dummy.txt" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376501837903" ignored="false" />
     <file path="/AuthController.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1376039851604" ignored="false" />
     <file path="/login.twig" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1375192449245" ignored="false" />
     <file path="/index.php" changelist="09eb60dc-b696-4fda-8ae0-6581e319dadf" time="1373380886961" ignored="false" />
@@ -378,7 +195,7 @@
       <file leaf-file-name="AdvertisementsRepository.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="30" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.57004833">
+            <state line="31" column="58" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.39613527">
               <folding>
                 <element signature="e#6#162#0" expanded="true" />
               </folding>
@@ -920,7 +737,11 @@
       <created>1376424169599</created>
       <updated>1376424169599</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="recovery">
+      <created>1376501846824</created>
+      <updated>1376501846824</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1010,7 +831,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="home page af" />
+    <option name="LAST_COMMIT_MESSAGE" value="recovery" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1033,6 +854,7 @@
     <MESSAGE value="detail af&#10;" />
     <MESSAGE value="profiel af" />
     <MESSAGE value="home page af" />
+    <MESSAGE value="recovery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1150,7 +972,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ikdoeict/repository/AdvertisementsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="30" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.57004833">
+        <state line="31" column="58" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.39613527">
           <folding>
             <element signature="e#6#162#0" expanded="true" />
           </folding>
