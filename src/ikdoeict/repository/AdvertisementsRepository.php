@@ -123,7 +123,7 @@ FROM advertisements
         INNER JOIN locations ON locations.idLocatie = advertisements.idLocation
         INNER JOIN photos ON photos.idAdvertisement = advertisements.idAdvertisement
         INNER JOIN cities ON cities.idCity = locations.idLocatie
-        WHERE photos.front = true  AND advertisement.sold_rented = false
+        WHERE photos.front = true  AND advertisements.sold_rented = false
         ORDER BY advertisements.updated_on DESC
         LIMIT 0,10
         ');
